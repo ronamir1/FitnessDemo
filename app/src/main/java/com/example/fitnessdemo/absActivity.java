@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.ContextThemeWrapper;
@@ -30,22 +32,15 @@ public class absActivity extends AppCompatActivity {
         startActivity(mainIntent);
     }
 
-    public void setExerciseList() {
-        exerciseArrList = new ArrayList<String>();
-        exerciseArrList.add("1. Static upper");
-        exerciseArrList.add("2. Legs raise");
-        exerciseArrList.add("3. Marine leg raise");
-        exerciseArrList.add("4. Bicycle");
-        exerciseArrList.add("5. Side crunches");
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_abs);
+        Intent intent = getIntent();
+        exerciseArrList = intent.getStringArrayListExtra("Drills");
+        String description = intent.getStringExtra("description");
         trainingDescription = findViewById(R.id.trainingDescription);
-        trainingDescription.setText("Abs & Core_day");
-        setExerciseList();
+        trainingDescription.setText(description);
         exerciseListView = (ListView) findViewById(R.id.exerciseListView);
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, exerciseArrList);
         exerciseListView.setAdapter(arrayAdapter);
@@ -65,7 +60,8 @@ public class absActivity extends AppCompatActivity {
                         setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-                                //open or create - with sqlLite
+                                Intent mainIntent = new Intent(getApplicationContext(), SquatActivity.class);
+                                startActivity(mainIntent);
                             }
                         }).show();
                 return true;
