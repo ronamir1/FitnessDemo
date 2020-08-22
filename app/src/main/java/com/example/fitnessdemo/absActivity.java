@@ -21,7 +21,7 @@ import java.util.ArrayList;
 
 public class absActivity extends AppCompatActivity {
 
-    ArrayList<String> exerciseArrList;
+    ArrayList<String> exerciseArrList, exerciseInfo;
     ListView exerciseListView;
     TextView trainingDescription;
     AlertDialog.Builder alertDialog;
@@ -31,25 +31,17 @@ public class absActivity extends AppCompatActivity {
         startActivity(mainIntent);
     }
 
-    public void setExerciseList() {
-        exerciseArrList = new ArrayList<String>();
-        exerciseArrList.add("1. Static upper");
-        exerciseArrList.add("2. Legs raise");
-        exerciseArrList.add("3. Marine leg raise");
-        exerciseArrList.add("4. Bicycle");
-        exerciseArrList.add("5. Side crunches");
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_abs);
         Intent intent = getIntent();
-        exerciseArrList = intent.getStringArrayListExtra("Drills");
+        exerciseArrList = intent.getStringArrayListExtra("exercises");
+        exerciseInfo = intent.getStringArrayListExtra("info");
         String description = intent.getStringExtra("description");
         trainingDescription = findViewById(R.id.trainingDescription);
         trainingDescription.setText("Abs & Core_day");
-        setExerciseList();
         exerciseListView = (ListView) findViewById(R.id.exerciseListView);
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, exerciseArrList);
         exerciseListView.setAdapter(arrayAdapter);
@@ -67,13 +59,13 @@ public class absActivity extends AppCompatActivity {
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
 
                 alertDialog = new AlertDialog.Builder(absActivity.this);
-                alertDialog.setMessage(exerciseInfoList.get(i));
+                alertDialog.setMessage(exerciseInfo.get(i));
                 alertDialog.setView(R.layout.layout_dialog).
                         setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-                                Intent mainIntent = new Intent(getApplicationContext(), SquatActivity.class);
-                                startActivity(mainIntent);
+//                                Intent mainIntent = new Intent(getApplicationContext(), SquatActivity.class);
+//                                startActivity(mainIntent);
                             }
                         }).show();
                 return true;
