@@ -14,6 +14,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -22,6 +23,7 @@ public class absActivity extends AppCompatActivity {
 
     ArrayList<String> exerciseArrList;
     ListView exerciseListView;
+    TextView trainingDescription;
 
     public void backToMain(View view) {
         Intent mainIntent = new Intent(getApplicationContext(), MainActivity.class);
@@ -41,7 +43,8 @@ public class absActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_abs);
-
+        trainingDescription = findViewById(R.id.trainingDescription);
+        trainingDescription.setText("Abs & Core_day");
         setExerciseList();
         exerciseListView = (ListView) findViewById(R.id.exerciseListView);
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, exerciseArrList);
