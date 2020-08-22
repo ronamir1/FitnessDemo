@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">FitnessDemo</string>
+    <string name="abs_amp_core_day"><![CDATA[Abs & core day]]></string>
+    <string name="our_recommendation_is_nfirst_day_upper_and_lower_abs_exercises_1_3_nsecond_day_obliques_exercises_4_5">Our recommendation is:\nFirst day - upper and lower abs (exercises 1-3)\nSecond day - obliques (exercises 4-5)</string>
+    <string name="todo">TODO</string>
+    <string name="enter_desired_weight">Enter Desired Weight</string>
+    <string name="enter_number_of_sets">Enter Number Of Sets...</string>
+    <string name="shoulder">Shoulder</string>
+    <string name="abs_amp_core"><![CDATA[abs & core]]></string>
+    <string name="chest">Chest</string>
+    <string name="biceps_triceps">Biceps / Triceps</string>
+    <string name="gym_beginners_app">Gym Beginners App</string>
+    <string name="back">Back</string>
+    <string name="legs">Legs</string>
+</resources>

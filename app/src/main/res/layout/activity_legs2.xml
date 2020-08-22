@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LegsActivity">
+
+    <TextView
+        android:id="@+id/trainingDescription"
+        android:layout_width="200dp"
+        android:layout_height="38dp"
+        android:layout_marginLeft="2dp"
+        android:background="#FFFFFF"
+        android:text="This is leg day"
+        android:textColor="#000000"
+        android:textSize="27sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/button"
+        android:layout_width="45dp"
+        android:layout_height="38dp"
+        android:onClick="backToMain"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_revert" />
+
+    <TextView
+        android:id="@+id/instructions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="8dp"
+        android:text="Our recommendation of exercises and they're order:\n1. Squats\n2. Deadlift\n3. Lunges/Bulgarian split squat\n4. Calf raise"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/trainingDescription" />
+
+    <ListView
+        android:id="@+id/exerciseListView"
+        android:layout_width="409dp"
+        android:layout_height="598dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintStart_toStartOf="@+id/instructions"
+        app:layout_constraintTop_toBottomOf="@+id/instructions" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
