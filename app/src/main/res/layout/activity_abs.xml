@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#EFE9E9"
     tools:context=".MuscleGroupActivity">
 
     <TextView
@@ -16,7 +17,8 @@
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
-        android:background="#FFFFFF"
+        android:background="#EFE9E9"
+        android:fontFamily="sans-serif-condensed"
         android:text="Abs &amp; Core Day"
         android:textColor="#000000"
         android:textSize="27sp"
@@ -30,18 +32,18 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
+        android:layout_marginStart="120dp"
         android:layout_marginLeft="120dp"
         android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
         android:layout_toEndOf="@+id/trainingDescription"
         android:layout_toRightOf="@+id/trainingDescription"
+        android:contentDescription="@string/todo"
         android:onClick="backToMain"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_revert"
-        android:contentDescription="@string/todo"
-        android:layout_marginEnd="10dp"
-        android:layout_marginStart="120dp" />
+        app:srcCompat="@android:drawable/ic_menu_revert" />
 
     <TextView
         android:id="@+id/instructions"
@@ -58,6 +60,7 @@
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
         android:text="@string/our_recommendation_is_nfirst_day_upper_and_lower_abs_exercises_1_3_nsecond_day_obliques_exercises_4_5"
+        android:textColor="#454141"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/trainingDescription" />
 
@@ -75,6 +78,12 @@
         android:layout_alignParentBottom="true"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="-5dp"
+        android:animateLayoutChanges="false"
+        android:animationCache="false"
+        android:background="#EFE9E9"
+        android:dividerHeight="5dp"
+        android:footerDividersEnabled="false"
+        android:headerDividersEnabled="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

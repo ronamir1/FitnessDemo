@@ -11,6 +11,7 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:scaleType="fitXY"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/tableLayout"
         app:layout_constraintEnd_toEndOf="@+id/tableLayout"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,30 +23,56 @@
         android:id="@+id/tableLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:alpha="0"
-        android:visibility="invisible">
+        android:stretchColumns="0,1,2"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <!-- 3 columns -->
 
         <TableRow
             android:id="@+id/tipDay"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="#FFFFFF">
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0"
+            android:background="#2F989696">
+
+            <!--            <TextView-->
+            <!--                android:id="@+id/dailyTip"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="match_parent"-->
+            <!--                android:layout_span="3"-->
+            <!--                android:layout_weight="1"-->
+            <!--                android:background="#56F15C"-->
+            <!--                android:text="Each row contains a workout, we recommend to start with the first muscle group ,then the second one.\n(left button then the right one)"-->
+            <!--                android:textColor="#000000"-->
+            <!--                android:textSize="16sp" />-->
+
 
             <TextView
-                android:id="@+id/dailyTip"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_span="3"
-                android:layout_weight="1"
-                android:background="#56F15C"
-                android:textColor="#000000"
-                android:textSize="16sp"
-                android:text="Each row contains a workout, we recommend to start with the first muscle group ,then the second one.\n(left button then the right one)"/>
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight=".7" />
 
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight=".2" />
 
+            <ImageButton
+                android:id="@+id/imageButton2"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_column="2"
+                android:layout_gravity="end"
+                android:layout_weight=".7"
+                android:onClick="directions"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/question_mark_icon" />
         </TableRow>
 
         <TableRow
@@ -54,12 +81,16 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="#FFFFFF"
-            android:padding="5dip">
+            android:divider="@android:drawable/status_bar_item_app_background"
+            android:padding="2dip"
+            android:showDividers="middle">
 
             <TextView
                 android:id="@+id/a"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="0.1"
+                android:layout_weight="0.5"
+                android:background="#2F989696"
                 android:gravity="center_horizontal|center_vertical"
                 android:text="A"
                 android:textColor="#000000"
@@ -67,19 +98,23 @@
 
             <Button
                 android:id="@+id/chestButton"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="2.25"
-                android:text="Chest" />
+                android:background="#EAD0D0"
+                android:text="Chest"
+                android:textColor="#C89C9C"
+                android:textSize="30sp" />
 
             <Button
                 android:id="@+id/shouldersButton"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="Shoulders" />
-
-
+                android:layout_weight="2.25"
+                android:background="#EAD0D0"
+                android:text="Shoulders"
+                android:textColor="#C89C9C"
+                android:textSize="30sp" />
         </TableRow>
 
         <TableRow
@@ -88,12 +123,16 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="#FFFFFF"
-            android:padding="5dip">
+            android:divider="@android:drawable/status_bar_item_app_background"
+            android:padding="2dip"
+            android:showDividers="middle">
 
             <TextView
                 android:id="@+id/b"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="0.1"
+                android:layout_weight="0.5"
+                android:background="#2F989696"
                 android:gravity="center_horizontal|center_vertical"
                 android:text="B"
                 android:textColor="#000000"
@@ -101,19 +140,23 @@
 
             <Button
                 android:id="@+id/backButton"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="2.25"
-                android:text="Back" />
+                android:background="#EAD0D0"
+                android:text="Back"
+                android:textColor="#C89C9C"
+                android:textSize="30sp" />
 
             <Button
                 android:id="@+id/bicepButton"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="Biceps/Triceps" />
-
-
+                android:layout_weight="2.25"
+                android:background="#EAD0D0"
+                android:text="Biceps/Triceps"
+                android:textColor="#C89C9C"
+                android:textSize="30sp" />
         </TableRow>
 
         <TableRow
@@ -122,13 +165,16 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="#FFFFFF"
-            android:padding="5dip">
+            android:divider="@android:drawable/status_bar_item_app_background"
+            android:padding="2dip"
+            android:showDividers="middle">
 
             <TextView
                 android:id="@+id/c"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="0.1"
+                android:layout_weight="0.5"
+                android:background="#2F989696"
                 android:gravity="center_horizontal|center_vertical"
                 android:text="C"
                 android:textColor="#000000"
@@ -137,22 +183,27 @@
 
             <Button
                 android:id="@+id/legsButton"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="2.25"
+                android:background="#EAD0D0"
                 android:onClick="legsMain"
-                android:text="Legs" />
+                android:text="Legs"
+                android:textColor="#C89C9C"
+                android:textSize="30sp" />
 
             <Button
                 android:id="@+id/button3"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_weight="2.25"
+                android:background="#EAD0D0"
                 android:onClick="absMain"
-                android:text="Abs &amp; Core" />
-
-
+                android:text="Abs &amp; Core"
+                android:textColor="#C89C9C"
+                android:textSize="30sp" />
         </TableRow>
+
 
     </TableLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,7 +1,9 @@
 package com.example.fitnessdemo;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -38,6 +40,16 @@ public class MainActivity extends AppCompatActivity {
         Intent absIntent = new Intent(getApplicationContext(), MuscleGroupActivity.class);
         absIntent.putExtra("muscle group", 5);
         startActivity(absIntent);
+    }
+
+    public void directions(View view){
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(MainActivity.this);
+        alertDialog.setMessage("each row contains a workout, we recommend to start with the first muscle group ,then the second one.\n(left button then the right one)");
+        alertDialog.setView(R.layout.layout_dialog).
+                setPositiveButton("Got It!", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {}
+                }).show();
     }
 
 
