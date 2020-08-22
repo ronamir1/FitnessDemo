@@ -6,102 +6,112 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
     <TableLayout
+        android:id="@+id/tableLayout1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:stretchColumns="*"
-        android:shrinkColumns="*"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent" >
+
+        <!-- 3 columns -->
 
         <TableRow
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:id="@+id/aDay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            >
+            android:background="#FFFFFF"
+            android:padding="5dip">
 
-            <Button
-                android:id="@+id/backButton"
-                android:layout_width="0dp"
-                android:layout_height="fill_parent"
-                android:layout_column="0"
-                android:gravity="fill"
-                android:text="@string/back"
-                android:textAlignment="center"
-                tools:ignore="RtlCompat" />
-
-            <Button
-                android:id="@+id/shoulderButton"
-                android:layout_width="0dp"
-                android:layout_height="fill_parent"
-                android:gravity="fill"
-                android:layout_column="1"
-                android:text="@string/shoulder"
-                android:textAlignment="center"
-                tools:ignore="RtlCompat" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_weight="1"
-            >
-
-            <Button
-                android:id="@+id/legButton"
-                android:layout_width="0dp"
-                android:layout_height="fill_parent"
-                android:gravity="fill"
-                android:onClick="legsMain"
-                android:text="@string/legs"
-                android:layout_column="0"
-                android:textAlignment="center"
-                tools:ignore="RtlCompat" />
-
-            <Button
-                android:id="@+id/button5"
-                android:layout_width="0dp"
-                android:layout_height="fill_parent"
-                android:gravity="fill"
-                android:onClick="absMain"
-                android:layout_column="1"
-                android:text="@string/abs_amp_core"
-                android:textAlignment="center"
-                tools:ignore="RtlCompat" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_weight="1"
-            >
+            <TextView
+                android:id="@+id/a"
+                android:layout_height="match_parent"
+                android:layout_weight="0.1"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="A"
+                android:textColor="#000000"
+                android:textSize="60sp" />
 
             <Button
                 android:id="@+id/chestButton"
-                android:layout_width="0dp"
-                android:layout_height="fill_parent"
-                android:gravity="fill"
-                android:layout_column="0"
-                android:text="@string/chest"
-                android:textAlignment="center"
-                tools:ignore="RtlCompat" />
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="2.25"
+                android:text="Chest" />
 
             <Button
+                android:id="@+id/shouldersButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Shoulders" />
+        </TableRow>
 
+        <TableRow
+            android:id="@+id/bDay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#FFFFFF"
+            android:padding="5dip">
+
+            <TextView
+                android:id="@+id/b"
+                android:layout_height="match_parent"
+                android:layout_weight="0.1"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="B"
+                android:textColor="#000000"
+                android:textSize="60sp" />
+
+            <Button
+                android:id="@+id/backButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="2.25"
+                android:text="Back" />
+
+            <Button
                 android:id="@+id/bicepButton"
-                android:layout_width="0dp"
-                android:layout_height="fill_parent"
-                android:gravity="fill"
-                android:layout_column="1"
-                android:text="@string/biceps_triceps"
-                android:textAlignment="center"
-                tools:ignore="RtlCompat" />
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Biceps/Triceps" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/cDay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#FFFFFF"
+            android:padding="5dip">
+
+            <TextView
+                android:id="@+id/c"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.1"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="C"
+                android:textColor="#000000"
+                android:textSize="60sp" />
+
+
+            <Button
+                android:id="@+id/legsButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="2.25"
+                android:onClick="legsMain"
+                android:text="Legs" />
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:onClick="absMain"
+                android:text="Abs &amp; Core" />
         </TableRow>
 
     </TableLayout>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

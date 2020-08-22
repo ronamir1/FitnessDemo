@@ -21,9 +21,10 @@ import java.util.ArrayList;
 
 public class absActivity extends AppCompatActivity {
 
-    ArrayList<String> exerciseArrList;
+    ArrayList<String> exerciseArrList, exerciseInfoList;
     ListView exerciseListView;
     TextView trainingDescription;
+    AlertDialog.Builder alertDialog;
 
     public void backToMain(View view) {
         Intent mainIntent = new Intent(getApplicationContext(), MainActivity.class);
@@ -37,6 +38,13 @@ public class absActivity extends AppCompatActivity {
         exerciseArrList.add("3. Marine leg raise");
         exerciseArrList.add("4. Bicycle");
         exerciseArrList.add("5. Side crunches");
+
+        exerciseInfoList = new ArrayList<String>();
+        exerciseInfoList.add("You should thrive to do 3 sets of 10-15 reps with 45 seconds rest between sets");
+        exerciseInfoList.add("You should thrive to do 3 sets of 10-15 reps with 45 seconds rest between sets");
+        exerciseInfoList.add("You should thrive to do 3 sets of 10-15 reps with 45 seconds rest between sets");
+        exerciseInfoList.add("You should thrive to do 3 sets of 10-15 reps with 45 seconds rest between sets");
+        exerciseInfoList.add("You should thrive to do 3 sets of 10-15 reps with 45 seconds rest between sets");
     }
 
     @Override
@@ -45,6 +53,7 @@ public class absActivity extends AppCompatActivity {
         setContentView(R.layout.activity_abs);
         trainingDescription = findViewById(R.id.trainingDescription);
         trainingDescription.setText("Abs & Core_day");
+
         setExerciseList();
         exerciseListView = (ListView) findViewById(R.id.exerciseListView);
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, exerciseArrList);
@@ -61,7 +70,10 @@ public class absActivity extends AppCompatActivity {
         exerciseListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
-                new AlertDialog.Builder(absActivity.this).setView(R.layout.layout_dialog).
+
+                alertDialog = new AlertDialog.Builder(absActivity.this);
+                alertDialog.setMessage(exerciseInfoList.get(i));
+                alertDialog.setView(R.layout.layout_dialog).
                         setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
