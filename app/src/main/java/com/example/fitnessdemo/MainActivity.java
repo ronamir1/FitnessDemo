@@ -4,13 +4,18 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TableLayout;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
+    ImageView entry;
+    TableLayout tableLayout;
 
     public void legsMain(View view){
         String[] legsExercises = {"1. Squats", "2. Deadlift", "3. Lunges", "4. Bulgarian split squat", "5. Calf raise"};
@@ -41,5 +46,19 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        entry = findViewById(R.id.entry);
+        tableLayout = findViewById(R.id.tableLayout);
+        new CountDownTimer(2000, 1000) {
+            @Override
+            public void onTick(long l) {
+            }
+
+            @Override
+            public void onFinish() {
+                entry.animate().alpha(0f).setDuration(2000);
+                tableLayout.setVisibility(View.VISIBLE);
+                tableLayout.animate().alpha(1f).setDuration(2000);
+            }
+        }.start();
     }
 }
