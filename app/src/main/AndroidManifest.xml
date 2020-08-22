@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".absActivity"></activity>
+        <activity android:name=".MuscleGroupActivity"></activity>
         <activity android:name=".SquatActivity" />
         <activity android:name=".LegsActivity" />
         <activity android:name=".MainActivity">

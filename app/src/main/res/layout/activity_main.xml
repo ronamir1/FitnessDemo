@@ -17,6 +17,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ogo1" />
 
+
     <TableLayout
         android:id="@+id/tableLayout"
         android:layout_width="match_parent"
@@ -25,6 +26,27 @@
         android:visibility="invisible">
 
         <!-- 3 columns -->
+
+        <TableRow
+            android:id="@+id/tipDay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#FFFFFF">
+
+            <TextView
+                android:id="@+id/dailyTip"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_span="3"
+                android:layout_weight="1"
+                android:background="#56F15C"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:text="Each row contains a workout, we recommend to start with the first muscle group ,then the second one.\n(left button then the right one)"/>
+
+
+        </TableRow>
 
         <TableRow
             android:id="@+id/aDay"
@@ -56,6 +78,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="Shoulders" />
+
+
         </TableRow>
 
         <TableRow
@@ -88,6 +112,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="Biceps/Triceps" />
+
+
         </TableRow>
 
         <TableRow
@@ -124,6 +150,8 @@
                 android:layout_weight="1"
                 android:onClick="absMain"
                 android:text="Abs &amp; Core" />
+
+
         </TableRow>
 
     </TableLayout>

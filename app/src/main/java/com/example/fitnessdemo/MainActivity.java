@@ -5,39 +5,38 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.Handler;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TableLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     ImageView entry;
     TableLayout tableLayout;
+    TextView dailyTip;
+    final String DAILY_TIP = "Daily tip:";
+    final String LINE_DROP = "\n";
+    String[] dailyTips = {"Drink at least 2 cups of water upon waking up in the morning",
+            "Eat at least 1 gram of protein for each kg you weigh\ni.e a 70kg men should eat at least 70 gram of protein a day",
+            "It is OK to take a day off to rest and gather strength for the next workout"};
+    Random rand = new Random();
 
-    public void legsMain(View view){
-        String[] legsExercises = {"1. Squats", "2. Deadlift", "3. Lunges", "4. Bulgarian split squat", "5. Calf raise"};
-        String[] exerciseInfo = {"You should", "You should", "You should", "You should", "You should"};
-        ArrayList <String> exerciseArrList = new ArrayList<String>(Arrays.asList(legsExercises));
-        ArrayList <String> exerciseArrInfo = new ArrayList<String>(Arrays.asList(exerciseInfo));
-        Intent legsIntent = new Intent(getApplicationContext(), absActivity.class);
-        legsIntent.putExtra("exercises", exerciseArrList);
-        legsIntent.putExtra("info", exerciseArrInfo);
-        legsIntent.putExtra("description", "Leg Day");
+    public void legsMain(View view) {
+        Intent legsIntent = new Intent(getApplicationContext(), MuscleGroupActivity.class);
+        legsIntent.putExtra("muscle group", 4);
         startActivity(legsIntent);
     }
 
-    public void absMain(View view){
-        String[] absDrills = {"1. Static upper", "2. Legs raise", "3. Marine leg raise", "4. Bicycle, 5. Side crunches"};
-        String[] exerciseInfo = {"You should", "You should", "You should", "You should", "You should"};
-        ArrayList <String> exerciseArrList = new ArrayList<String>(Arrays.asList(absDrills));
-        ArrayList <String> exerciseArrInfo = new ArrayList<String>(Arrays.asList(exerciseInfo));
-        Intent absIntent = new Intent(getApplicationContext(), absActivity.class);
-        absIntent.putExtra("exercises", exerciseArrList);
-        absIntent.putExtra("info", exerciseArrInfo);
-        absIntent.putExtra("description", "Abs & Core_day");
+    public void absMain(View view) {
+        Intent absIntent = new Intent(getApplicationContext(), MuscleGroupActivity.class);
+        absIntent.putExtra("muscle group", 5);
         startActivity(absIntent);
     }
 
@@ -46,19 +45,43 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        final int todayTip = rand.nextInt(dailyTips.length);
         entry = findViewById(R.id.entry);
         tableLayout = findViewById(R.id.tableLayout);
-        new CountDownTimer(2000, 1000) {
-            @Override
-            public void onTick(long l) {
-            }
 
-            @Override
-            public void onFinish() {
-                entry.animate().alpha(0f).setDuration(2000);
-                tableLayout.setVisibility(View.VISIBLE);
-                tableLayout.animate().alpha(1f).setDuration(2000);
-            }
-        }.start();
+        // fading out opening screen
+        Intent intent = getIntent();
+        int isStartScreen = intent.getIntExtra("start screen", -1);
+        if (isStartScreen != 0) {
+            new CountDownTimer(3000, 1000) {
+                @Override
+                public void onTick(long l) {
+                }
+
+                @Override
+                public void onFinish() {
+                    entry.animate().alpha(0f).setDuration(2000);
+                    tableLayout.setVisibility(View.VISIBLE);
+                    tableLayout.animate().alpha(1f).setDuration(2000);
+                }
+            }.start();
+
+            // a daily tip toast during waiting time till opening screen fades out
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    Toast toast = Toast.makeText(getApplicationContext(), DAILY_TIP + LINE_DROP + dailyTips[todayTip],
+                            Toast.LENGTH_LONG);
+                    toast.setGravity(Gravity.TOP, 0, 0);
+                    toast.show();
+                }
+            }, 500);
+        }
+        else{
+            entry.setAlpha(0f);
+            tableLayout.setVisibility(View.VISIBLE);
+            tableLayout.setAlpha(1f);
+        }
     }
 }

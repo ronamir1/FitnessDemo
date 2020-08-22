@@ -12,7 +12,10 @@ import com.bumptech.glide.Glide;
 public class SquatActivity extends AppCompatActivity {
 
     public void backToLegs(View view){
-        Intent mainIntent = new Intent(getApplicationContext(), LegsActivity.class);
+        Intent intent = getIntent();
+        int muscleGroup = intent.getIntExtra("muscle group", -1);
+        Intent mainIntent = new Intent(getApplicationContext(), MuscleGroupActivity.class);
+        mainIntent.putExtra("muscle group", muscleGroup);
         startActivity(mainIntent);
     }
 
