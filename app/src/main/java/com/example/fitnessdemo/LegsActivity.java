@@ -25,6 +25,7 @@ public class LegsActivity extends AppCompatActivity {
     }
 
     public void setExerciseList(){
+        String[] absDrills = {"1. Squats", "2. Deadlift", "3. Lunges", "4. Bulgarian split squat, 5. Calf raise"};
         exerciseArrList = new ArrayList<String>();
         exerciseArrList.add("Squats");
         exerciseArrList.add("Deadlift");

@@ -21,7 +21,7 @@ import java.util.ArrayList;
 
 public class absActivity extends AppCompatActivity {
 
-    ArrayList<String> exerciseArrList, exerciseInfoList;
+    ArrayList<String> exerciseArrList;
     ListView exerciseListView;
     TextView trainingDescription;
     AlertDialog.Builder alertDialog;
@@ -38,22 +38,17 @@ public class absActivity extends AppCompatActivity {
         exerciseArrList.add("3. Marine leg raise");
         exerciseArrList.add("4. Bicycle");
         exerciseArrList.add("5. Side crunches");
-
-        exerciseInfoList = new ArrayList<String>();
-        exerciseInfoList.add("You should thrive to do 3 sets of 10-15 reps with 45 seconds rest between sets");
-        exerciseInfoList.add("You should thrive to do 3 sets of 10-15 reps with 45 seconds rest between sets");
-        exerciseInfoList.add("You should thrive to do 3 sets of 10-15 reps with 45 seconds rest between sets");
-        exerciseInfoList.add("You should thrive to do 3 sets of 10-15 reps with 45 seconds rest between sets");
-        exerciseInfoList.add("You should thrive to do 3 sets of 10-15 reps with 45 seconds rest between sets");
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_abs);
+        Intent intent = getIntent();
+        exerciseArrList = intent.getStringArrayListExtra("Drills");
+        String description = intent.getStringExtra("description");
         trainingDescription = findViewById(R.id.trainingDescription);
         trainingDescription.setText("Abs & Core_day");
-
         setExerciseList();
         exerciseListView = (ListView) findViewById(R.id.exerciseListView);
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, exerciseArrList);
@@ -77,7 +72,8 @@ public class absActivity extends AppCompatActivity {
                         setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-                                //open or create - with sqlLite
+                                Intent mainIntent = new Intent(getApplicationContext(), SquatActivity.class);
+                                startActivity(mainIntent);
                             }
                         }).show();
                 return true;
