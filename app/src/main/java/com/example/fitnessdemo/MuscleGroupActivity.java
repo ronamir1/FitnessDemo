@@ -17,12 +17,12 @@ import java.util.Arrays;
 
 public class MuscleGroupActivity extends AppCompatActivity {
 
-    final int CHEST = 0;
-    final int SHOULDERS = 1;
-    final int BACK = 2;
-    final int BICEPS = 3;
-    final int LEGS = 4;
-    final int ABS = 5;
+    final static int CHEST = 0;
+    final static int SHOULDERS = 1;
+    final static int BACK = 2;
+    final static int BICEPS = 3;
+    final static int LEGS = 4;
+    final static int ABS = 5;
     final String[] descriptions= {"Chest","Shoulders","Back","Biceps/Triceps","Legs","Abs & Core"};
 
     ArrayList<String> exerciseArrList, exerciseInfo;
@@ -42,8 +42,8 @@ public class MuscleGroupActivity extends AppCompatActivity {
 
         switch(numMuscleGroup){
             case CHEST:
-                exercises = new String[]{"1. Bench press", "2. Legs raise", "3. Marine leg raise", "4. Bicycle", " 5. Side crunches"};
-                info = new String[]{"You should", "You should", "You should", "You should", "You should"};
+                exercises = new String[]{"1. Bench press", "2. Dumbbell bench press ", "3. dips"};
+                info = new String[]{"You should", "You should", "You should"};
                 break;
             case SHOULDERS:
                 exercises = new String[]{"1. Shoulder press", "2. Legs raise", "3. Marine leg raise", "4. Bicycle", " 5. Side crunches"};
@@ -54,8 +54,8 @@ public class MuscleGroupActivity extends AppCompatActivity {
                 info = new String[]{"You should", "You should", "You should", "You should", "You should"};
                 break;
             case BICEPS:
-                exercises = new String[]{"1. Bicep curls", "2. Legs raise", "3. Marine leg raise", "4. Bicycle", " 5. Side crunches"};
-                info = new String[]{"You should", "You should", "You should", "You should", "You should"};
+                exercises = new String[]{"1. Bicep curls"};
+                info = new String[]{"You should"};
                 break;
             case LEGS:
                 exercises = new String[]{"1. Squat", "2. Legs raise", "3. Marine leg raise", "4. Bicycle", " 5. Side crunches"};
@@ -95,6 +95,7 @@ public class MuscleGroupActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent exerciseIntent = new Intent(getApplicationContext(), SquatActivity.class);
                 exerciseIntent.putExtra("muscle group", muscleGroup);
+                exerciseIntent.putExtra("exercise", i);
                 startActivity(exerciseIntent);
             }
         });
