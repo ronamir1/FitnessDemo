@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
                     toast.setGravity(Gravity.TOP, 0, 0);
                     toast.show();
                 }
-            }, 500);
+            }, 250);
         }
         else{
             entry.setAlpha(0f);
