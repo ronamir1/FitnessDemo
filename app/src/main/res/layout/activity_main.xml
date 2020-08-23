@@ -55,21 +55,19 @@
                 android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight=".7" />
+                android:layout_span="1"
+                android:layout_weight=".7"
+                android:text="Choose your workout"
+                android:textSize="25sp"/>
 
-            <TextView
-                android:id="@+id/textView6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight=".2" />
 
             <ImageButton
                 android:id="@+id/imageButton2"
-                android:layout_width="0dp"
+                android:layout_width="20dp"
                 android:layout_height="40dp"
                 android:layout_column="2"
                 android:layout_gravity="end"
-                android:layout_weight=".7"
+                android:layout_weight="4"
                 android:onClick="directions"
                 android:scaleType="fitXY"
                 app:srcCompat="@drawable/question_mark_icon" />
@@ -89,7 +87,7 @@
                 android:id="@+id/a"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="0.5"
+                android:layout_weight="0.6"
                 android:background="#2F989696"
                 android:gravity="center_horizontal|center_vertical"
                 android:text="A"
@@ -104,7 +102,7 @@
                 android:background="#EAD0D0"
                 android:text="Chest"
                 android:textColor="#C89C9C"
-                android:textSize="30sp" />
+                android:textSize="25sp" />
 
             <Button
                 android:id="@+id/shouldersButton"
@@ -114,7 +112,7 @@
                 android:background="#EAD0D0"
                 android:text="Shoulders"
                 android:textColor="#C89C9C"
-                android:textSize="30sp" />
+                android:textSize="25sp" />
         </TableRow>
 
         <TableRow
@@ -131,7 +129,7 @@
                 android:id="@+id/b"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="0.5"
+                android:layout_weight="0.6"
                 android:background="#2F989696"
                 android:gravity="center_horizontal|center_vertical"
                 android:text="B"
@@ -146,7 +144,7 @@
                 android:background="#EAD0D0"
                 android:text="Back"
                 android:textColor="#C89C9C"
-                android:textSize="30sp" />
+                android:textSize="25sp" />
 
             <Button
                 android:id="@+id/bicepButton"
@@ -156,7 +154,7 @@
                 android:background="#EAD0D0"
                 android:text="Biceps/Triceps"
                 android:textColor="#C89C9C"
-                android:textSize="30sp" />
+                android:textSize="25sp" />
         </TableRow>
 
         <TableRow
@@ -173,7 +171,7 @@
                 android:id="@+id/c"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="0.5"
+                android:layout_weight="0.6"
                 android:background="#2F989696"
                 android:gravity="center_horizontal|center_vertical"
                 android:text="C"
@@ -190,7 +188,7 @@
                 android:onClick="legsMain"
                 android:text="Legs"
                 android:textColor="#C89C9C"
-                android:textSize="30sp" />
+                android:textSize="25sp" />
 
             <Button
                 android:id="@+id/button3"
@@ -201,7 +199,7 @@
                 android:onClick="absMain"
                 android:text="Abs &amp; Core"
                 android:textColor="#C89C9C"
-                android:textSize="30sp" />
+                android:textSize="25sp" />
         </TableRow>
 
 
