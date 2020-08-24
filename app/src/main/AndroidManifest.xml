@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MuscleGroupActivity"></activity>
+        <activity android:name=".NewHereActivity"></activity>
+        <activity android:name=".MuscleGroupActivity" />
         <activity android:name=".SquatActivity" />
         <activity android:name=".LegsActivity" />
         <activity android:name=".MainActivity">
@@ -19,7 +20,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>

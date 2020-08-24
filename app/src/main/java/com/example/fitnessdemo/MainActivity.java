@@ -30,17 +30,10 @@ public class MainActivity extends AppCompatActivity {
             "It is OK to take a day off to rest and gather strength for the next workout"};
     Random rand = new Random();
 
-//    public void legsMain(View view) {
-//        Intent legsIntent = new Intent(getApplicationContext(), MuscleGroupActivity.class);
-//        legsIntent.putExtra("muscle group", 4);
-//        startActivity(legsIntent);
-//    }
-//
-//    public void absMain(View view) {
-//        Intent absIntent = new Intent(getApplicationContext(), MuscleGroupActivity.class);
-//        absIntent.putExtra("muscle group", 5);
-//        startActivity(absIntent);
-//    }
+    public void newHereActivity(View view){
+        Intent newIntent = new Intent(getApplicationContext(), NewHereActivity.class);
+        startActivity(newIntent);
+    }
 
     public void muscleGroupMain(View view) {
         Intent absIntent = new Intent(getApplicationContext(), MuscleGroupActivity.class);

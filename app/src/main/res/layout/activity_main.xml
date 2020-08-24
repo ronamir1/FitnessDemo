@@ -39,25 +39,15 @@
             android:layout_weight="0"
             android:background="#2F989696">
 
-            <!--            <TextView-->
-            <!--                android:id="@+id/dailyTip"-->
-            <!--                android:layout_width="match_parent"-->
-            <!--                android:layout_height="match_parent"-->
-            <!--                android:layout_span="3"-->
-            <!--                android:layout_weight="1"-->
-            <!--                android:background="#56F15C"-->
-            <!--                android:text="Each row contains a workout, we recommend to start with the first muscle group ,then the second one.\n(left button then the right one)"-->
-            <!--                android:textColor="#000000"-->
-            <!--                android:textSize="16sp" />-->
-
-
             <TextView
                 android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_span="1"
                 android:layout_weight=".7"
-                android:text="Choose your workout"
+                android:onClick="newHereActivity"
+                android:text="New to this? click here"
+                android:textColor="#000000"
                 android:textSize="25sp" />
 
 

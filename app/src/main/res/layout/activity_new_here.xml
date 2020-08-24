@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NewHereActivity">
+
+    <TextView
+        android:id="@+id/msg"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="This page contains some simple tips for you to train correctly and (hopefully) prevent injuries."
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/imageView"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="27dp"
+        android:layout_height="27dp"
+        android:onClick="backToMain"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_revert" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/msg">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="1.No pain no gain is NOT true.\nThere is a BIG difference between muscles hurting from a workout or from an injury. listen to your body and rest if needed." />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="2. Warm up is necessary, before each exercise do one slow set of 12-15 reps with lower weight." />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="3. Work on each body part (i.e. chest/shoulders/back/legs etc.) 1-2 times a week." />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="4. The workouts are divided into 3 sections:\nChest and shoulders, Back and Biceps/Triceps, Legs.\nOn each workout, choose one of the sections and work it.\nRegarding abs &amp; core, you can do them after each workout (no more than 3-4 times a week)." />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="5. your Max weight in an exercise is the maximum weight you can do 6-8 reps in that specific exercise." />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="6. Change your workout every few weeks, going in a rut in workouts is not good. Hence, you can either change the order of the exercises or choose different exercises, you have plenty of exercises to choose from in each section." />
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
