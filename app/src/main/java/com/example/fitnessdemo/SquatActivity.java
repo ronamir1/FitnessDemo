@@ -88,7 +88,7 @@ public class SquatActivity extends AppCompatActivity {
                 break;
             case 2:
                 firstTextView.setText("Marine leg raise");
-                Glide.with(this).load(R.drawable.marine_abs_gif).into(firstGif);
+                Glide.with(this).load(R.drawable.marine_abs).into(firstGif);
                 break;
             case 3:
                 firstTextView.setText("Bicycle");
