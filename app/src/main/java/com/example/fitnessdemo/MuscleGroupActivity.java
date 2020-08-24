@@ -46,24 +46,24 @@ public class MuscleGroupActivity extends AppCompatActivity {
                 info = new String[]{"You should", "You should", "You should"};
                 break;
             case SHOULDERS:
-                exercises = new String[]{"1. Shoulder press", "2. Legs raise", "3. Marine leg raise", "4. Bicycle", " 5. Side crunches"};
-                info = new String[]{"You should", "You should", "You should", "You should", "You should"};
+                exercises = new String[]{"1. Shoulder press"};
+                info = new String[]{"You should"};
                 break;
             case BACK:
-                exercises = new String[]{"1. Pull up", "2. Legs raise", "3. Marine leg raise", "4. Bicycle", " 5. Side crunches"};
+                exercises = new String[]{"1. Pull up", "2. Hip row", "3. Sitting row", "4. Pull over", " 5. One arm pull"};
                 info = new String[]{"You should", "You should", "You should", "You should", "You should"};
                 break;
             case BICEPS:
-                exercises = new String[]{"1. Bicep curls"};
-                info = new String[]{"You should"};
+                exercises = new String[]{"1. Bicep curls", "2. French press"};
+                info = new String[]{"You should", "You should"};
                 break;
             case LEGS:
-                exercises = new String[]{"1. Squat", "2. Legs raise", "3. Marine leg raise", "4. Bicycle", " 5. Side crunches"};
-                info = new String[]{"You should", "You should", "You should", "You should", "You should"};
+                exercises = new String[]{"1. Squat", "2. Deadlift", "3. lunges", "4. Bulgarian split squat"};
+                info = new String[]{"You should", "You should", "You should", "You should"};
                 break;
             case ABS:
-                exercises = new String[]{"1. Static upper", "2. Legs raise", "3. Marine leg raise", "4. Bicycle", " 5. Side crunches"};
-                info = new String[]{"You should", "You should", "You should", "You should", "You should"};
+                exercises = new String[]{"1. Static upper", "2. Accordion", "3. Legs raise", "4. Marine leg raise", "5. Bicycle", " 6. Side accordion"};
+                info = new String[]{"You should", "You should", "You should", "You should", "You should", "You should"};
                 break;
             default:
                 exercises = new String[]{};

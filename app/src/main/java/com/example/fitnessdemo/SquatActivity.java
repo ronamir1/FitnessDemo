@@ -44,10 +44,22 @@ public class SquatActivity extends AppCompatActivity {
                 break;
             case 2:
                 secondGif.setVisibility(View.INVISIBLE);
-                firstTextView.setText("dips - side");
                 secondTextView.setVisibility(View.INVISIBLE);
+                firstTextView.setText("dips - side");
                 Glide.with(this).load(R.drawable.dips).into(firstGif);
-                Glide.with(this).load(R.drawable.dips).into(secondGif);
+        }
+    }
+
+    public void shouldersMain(int exercise){
+        switch(exercise){
+            case 0:
+                secondGif.setVisibility(View.INVISIBLE);
+                secondTextView.setVisibility(View.INVISIBLE);
+                firstTextView.setText("Shoulder press");
+                Glide.with(this).load(R.drawable.shoulder_press).into(firstGif);
+                break;
+            case 1:
+            case 2:
         }
     }
 
@@ -58,19 +70,14 @@ public class SquatActivity extends AppCompatActivity {
                 secondTextView.setVisibility(View.INVISIBLE);
                 firstTextView.setText("Barbell curls");
                 Glide.with(this).load(R.drawable.barbell_curls).into(firstGif);
-                Glide.with(this).load(R.drawable.barbell_curls).into(secondGif);
                 break;
             case 1:
-//                firstTextView.setText("Dumbbell bench press - side");
-//                secondTextView.setText("Dumbbell bench press - back");
-//                Glide.with(this).load(R.drawable.dumbell_bench_press).into(firstGif);
-//                Glide.with(this).load(R.drawable.dumbell_bench_press_back).into(secondGif);
-//                break;
+                secondGif.setVisibility(View.INVISIBLE);
+                secondTextView.setVisibility(View.INVISIBLE);
+                firstTextView.setText("French press");
+                Glide.with(this).load(R.drawable.french_press).into(firstGif);
+                break;
             case 2:
-//                firstTextView.setText("dips - side");
-//                secondTextView.setText("dips - back");
-//                Glide.with(this).load(R.drawable.dips).into(firstGif);
-//                Glide.with(this).load(R.drawable.dips).into(secondGif);
         }
     }
 
@@ -80,24 +87,29 @@ public class SquatActivity extends AppCompatActivity {
         switch(exercise){
             case 0:
                 firstTextView.setText("Static upper");
-                Glide.with(this).load(R.drawable.bicycle).into(firstGif);
+                Glide.with(this).load(R.drawable.static_upper).into(firstGif);
                 break;
             case 1:
-                firstTextView.setText("Leg raise");
-                Glide.with(this).load(R.drawable.bicycle).into(firstGif);
+                firstTextView.setText("Accordion");
+                Glide.with(this).load(R.drawable.accordion).into(firstGif);
                 break;
             case 2:
-                firstTextView.setText("Marine leg raise");
-                Glide.with(this).load(R.drawable.marine_abs).into(firstGif);
+                firstTextView.setText("Leg raise");
+                Glide.with(this).load(R.drawable.leg_raise).into(firstGif);
                 break;
             case 3:
+                firstTextView.setText("Marine leg raise");
+                Glide.with(this).load(R.drawable.marine_abs).into(firstGif);
+
+                break;
+            case 4:
                 firstTextView.setText("Bicycle");
                 Glide.with(this).load(R.drawable.bicycle).into(firstGif);
                 break;
-            case 4:
+            case 5:
                 firstTextView.setText("Side accordion");
                 Glide.with(this).load(R.drawable.side_accordion).into(firstGif);
-                break;
+
         }
     }
 
@@ -122,6 +134,8 @@ public class SquatActivity extends AppCompatActivity {
                 chestMain(exercise);
                 break;
             case MuscleGroupActivity.SHOULDERS:
+                shouldersMain(exercise);
+                break;
             case MuscleGroupActivity.BACK:
             case MuscleGroupActivity.BICEPS:
                 bicepsMain(exercise);
