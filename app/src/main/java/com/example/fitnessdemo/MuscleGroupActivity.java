@@ -17,6 +17,12 @@ import java.util.Arrays;
 
 public class MuscleGroupActivity extends AppCompatActivity {
 
+    final String warmUpSet = "Warm up set 50% max weight 15 reps";
+    final String firstSet = "First set 75% max weight 12 reps";
+    final String secondSet = "Second set 85% max weight 10 reps";
+    final String thirdSet = "Third and fourth set max weight 8 reps or failure (max you can do).";
+    final String classicSet = "Three sets of 95% max weight 12 reps or failure";
+    final String LINE_DROP = "\n";
     final static int CHEST = 0;
     final static int SHOULDERS = 1;
     final static int BACK = 2;
@@ -43,7 +49,7 @@ public class MuscleGroupActivity extends AppCompatActivity {
         switch(numMuscleGroup){
             case CHEST:
                 exercises = new String[]{"1. Bench press", "2. Dumbbell bench press ", "3. dips"};
-                info = new String[]{"You should", "You should", "You should"};
+                info = new String[]{"5 sets:"+LINE_DROP+firstSet+LINE_DROP+secondSet+LINE_DROP+thirdSet, "You should", "You should"};
                 break;
             case SHOULDERS:
                 exercises = new String[]{"1. Shoulder press"};
