@@ -24,23 +24,32 @@ public class MuscleGroupActivity extends AppCompatActivity {
     final String firstSet = "First set 75% max weight 12 reps";
     final String secondSet = "Second set 85% max weight 10 reps";
     final String thirdSet = "Third and fourth set max weight 8 reps or failure (max you can do).";
-    final String classicSet = warmUpSet+LINE_DROP+"Three sets of 90% max weight 12 reps or failure";
-    final String raisingPyramide = "5 sets:"+LINE_DROP+warmUpSet+LINE_DROP+firstSet+LINE_DROP+secondSet+LINE_DROP+thirdSet;
+    final String classicSet = warmUpSet + LINE_DROP + "Three sets of 90% max weight 12 reps or failure";
+    final String raisingPyramide = "5 sets:" + LINE_DROP + warmUpSet + LINE_DROP + firstSet + LINE_DROP + secondSet + LINE_DROP + thirdSet;
     final String bodyWeight = "4 sets overall.\nThe first is a warm up set, do half your maximum. On the other sets do the maximum you can.";
     final String health = "This exercise require high rep so do three sets of 80% max weight, 15 reps.\nIf too hard drop to a weight that allows you this number of reps.";
-    final String combineClassicPyramide = firstOption+ raisingPyramide+LINE_DROP+LINE_DROP+secondOption+classicSet;
+    final String combineClassicPyramide = firstOption + raisingPyramide + LINE_DROP + LINE_DROP + secondOption + classicSet;
     final String absClassic = "3 sets, slow movements, each set 30-45 seconds\nIf it is too hard, try to do your best.\nIf its easy peasy lemon squeezy you go ahead and do it for longer.";
+
+    final String dontForget = "Don't forget to change them every once in a while!";
+    final String bigMuscle = "We recommend you to choose 4 exercises for this muscle, choose the ones you like.\n\n" + dontForget;
+    final String mediumMuscle = "We recommend you to choose 3 exercises for this muscle, choose the ones you like.\n\n" + dontForget;
+    final String smallMuscle = "We recommend you to choose 2 exercises for this muscle, choose the ones you like.\n\n" + dontForget;
+    final String forBicepsTriceps = "We recommend you to choose 2 exercises for this muscle, choose the ones you like.\nThat's two for biceps and two for triceps\n\n"+dontForget;
+    final String forAbs = "We recommend you to choose 4 exercises for this muscle, try to work one day on upper and lower and the other on obliques and sides.\n\n"+dontForget;
+
     final static int CHEST = 0;
     final static int SHOULDERS = 1;
     final static int BACK = 2;
     final static int BICEPS = 3;
     final static int LEGS = 4;
     final static int ABS = 5;
-    final String[] descriptions= {"Chest","Shoulders","Back","Biceps/Triceps","Legs","Abs & Core"};
+    final String[] descriptions = {"Chest", "Shoulders", "Back", "Biceps/Triceps", "Legs", "Abs & Core"};
+    final String[] muscleGroupRecommendations = {bigMuscle, mediumMuscle, bigMuscle, forBicepsTriceps, mediumMuscle, forAbs};
 
     ArrayList<String> exerciseArrList, exerciseInfo;
     ListView exerciseListView;
-    TextView trainingDescription;
+    TextView trainingDescription, instructions;
     AlertDialog.Builder alertDialog;
 
     public void backToMain(View view) {
@@ -49,14 +58,14 @@ public class MuscleGroupActivity extends AppCompatActivity {
         startActivity(mainIntent);
     }
 
-    public void matchListView(int numMuscleGroup){
+    public void matchListView(int numMuscleGroup) {
         String[] exercises;
         String[] info;
 
-        switch(numMuscleGroup){
+        switch (numMuscleGroup) {
             case CHEST:
                 exercises = new String[]{"1. Bench press", "2. Dumbbell bench press ", "3. dips"};
-                info = new String[]{raisingPyramide,raisingPyramide, bodyWeight};
+                info = new String[]{raisingPyramide, raisingPyramide, bodyWeight};
                 break;
             case SHOULDERS:
                 exercises = new String[]{"1. Shoulder press"};
@@ -99,6 +108,8 @@ public class MuscleGroupActivity extends AppCompatActivity {
 
         trainingDescription = findViewById(R.id.trainingDescription);
         trainingDescription.setText(descriptions[muscleGroup]);
+        instructions = findViewById(R.id.instructions);
+        instructions.setText(muscleGroupRecommendations[muscleGroup]);
         exerciseListView = (ListView) findViewById(R.id.exerciseListView);
         matchListView(muscleGroup);
 
@@ -123,7 +134,8 @@ public class MuscleGroupActivity extends AppCompatActivity {
                 alertDialog.setView(R.layout.layout_dialog).
                         setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                             @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {}
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                            }
                         }).show();
                 return true;
             }
