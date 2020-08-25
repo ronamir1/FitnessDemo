@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#61B8A4A4"
     tools:context=".MainActivity">
 
     <ImageView
@@ -11,7 +12,7 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:scaleType="fitXY"
-        android:visibility="visible"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/tableLayout"
         app:layout_constraintEnd_toEndOf="@+id/tableLayout"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,7 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:stretchColumns="0,1,2"
-        android:visibility="invisible"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -37,7 +38,7 @@
             android:layout_height="40dp"
             android:layout_gravity="center_horizontal"
             android:layout_weight="0"
-            android:background="#2F989696">
+            android:background="#61B8A4A4">
 
             <TextView
                 android:id="@+id/textView3"
@@ -53,14 +54,16 @@
 
             <ImageButton
                 android:id="@+id/imageButton2"
-                android:layout_width="20dp"
-                android:layout_height="40dp"
+                android:layout_width="0dp"
+                android:layout_height="20dp"
                 android:layout_column="2"
-                android:layout_gravity="end"
+                android:layout_gravity="center|end"
+                android:layout_marginRight="5dp"
                 android:layout_weight="4"
+                android:background="#00FFFFFF"
                 android:onClick="directions"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/question_mark_icon" />
+                app:srcCompat="@drawable/question" />
         </TableRow>
 
         <TableRow
@@ -78,10 +81,10 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.6"
-                android:background="#2F989696"
+                android:background="#5164FFDA"
                 android:gravity="center_horizontal|center_vertical"
                 android:text="A"
-                android:textColor="#000000"
+                android:textColor="#37E3BA"
                 android:textSize="60sp" />
 
             <Button
@@ -90,11 +93,11 @@
                 android:layout_height="match_parent"
                 android:layout_weight="2.25"
                 android:background="#EAD0D0"
-                android:text="Chest"
                 android:onClick="muscleGroupMain"
-                android:textColor="#C89C9C"
                 android:tag="0"
-                android:textSize="25sp"/>
+                android:text="Chest"
+                android:textColor="#C89C9C"
+                android:textSize="25sp" />
 
             <Button
                 android:id="@+id/shouldersButton"
@@ -102,10 +105,10 @@
                 android:layout_height="match_parent"
                 android:layout_weight="2.25"
                 android:background="#EAD0D0"
-                android:text="Shoulders"
                 android:onClick="muscleGroupMain"
-                android:textColor="#C89C9C"
                 android:tag="1"
+                android:text="Shoulders"
+                android:textColor="#C89C9C"
                 android:textSize="25sp" />
         </TableRow>
 
@@ -124,10 +127,10 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.6"
-                android:background="#2F989696"
+                android:background="#5164FFDA"
                 android:gravity="center_horizontal|center_vertical"
                 android:text="B"
-                android:textColor="#000000"
+                android:textColor="#37E3BA"
                 android:textSize="60sp" />
 
             <Button
@@ -136,10 +139,10 @@
                 android:layout_height="match_parent"
                 android:layout_weight="2.25"
                 android:background="#EAD0D0"
-                android:text="Back"
                 android:onClick="muscleGroupMain"
-                android:textColor="#C89C9C"
                 android:tag="2"
+                android:text="Back"
+                android:textColor="#C89C9C"
                 android:textSize="25sp" />
 
             <Button
@@ -148,10 +151,10 @@
                 android:layout_height="match_parent"
                 android:layout_weight="2.25"
                 android:background="#EAD0D0"
-                android:text="Biceps/Triceps"
                 android:onClick="muscleGroupMain"
-                android:textColor="#C89C9C"
                 android:tag="3"
+                android:text="Biceps/Triceps"
+                android:textColor="#C89C9C"
                 android:textSize="25sp" />
         </TableRow>
 
@@ -170,10 +173,10 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.6"
-                android:background="#2F989696"
+                android:background="#5164FFDA"
                 android:gravity="center_horizontal|center_vertical"
                 android:text="C"
-                android:textColor="#000000"
+                android:textColor="#37E3BA"
                 android:textSize="60sp" />
 
 
@@ -184,9 +187,9 @@
                 android:layout_weight="2.25"
                 android:background="#EAD0D0"
                 android:onClick="muscleGroupMain"
+                android:tag="4"
                 android:text="Legs"
                 android:textColor="#C89C9C"
-                android:tag="4"
                 android:textSize="25sp" />
 
             <Button
@@ -196,9 +199,9 @@
                 android:layout_weight="2.25"
                 android:background="#EAD0D0"
                 android:onClick="muscleGroupMain"
+                android:tag="5"
                 android:text="Abs &amp; Core"
                 android:textColor="#C89C9C"
-                android:tag="5"
                 android:textSize="25sp" />
         </TableRow>
 
