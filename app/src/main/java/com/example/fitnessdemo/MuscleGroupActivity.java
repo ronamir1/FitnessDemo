@@ -1,16 +1,28 @@
 package com.example.fitnessdemo;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.PopupWindow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -93,8 +105,9 @@ public class MuscleGroupActivity extends AppCompatActivity {
         }
         exerciseArrList = new ArrayList<String>(Arrays.asList(exercises));
         exerciseInfo = new ArrayList<String>(Arrays.asList(info));
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, exerciseArrList);
-        exerciseListView.setAdapter(arrayAdapter);
+        MyAdapter adapter = new MyAdapter(this, exerciseArrList);
+//        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, exerciseArrList);
+        exerciseListView.setAdapter(adapter);
     }
 
 
@@ -140,5 +153,51 @@ public class MuscleGroupActivity extends AppCompatActivity {
                 return true;
             }
         });
+    }
+
+    public void bs(int x, int y){
+        LayoutInflater inflater = (LayoutInflater)
+                this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        PopupWindow pw = new PopupWindow(
+                inflater.inflate(R.layout.popup_example, null, false),
+                350,
+                300,
+                true);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            pw.setElevation(90);
+        }
+        pw.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+        // The code below assumes that the root container has an id called 'main'
+        pw.showAtLocation(findViewById(R.id.exerciseListView), Gravity.TOP, 350, (y - 25));
+    }
+
+    class MyAdapter extends ArrayAdapter<String>{
+        Context context;
+        ArrayList<String> exercises;
+        View row;
+        MyAdapter(Context c, ArrayList<String> exercises1){
+            super(c, R.layout.row, exercises1);
+            this.context = c;
+            this.exercises = exercises1;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            LayoutInflater layoutInflater = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            row = layoutInflater.inflate(R.layout.row, parent, false);
+            final ImageView imageView = row.findViewById(R.id.options);
+            imageView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    int[] location = new int[2];
+                    imageView.getLocationOnScreen(location);
+                    bs(location[0], location[1]);
+                }
+            });
+            TextView exercise_description = row.findViewById(R.id.exercise_description);
+            exercise_description.setText(this.exercises.get(position));
+            return row;
+        }
     }
 }
