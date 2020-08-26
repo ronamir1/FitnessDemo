@@ -6,6 +6,51 @@
     android:layout_height="match_parent"
     tools:context=".SquatActivity">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/secondGifTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="4dp"
+                android:text="Squat" />
+
+            <ImageView
+                android:id="@+id/splace_image_view"
+                android:layout_width="match_parent"
+                android:layout_height="450dp"
+                android:layout_centerInParent="true"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="18dp"
+                android:layout_marginRight="18dp" />
+
+            <TextView
+                android:id="@+id/firstGifTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:text="Warm up" />
+
+            <ImageView
+                android:id="@+id/squat"
+                android:layout_width="match_parent"
+                android:layout_height="450dp"
+                android:layout_marginLeft="17dp"
+                android:layout_marginRight="17dp"
+                android:layout_alignTop="@id/splace_image_view"
+                android:layout_centerInParent="false" />
+        </LinearLayout>
+    </ScrollView>
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="27dp"
@@ -14,47 +59,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/ic_menu_revert" />
-
-
-    <ImageView
-        android:id="@+id/splace_image_view"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_centerInParent="true"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/trainingDescription"
-        app:layout_constraintTop_toBottomOf="@+id/firstGifTextView"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <ImageView
-        android:id="@+id/squat"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_alignTop="@id/splace_image_view"
-        android:layout_centerInParent="false"
-        app:layout_constraintStart_toStartOf="@+id/splace_image_view"
-        app:layout_constraintTop_toBottomOf="@+id/secondGifTextView" />
-
-    <TextView
-        android:id="@+id/firstGifTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:text="Warm up"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/secondGifTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="2dp"
-        android:layout_marginTop="4dp"
-        android:text="Squat"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/splace_image_view" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
