@@ -1,34 +1,33 @@
 package com.example.fitnessdemo;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.PopupWindow;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public class MuscleGroupActivity extends AppCompatActivity {
-
+    DbManager dbManager;
     final String LINE_DROP = "\n";
     final String firstOption = "First option:\n";
     final String secondOption = "Second option (to vary training from time to time):\n";
@@ -49,7 +48,6 @@ public class MuscleGroupActivity extends AppCompatActivity {
     final String smallMuscle = "We recommend you to choose 2 exercises for this muscle, choose the ones you like.\n\n" + dontForget;
     final String forBicepsTriceps = "We recommend you to choose 2 exercises for this muscle, choose the ones you like.\nThat's two for biceps and two for triceps\n\n"+dontForget;
     final String forAbs = "We recommend you to choose 4 exercises for this muscle, try to work one day on upper and lower and the other on obliques and sides.\n\n"+dontForget;
-
     final static int CHEST = 0;
     final static int SHOULDERS = 1;
     final static int BACK = 2;
@@ -115,10 +113,9 @@ public class MuscleGroupActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_abs);
-
         Intent intent = getIntent();
         final int muscleGroup = intent.getIntExtra("muscle group", -1);
-
+        dbManager = new DbManager(this.openOrCreateDatabase("exerciseDescription", MODE_PRIVATE, null));
         trainingDescription = findViewById(R.id.trainingDescription);
         trainingDescription.setText(descriptions[muscleGroup]);
         instructions = findViewById(R.id.instructions);
@@ -155,21 +152,30 @@ public class MuscleGroupActivity extends AppCompatActivity {
         });
     }
 
-    public void bs(int x, int y){
-        LayoutInflater inflater = (LayoutInflater)
-                this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        PopupWindow pw = new PopupWindow(
-                inflater.inflate(R.layout.popup_example, null, false),
-                350,
-                300,
-                true);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            pw.setElevation(90);
-        }
-        pw.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-
-        // The code below assumes that the root container has an id called 'main'
-        pw.showAtLocation(findViewById(R.id.exerciseListView), Gravity.TOP, 350, (y - 25));
+    public void setExerciseParams(int x, int y, final String exercise){
+        final Dialog pw = new Dialog(MuscleGroupActivity.this);
+        pw.setContentView(R.layout.popup_example);
+        pw.setCanceledOnTouchOutside(true);
+        int[] params = dbManager.getExerciseParams(exercise);
+        EditText sets = pw.findViewById(R.id.sets);
+        sets.setText(Integer.toString(params[0]));
+        EditText weights = pw.findViewById(R.id.weights);
+        weights.setText(Integer.toString(params[1]));
+        Window window = pw.getWindow();
+        window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        window.setGravity(Gravity.TOP);
+        WindowManager.LayoutParams wmlp = pw.getWindow().getAttributes();
+        wmlp.x = x;
+        wmlp.y = y - 75;
+        pw.setOnCancelListener(new DialogInterface.OnCancelListener() {
+            @Override
+            public void onCancel(DialogInterface dialogInterface) {
+                EditText sets = pw.findViewById(R.id.sets);
+                EditText weights = pw.findViewById(R.id.weights);
+                dbManager.updateValues(exercise, sets.getText().toString(), weights.getText().toString());
+            }
+        });
+        pw.show();
     }
 
     class MyAdapter extends ArrayAdapter<String>{
@@ -187,16 +193,16 @@ public class MuscleGroupActivity extends AppCompatActivity {
             LayoutInflater layoutInflater = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             row = layoutInflater.inflate(R.layout.row, parent, false);
             final ImageView imageView = row.findViewById(R.id.options);
+            final TextView description = row.findViewById(R.id.exercise_description);
             imageView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     int[] location = new int[2];
                     imageView.getLocationOnScreen(location);
-                    bs(location[0], location[1]);
+                    setExerciseParams(location[0], location[1], description.getText().toString());
                 }
             });
-            TextView exercise_description = row.findViewById(R.id.exercise_description);
-            exercise_description.setText(this.exercises.get(position));
+            description.setText(this.exercises.get(position));
             return row;
         }
     }
