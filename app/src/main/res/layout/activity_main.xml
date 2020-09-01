@@ -4,207 +4,153 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#61B8A4A4"
-    tools:context=".MainActivity">
+    android:background="#DCD5D5">
 
-    <ImageView
-        android:id="@+id/entry"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:scaleType="fitXY"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="@+id/tableLayout"
-        app:layout_constraintEnd_toEndOf="@+id/tableLayout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ogo1" />
-
-
-    <TableLayout
-        android:id="@+id/tableLayout"
+    <ScrollView
+        android:id="@+id/scroll"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:stretchColumns="0,1,2"
-        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <!-- 3 columns -->
-
-        <TableRow
-            android:id="@+id/tipDay"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="0"
-            android:background="#61B8A4A4">
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_span="1"
-                android:layout_weight="2"
-                android:onClick="newHereActivity"
-                android:text="New? click here"
-                android:textColor="#000000"
-                android:textSize="25sp" />
-
-
-            <ImageButton
-                android:id="@+id/imageButton2"
-                android:layout_width="0dp"
-                android:layout_height="20dp"
-                android:layout_column="2"
-                android:layout_gravity="center|end"
-                android:layout_marginRight="5dp"
-                android:layout_weight="4"
-                android:background="#00FFFFFF"
-                android:onClick="directions"
-                android:scaleType="fitXY"
-                app:srcCompat="@drawable/question" />
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/aDay"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="#FFFFFF"
-            android:divider="@android:drawable/status_bar_item_app_background"
-            android:padding="2dip"
-            android:showDividers="middle">
+            android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/a"
-                android:layout_width="0dp"
+            <LinearLayout
+                android:id="@+id/first_element"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="0.6"
-                android:background="#5164FFDA"
-                android:gravity="center_horizontal|center_vertical"
-                android:text="A"
-                android:textColor="#37E3BA"
-                android:textSize="60sp" />
+                android:orientation="vertical">
 
-            <Button
-                android:id="@+id/chestButton"
-                android:layout_width="0dp"
+                <ImageView
+                    android:id="@+id/group_a"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/muscle_group_a" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/chest"
+                        android:layout_width="fill_parent"
+                        android:layout_height="195dp"
+                        android:layout_weight="1"
+                        android:background="#00FFFFFF"
+                        android:onClick="muscleGroupMain"
+                        android:scaleType="fitXY"
+                        android:tag="0"
+                        app:srcCompat="@drawable/a1" />
+
+                    <ImageButton
+                        android:id="@+id/shoulders"
+                        android:layout_width="fill_parent"
+                        android:layout_height="195dp"
+                        android:layout_weight="1"
+                        android:background="#00FFFFFF"
+                        android:onClick="muscleGroupMain"
+                        android:scaleType="fitXY"
+                        android:tag="1"
+                        app:srcCompat="@drawable/a2" />
+
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/second_element"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="2.25"
-                android:background="#EAD0D0"
-                android:onClick="muscleGroupMain"
-                android:tag="0"
-                android:text="Chest"
-                android:textColor="#C89C9C"
-                android:textSize="25sp" />
+                app:layout_constraintTop_toBottomOf="@id/first_element"
+                android:orientation="vertical">
 
-            <Button
-                android:id="@+id/shouldersButton"
-                android:layout_width="0dp"
+                <ImageView
+                    android:id="@+id/group_b"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/muscle_group_b" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/back"
+                        android:layout_width="fill_parent"
+                        android:layout_height="195dp"
+                        android:layout_weight="1"
+                        android:background="#00FFFFFF"
+                        android:onClick="muscleGroupMain"
+                        android:scaleType="fitXY"
+                        android:tag="0"
+                        app:srcCompat="@drawable/b1" />
+
+                    <ImageButton
+                        android:id="@+id/biceps"
+                        android:layout_width="fill_parent"
+                        android:layout_height="195dp"
+                        android:layout_weight="1"
+                        android:background="#00FFFFFF"
+                        android:onClick="muscleGroupMain"
+                        android:scaleType="fitXY"
+                        android:tag="1"
+                        app:srcCompat="@drawable/b2" />
+
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                app:layout_constraintTop_toBottomOf="@id/second_element"
                 android:layout_height="match_parent"
-                android:layout_weight="2.25"
-                android:background="#EAD0D0"
-                android:onClick="muscleGroupMain"
-                android:tag="1"
-                android:text="Shoulders"
-                android:textColor="#C89C9C"
-                android:textSize="25sp" />
-        </TableRow>
+                android:orientation="vertical">
 
-        <TableRow
-            android:id="@+id/bDay"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="#FFFFFF"
-            android:divider="@android:drawable/status_bar_item_app_background"
-            android:padding="2dip"
-            android:showDividers="middle">
+                <ImageView
+                    android:id="@+id/group_c"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/muscle_group_c" />
 
-            <TextView
-                android:id="@+id/b"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.6"
-                android:background="#5164FFDA"
-                android:gravity="center_horizontal|center_vertical"
-                android:text="B"
-                android:textColor="#37E3BA"
-                android:textSize="60sp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/backButton"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="2.25"
-                android:background="#EAD0D0"
-                android:onClick="muscleGroupMain"
-                android:tag="2"
-                android:text="Back"
-                android:textColor="#C89C9C"
-                android:textSize="25sp" />
+                    <ImageButton
+                        android:id="@+id/legs"
+                        android:layout_width="fill_parent"
+                        android:layout_height="195dp"
+                        android:layout_weight="1"
+                        android:background="#00FFFFFF"
+                        android:onClick="muscleGroupMain"
+                        android:scaleType="fitXY"
+                        android:tag="0"
+                        app:srcCompat="@drawable/c1" />
 
-            <Button
-                android:id="@+id/bicepButton"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="2.25"
-                android:background="#EAD0D0"
-                android:onClick="muscleGroupMain"
-                android:tag="3"
-                android:text="Biceps/Triceps"
-                android:textColor="#C89C9C"
-                android:textSize="25sp" />
-        </TableRow>
+                    <ImageButton
+                        android:id="@+id/abs"
+                        android:layout_width="fill_parent"
+                        android:layout_height="195dp"
+                        android:layout_weight="1"
+                        android:background="#00FFFFFF"
+                        android:onClick="muscleGroupMain"
+                        android:scaleType="fitXY"
+                        android:tag="1"
+                        app:srcCompat="@drawable/c2" />
 
-        <TableRow
-            android:id="@+id/cDay"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="#FFFFFF"
-            android:divider="@android:drawable/status_bar_item_app_background"
-            android:padding="2dip"
-            android:showDividers="middle">
+                </LinearLayout>
+            </LinearLayout>
 
-            <TextView
-                android:id="@+id/c"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.6"
-                android:background="#5164FFDA"
-                android:gravity="center_horizontal|center_vertical"
-                android:text="C"
-                android:textColor="#37E3BA"
-                android:textSize="60sp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-            <Button
-                android:id="@+id/legsButton"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="2.25"
-                android:background="#EAD0D0"
-                android:onClick="muscleGroupMain"
-                android:tag="4"
-                android:text="Legs"
-                android:textColor="#C89C9C"
-                android:textSize="25sp" />
-
-            <Button
-                android:id="@+id/button3"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="2.25"
-                android:background="#EAD0D0"
-                android:onClick="muscleGroupMain"
-                android:tag="5"
-                android:text="Abs &amp; Core"
-                android:textColor="#C89C9C"
-                android:textSize="25sp" />
-        </TableRow>
+    </ScrollView>
 
 
-    </TableLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

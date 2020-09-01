@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
             "It is OK to take a day off to rest and gather strength for the next workout"};
     Random rand = new Random();
 
-    public void newHereActivity(View view){
+    public void newHereActivity(MenuItem item){
         Intent newIntent = new Intent(getApplicationContext(), NewHereActivity.class);
         startActivity(newIntent);
     }
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(absIntent);
     }
 
-    public void directions(View view){
+    public void directions(MenuItem item){
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(MainActivity.this);
         alertDialog.setMessage("each row contains a workout, we recommend to start with the first muscle group ,then the second one.\n(left button then the right one)");
         alertDialog.setView(R.layout.layout_dialog).
@@ -61,42 +61,42 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         final int todayTip = rand.nextInt(dailyTips.length);
-        entry = findViewById(R.id.entry);
-        tableLayout = findViewById(R.id.tableLayout);
-
-        // fading out opening screen
-        Intent intent = getIntent();
-        int isStartScreen = intent.getIntExtra("start screen", -1);
-        if (isStartScreen != 0) {
-            new CountDownTimer(3000, 1000) {
-                @Override
-                public void onTick(long l) {
-                }
-
-                @Override
-                public void onFinish() {
-                    entry.animate().alpha(0f).setDuration(2000);
-                    tableLayout.setVisibility(View.VISIBLE);
-                    tableLayout.animate().alpha(1f).setDuration(2000);
-                }
-            }.start();
-
-            // a daily tip toast during waiting time till opening screen fades out
-            new Handler().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    Toast toast = Toast.makeText(getApplicationContext(), DAILY_TIP + LINE_DROP + dailyTips[todayTip],
-                            Toast.LENGTH_LONG);
-                    toast.setGravity(Gravity.TOP, 0, 0);
-                    toast.show();
-                }
-            }, 250);
-        }
-        else{
-            entry.setAlpha(0f);
-            tableLayout.setVisibility(View.VISIBLE);
-            tableLayout.setAlpha(1f);
-        }
+//        entry = findViewById(R.id.);
+//        tableLayout = findViewById(R.id.tableLayout);
+//
+//        // fading out opening screen
+//        Intent intent = getIntent();
+//        int isStartScreen = intent.getIntExtra("start screen", -1);
+//        if (isStartScreen != 0) {
+//            new CountDownTimer(3000, 1000) {
+//                @Override
+//                public void onTick(long l) {
+//                }
+//
+//                @Override
+//                public void onFinish() {
+//                    entry.animate().alpha(0f).setDuration(2000);
+//                    tableLayout.setVisibility(View.VISIBLE);
+//                    tableLayout.animate().alpha(1f).setDuration(2000);
+//                }
+//            }.start();
+//
+//            // a daily tip toast during waiting time till opening screen fades out
+//            new Handler().postDelayed(new Runnable() {
+//                @Override
+//                public void run() {
+//                    Toast toast = Toast.makeText(getApplicationContext(), DAILY_TIP + LINE_DROP + dailyTips[todayTip],
+//                            Toast.LENGTH_LONG);
+//                    toast.setGravity(Gravity.TOP, 0, 0);
+//                    toast.show();
+//                }
+//            }, 250);
+//        }
+//        else{
+//            entry.setAlpha(0f);
+//            tableLayout.setVisibility(View.VISIBLE);
+//            tableLayout.setAlpha(1f);
+//        }
     }
 
     @Override

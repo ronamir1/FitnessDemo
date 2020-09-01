@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/how_to"
+        android:icon="@drawable/ic_action_name"
+        app:showAsAction="ifRoom"
+        android:onClick="newHereActivity"
+        android:title="Message" />
+
+    <item
+        android:id="@+id/question"
+        android:icon="@drawable/qustion_icon"
+        app:showAsAction="ifRoom"
+        android:onClick="directions"
+        android:title="Question" />
+
+
     <item
         android:id="@+id/hebrew"
         android:title="עברית(doesn't work yet)" />
