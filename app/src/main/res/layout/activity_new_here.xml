@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#121212"
     tools:context=".NewHereActivity">
 
     <TextView
@@ -11,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:text="This page contains some simple tips for you to train correctly and (hopefully) prevent injuries."
-        android:textColor="#000000"
+        android:textColor="#FFFFFF"
         android:textSize="16sp"
         app:layout_constraintEnd_toStartOf="@+id/imageView"
         app:layout_constraintHorizontal_bias="0"
@@ -20,18 +21,19 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="27dp"
-        android:layout_height="27dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:onClick="backToMain"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_revert" />
+        app:srcCompat="@drawable/back" />
 
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_marginTop="40dp"
         android:layout_marginLeft="4dp"
+        android:layout_marginTop="40dp"
+        android:background="#121212"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/msg">
 
@@ -45,49 +47,56 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="1.No pain no gain is NOT true.\nThere is a BIG difference between muscles hurting from a workout or from an injury. Listen to your body and rest if needed." />
+                android:text="1.No pain no gain is NOT true.\nThere is a BIG difference between muscles hurting from a workout or from an injury. Listen to your body and rest if needed."
+                android:textColor="#FFFFFF" />
 
             <TextView
                 android:id="@+id/textView4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="2. Warm up is necessary, before each exercise do one slow set of 12-15 reps with lower weight." />
+                android:text="2. Warm up is necessary, before each exercise do one slow set of 12-15 reps with lower weight."
+                android:textColor="#FFFFFF" />
 
             <TextView
                 android:id="@+id/textView5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="3. Work on each body part (i.e. chest/shoulders/back/legs etc.) 1-2 times a week." />
+                android:text="3. Work on each body part (i.e. chest/shoulders/back/legs etc.) 1-2 times a week."
+                android:textColor="#FFFFFF" />
 
             <TextView
                 android:id="@+id/textView6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="4. The workouts are divided into 3 sections:\nChest and shoulders, Back and Biceps/Triceps, Legs.\nOn each workout, choose one of the sections and work it.\nRegarding abs &amp; core, you can do them after each workout (no more than 3-4 times a week)." />
+                android:text="4. The workouts are divided into 3 sections:\nChest and shoulders, Back and Biceps/Triceps, Legs.\nOn each workout, choose one of the sections and work it.\nRegarding abs &amp; core, you can do them after each workout (no more than 3-4 times a week)."
+                android:textColor="#FFFFFF" />
 
             <TextView
                 android:id="@+id/textView7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="5. your Max weight in an exercise is the maximum weight you can do 6-8 reps in that specific exercise." />
+                android:text="5. your Max weight in an exercise is the maximum weight you can do 6-8 reps in that specific exercise."
+                android:textColor="#FFFFFF" />
 
             <TextView
                 android:id="@+id/textView8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="6. Change your workout every few weeks, going in a rut in workouts is not good. Hence, you can either change the order of the exercises or choose different exercises, you have plenty of exercises to choose from in each section." />
+                android:text="6. Change your workout every few weeks, going in a rut in workouts is not good. Hence, you can either change the order of the exercises or choose different exercises, you have plenty of exercises to choose from in each section."
+                android:textColor="#FFFFFF" />
 
             <TextView
                 android:id="@+id/textView9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="7. Most important exercises to put effort into:\nPull up, Bench press, Squat, Deadlift, Dips (this exercises increase testosterone levels)." />
+                android:text="7. Most important exercises to put effort into:\nPull up, Bench press, Squat, Deadlift, Dips (this exercises increase testosterone levels)."
+                android:textColor="#FFFFFF" />
 
         </LinearLayout>
     </ScrollView>

@@ -28,8 +28,8 @@
                 <ImageView
                     android:id="@+id/group_a"
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:scaleType="fitXY"
+                    android:layout_height="85dp"
+                    android:scaleType="fitCenter"
                     app:srcCompat="@drawable/muscle_group_a" />
 
                 <LinearLayout
@@ -71,8 +71,8 @@
                 <ImageView
                     android:id="@+id/group_b"
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:scaleType="fitXY"
+                    android:layout_height="85dp"
+                    android:scaleType="fitCenter"
                     app:srcCompat="@drawable/muscle_group_b" />
 
                 <LinearLayout
@@ -88,7 +88,7 @@
                         android:background="#00FFFFFF"
                         android:onClick="muscleGroupMain"
                         android:scaleType="fitXY"
-                        android:tag="0"
+                        android:tag="2"
                         app:srcCompat="@drawable/b1" />
 
                     <ImageButton
@@ -99,7 +99,7 @@
                         android:background="#00FFFFFF"
                         android:onClick="muscleGroupMain"
                         android:scaleType="fitXY"
-                        android:tag="1"
+                        android:tag="3"
                         app:srcCompat="@drawable/b2" />
 
                 </LinearLayout>
@@ -113,8 +113,8 @@
                 <ImageView
                     android:id="@+id/group_c"
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:scaleType="fitXY"
+                    android:layout_height="85dp"
+                    android:scaleType="fitCenter"
                     app:srcCompat="@drawable/muscle_group_c" />
 
                 <LinearLayout
@@ -130,7 +130,7 @@
                         android:background="#00FFFFFF"
                         android:onClick="muscleGroupMain"
                         android:scaleType="fitXY"
-                        android:tag="0"
+                        android:tag="4"
                         app:srcCompat="@drawable/c1" />
 
                     <ImageButton
@@ -141,7 +141,7 @@
                         android:background="#00FFFFFF"
                         android:onClick="muscleGroupMain"
                         android:scaleType="fitXY"
-                        android:tag="1"
+                        android:tag="5"
                         app:srcCompat="@drawable/c2" />
 
                 </LinearLayout>

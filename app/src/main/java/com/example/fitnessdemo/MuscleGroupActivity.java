@@ -165,6 +165,8 @@ public class MuscleGroupActivity extends AppCompatActivity {
         window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         window.setGravity(Gravity.TOP);
         WindowManager.LayoutParams wmlp = pw.getWindow().getAttributes();
+        wmlp.width = 360;
+        wmlp.height = 360;
         wmlp.x = x;
         wmlp.y = y - 75;
         pw.setOnCancelListener(new DialogInterface.OnCancelListener() {

@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="3dp"
-    android:background="@drawable/rounded_window">
+    android:background="@drawable/popup_background"
+    android:padding="3dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/popupColor"
+        android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,23 +20,30 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/textView10"
-                android:layout_width="55dp"
+                android:layout_width="47dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Sets:"
+                android:textColor="#FFFFFF"
                 android:textSize="15sp" />
 
             <EditText
                 android:id="@+id/weights"
-                android:layout_width="50dp"
+                android:layout_width="25dp"
                 android:layout_height="wrap_content"
+                android:backgroundTint="#FFFFFF"
                 android:ems="10"
                 android:hint="0"
                 android:inputType="number"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#FFFFFF"
                 android:textSize="15sp" />
         </LinearLayout>
 
@@ -47,18 +54,23 @@
 
             <TextView
                 android:id="@+id/textView11"
-                android:layout_width="55dp"
+                android:layout_width="47dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Weights" />
+                android:text="Weight:"
+                android:textColor="#FFFFFF" />
 
             <EditText
                 android:id="@+id/sets"
-                android:layout_width="50dp"
+                android:layout_width="25dp"
                 android:layout_height="wrap_content"
+                android:backgroundTint="#FFFFFF"
                 android:ems="10"
                 android:hint="0"
                 android:inputType="number"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#FFFFFF"
                 android:textSize="15sp" />
         </LinearLayout>
 

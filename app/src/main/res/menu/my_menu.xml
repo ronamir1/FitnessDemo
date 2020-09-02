@@ -4,14 +4,14 @@
 
     <item
         android:id="@+id/how_to"
-        android:icon="@drawable/ic_action_name"
-        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_round_message_24"
         android:onClick="newHereActivity"
-        android:title="Message" />
+        android:title="Message"
+        app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/question"
-        android:icon="@drawable/qustion_icon"
+        android:icon="@drawable/asset1"
         app:showAsAction="ifRoom"
         android:onClick="directions"
         android:title="Question" />
