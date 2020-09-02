@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.ContextThemeWrapper;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -139,9 +140,9 @@ public class MuscleGroupActivity extends AppCompatActivity {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
 
-                alertDialog = new AlertDialog.Builder(MuscleGroupActivity.this);
-                alertDialog.setMessage(exerciseInfo.get(i));
-                alertDialog.setView(R.layout.layout_dialog).
+                alertDialog = new AlertDialog.Builder(new ContextThemeWrapper(MuscleGroupActivity.this, R.style.CustomDialogTheme));
+                alertDialog.setMessage(exerciseInfo.get(i)).setTitle("Exercise Explanation:");
+                alertDialog.
                         setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
