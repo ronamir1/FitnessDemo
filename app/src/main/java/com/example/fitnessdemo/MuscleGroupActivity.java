@@ -79,12 +79,12 @@ public class MuscleGroupActivity extends AppCompatActivity {
                 info = new String[]{raisingPyramide, raisingPyramide, bodyWeight};
                 break;
             case SHOULDERS:
-                exercises = new String[]{"1. Shoulder press"};
-                info = new String[]{raisingPyramide};
+                exercises = new String[]{"1. Shoulder press", "2. Face pull"};
+                info = new String[]{raisingPyramide, health};
                 break;
             case BACK:
-                exercises = new String[]{"1. Pull up", "2. Hip row", "3. Sitting row", "4. Pull over", " 5. One arm pull"};
-                info = new String[]{bodyWeight, raisingPyramide, raisingPyramide, health, raisingPyramide};
+                exercises = new String[]{"1. Pull up", "2. Chin up", "3. Barbell row", "4. Sitting row", "5. Lat pulldown", " 6. One arm high row"};
+                info = new String[]{bodyWeight, bodyWeight, raisingPyramide, raisingPyramide, health, raisingPyramide};
                 break;
             case BICEPS:
                 exercises = new String[]{"1. Bicep curls", "2. French press"};
