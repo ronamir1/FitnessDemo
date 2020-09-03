@@ -41,6 +41,17 @@ public class MainActivity extends AppCompatActivity {
         startActivity(newIntent);
     }
 
+    public void aboutMessage(MenuItem item){
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+        alertDialog.setMessage("this is an about msg");
+        alertDialog.setView(R.layout.layout_dialog).
+                setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                    }
+                }).show();
+    }
+
     public void muscleGroupMain(View view) {
         Intent absIntent = new Intent(getApplicationContext(), MuscleGroupActivity.class);
         int muscleGroup = Integer.parseInt(view.getTag().toString());
@@ -92,10 +103,11 @@ public class MainActivity extends AppCompatActivity {
                 public void run() {
                     Toast toast = Toast.makeText(getApplicationContext(), DAILY_TIP + LINE_DROP + dailyTips[todayTip],
                             Toast.LENGTH_LONG);
-                    toast.setGravity(Gravity.TOP, 0, 0);
+                    toast.setGravity(Gravity.CENTER, 0, 0);
+                    toast.setDuration(Toast.LENGTH_SHORT);
                     toast.show();
                 }
-            }, 250);
+            }, 3500);
         }
         else{
             entry.setAlpha(0f);
@@ -107,22 +119,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.my_menu, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch(item.getItemId()){
-            case R.id.about:
-                AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
-                alertDialog.setMessage("this is an about msg");
-                alertDialog.setView(R.layout.layout_dialog).
-                        setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                            }
-                        }).show();
-        }
         return true;
     }
 }
