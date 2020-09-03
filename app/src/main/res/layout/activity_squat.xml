@@ -23,13 +23,13 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/secondGifTextView"
+                    android:id="@+id/firstGifTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="2dp"
                     android:layout_marginTop="4dp"
                     android:layout_weight="1"
-                    android:text="Squat"
+                    android:text="first"
                     android:textColor="#FFFFFF" />
 
                 <ImageView
@@ -52,12 +52,12 @@
                 android:layout_marginRight="18dp" />
 
             <TextView
-                android:id="@+id/firstGifTextView"
+                android:id="@+id/secondGifTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="36dp"
                 android:textColor="#FFFFFF"
-                android:text="Warm up" />
+                android:text="second" />
 
             <ImageView
                 android:id="@+id/squat"

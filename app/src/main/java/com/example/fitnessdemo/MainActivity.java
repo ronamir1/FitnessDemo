@@ -14,7 +14,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.TableLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,7 +22,7 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     ImageView entry;
-    TableLayout tableLayout;
+    ScrollView scrollView;
     TextView dailyTip;
     final String DAILY_TIP = "Daily tip:";
     final String LINE_DROP = "\n";
@@ -66,42 +66,42 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         final int todayTip = rand.nextInt(dailyTips.length);
-//        entry = findViewById(R.id.);
-//        tableLayout = findViewById(R.id.tableLayout);
-//
-//        // fading out opening screen
-//        Intent intent = getIntent();
-//        int isStartScreen = intent.getIntExtra("start screen", -1);
-//        if (isStartScreen != 0) {
-//            new CountDownTimer(3000, 1000) {
-//                @Override
-//                public void onTick(long l) {
-//                }
-//
-//                @Override
-//                public void onFinish() {
-//                    entry.animate().alpha(0f).setDuration(2000);
-//                    tableLayout.setVisibility(View.VISIBLE);
-//                    tableLayout.animate().alpha(1f).setDuration(2000);
-//                }
-//            }.start();
-//
-//            // a daily tip toast during waiting time till opening screen fades out
-//            new Handler().postDelayed(new Runnable() {
-//                @Override
-//                public void run() {
-//                    Toast toast = Toast.makeText(getApplicationContext(), DAILY_TIP + LINE_DROP + dailyTips[todayTip],
-//                            Toast.LENGTH_LONG);
-//                    toast.setGravity(Gravity.TOP, 0, 0);
-//                    toast.show();
-//                }
-//            }, 250);
-//        }
-//        else{
-//            entry.setAlpha(0f);
-//            tableLayout.setVisibility(View.VISIBLE);
-//            tableLayout.setAlpha(1f);
-//        }
+        entry = findViewById(R.id.entry);
+        scrollView = findViewById(R.id.scroll);
+
+        // fading out opening screen
+        Intent intent = getIntent();
+        int isStartScreen = intent.getIntExtra("start screen", -1);
+        if (isStartScreen != 0) {
+            new CountDownTimer(3000, 1000) {
+                @Override
+                public void onTick(long l) {
+                }
+
+                @Override
+                public void onFinish() {
+                    entry.animate().alpha(0f).setDuration(2000);
+                    scrollView.setVisibility(View.VISIBLE);
+                    scrollView.animate().alpha(1f).setDuration(2000);
+                }
+            }.start();
+
+            // a daily tip toast during waiting time till opening screen fades out
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    Toast toast = Toast.makeText(getApplicationContext(), DAILY_TIP + LINE_DROP + dailyTips[todayTip],
+                            Toast.LENGTH_LONG);
+                    toast.setGravity(Gravity.TOP, 0, 0);
+                    toast.show();
+                }
+            }, 250);
+        }
+        else{
+            entry.setAlpha(0f);
+            scrollView.setVisibility(View.VISIBLE);
+            scrollView.setAlpha(1f);
+        }
     }
 
     @Override
