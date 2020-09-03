@@ -36,6 +36,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(newIntent);
     }
 
+    public void openProfile(MenuItem item){
+        Intent newIntent = new Intent(getApplicationContext(), ProfileActivity.class);
+        startActivity(newIntent);
+    }
+
     public void muscleGroupMain(View view) {
         Intent absIntent = new Intent(getApplicationContext(), MuscleGroupActivity.class);
         int muscleGroup = Integer.parseInt(view.getTag().toString());
@@ -81,16 +86,16 @@ public class MainActivity extends AppCompatActivity {
 //                }
 //            }.start();
 //
-            // a daily tip toast during waiting time till opening screen fades out
-            new Handler().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    Toast toast = Toast.makeText(getApplicationContext(), DAILY_TIP + LINE_DROP + dailyTips[todayTip],
-                            Toast.LENGTH_LONG);
-                    toast.setGravity(Gravity.TOP, 0, 0);
-                    toast.show();
-                }
-            }, 250);
+//            // a daily tip toast during waiting time till opening screen fades out
+//            new Handler().postDelayed(new Runnable() {
+//                @Override
+//                public void run() {
+//                    Toast toast = Toast.makeText(getApplicationContext(), DAILY_TIP + LINE_DROP + dailyTips[todayTip],
+//                            Toast.LENGTH_LONG);
+//                    toast.setGravity(Gravity.TOP, 0, 0);
+//                    toast.show();
+//                }
+//            }, 250);
 //        }
 //        else{
 //            entry.setAlpha(0f);

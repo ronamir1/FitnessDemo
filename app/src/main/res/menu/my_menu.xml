@@ -16,6 +16,10 @@
         android:onClick="directions"
         android:title="Question" />
 
+    <item
+        android:id="@+id/profile"
+        android:onClick="openProfile"
+        android:title="My Profile" />
 
     <item
         android:id="@+id/hebrew"
