@@ -43,7 +43,6 @@ public class MuscleGroupActivity extends AppCompatActivity {
     final String health = "This exercise require high rep so do three sets of 80% max weight, 15 reps.\nIf too hard drop to a weight that allows you this number of reps.";
     final String combineClassicPyramide = firstOption + raisingPyramide + LINE_DROP + LINE_DROP + secondOption + classicSet;
     final String absClassic = "3 sets, slow movements, each set 30-45 seconds\nIf it is too hard, try to do your best.\nIf its easy peasy lemon squeezy you go ahead and do it for longer.";
-
     final String dontForget = "Don't forget to change them every once in a while!";
     final String bigMuscle = "We recommend you to choose 4 exercises for this muscle, choose the ones you like.\n\n" + dontForget;
     final String mediumMuscle = "We recommend you to choose 3 exercises for this muscle, choose the ones you like.\n\n" + dontForget;

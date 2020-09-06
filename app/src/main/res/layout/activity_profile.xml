@@ -45,16 +45,15 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="#00FFFFFF"
                 android:ems="10"
-                android:fontFamily="@font/roboto"
                 android:inputType="number"
                 android:text="123"
-                android:textColor="#FFFFFF" />
+                android:theme="@style/RobotoTextViewStyle" />
 
             <TextView
                 android:id="@+id/age"
                 android:layout_width="40dp"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto"
+                android:theme="@style/RobotoTextViewStyle"
                 android:text="AGE"
                 android:textAlignment="center" />
 
@@ -72,17 +71,16 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="#00FFFFFF"
                 android:ems="10"
-                android:fontFamily="@font/roboto"
                 android:inputType="number"
                 android:text="123"
                 android:textAlignment="center"
-                android:textColor="#FFFFFF" />
+                android:theme="@style/RobotoTextViewStyle" />
 
             <TextView
                 android:id="@+id/weight_profile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto"
+                android:theme="@style/RobotoTextViewStyle"
                 android:text="WEIGHT"
                 android:textAlignment="center" />
         </LinearLayout>
@@ -98,17 +96,17 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="#00FFFFFF"
                 android:ems="10"
-                android:fontFamily="@font/roboto"
+                android:theme="@style/RobotoTextViewStyle"
                 android:inputType="number"
                 android:text="123"
                 android:textAlignment="center"
-                android:textColor="#FFFFFF" />
+                />
 
             <TextView
                 android:id="@+id/height_profile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto"
+                android:theme="@style/RobotoTextViewStyle"
                 android:text="HEIGHT"
                 android:textAlignment="center" />
         </LinearLayout>
@@ -119,9 +117,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:fontFamily="@font/roboto"
         android:text="John Smith"
-        android:textColor="#FFFFFF"
+        android:theme="@style/RobotoTextViewStyle"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -152,7 +149,8 @@
                 android:ems="10"
                 android:inputType="number"
                 android:text="123"
-                android:textColor="#FFFFFF" />
+                android:textColor="#DBFFFFFF"
+                android:theme="@style/RobotoTextViewStyle" />
 
             <TextView
                 android:id="@+id/achievement1_content"
@@ -160,7 +158,7 @@
                 android:layout_height="wrap_content"
                 android:text="AGE"
                 android:textAlignment="center"
-                android:textColor="#FFFFFF" />
+                android:theme="@style/RobotoTextViewStyle" />
 
         </LinearLayout>
 
@@ -179,7 +177,8 @@
                 android:inputType="number"
                 android:text="123"
                 android:textAlignment="center"
-                android:textColor="#FFFFFF" />
+                android:textColor="#DBFFFFFF"
+                android:theme="@style/RobotoTextViewStyle" />
 
             <TextView
                 android:id="@+id/achievement2_content"
@@ -187,7 +186,7 @@
                 android:layout_height="wrap_content"
                 android:text="WEIGHT"
                 android:textAlignment="center"
-                android:textColor="#FFFFFF" />
+                android:theme="@style/RobotoTextViewStyle" />
         </LinearLayout>
 
         <LinearLayout
@@ -199,12 +198,12 @@
                 android:id="@+id/achievement3"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#00FFFFFF"
                 android:ems="10"
                 android:inputType="number"
                 android:text="123"
                 android:textAlignment="center"
-                android:textColor="#FFFFFF" />
+                android:textColor="#DBFFFFFF"
+                android:theme='android:theme="@style/RobotoTextViewStyle"' />
 
             <TextView
                 android:id="@+id/achievement3_content"
@@ -212,7 +211,7 @@
                 android:layout_height="wrap_content"
                 android:text="HEIGHT"
                 android:textAlignment="center"
-                android:textColor="#FFFFFF" />
+                android:theme="@style/RobotoTextViewStyle" />
         </LinearLayout>
     </LinearLayout>
 
