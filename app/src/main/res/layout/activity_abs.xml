@@ -112,7 +112,7 @@
         <ListView
             android:id="@+id/exerciseListView"
             android:layout_width="fill_parent"
-            android:layout_height="598dp"
+            android:layout_height="wrap_content"
             android:layout_below="@+id/instructions"
             android:layout_alignEnd="@id/button"
             android:layout_alignRight="@id/button"
@@ -121,11 +121,14 @@
             android:layout_alignParentEnd="false"
             android:layout_alignParentRight="false"
             android:layout_alignParentBottom="true"
-            android:layout_marginTop="4dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="16dp"
             android:animateLayoutChanges="false"
             android:animationCache="false"
             android:background="#121212"
-            android:dividerHeight="5dp"
+            android:divider="?android:attr/listDivider"
+            android:dividerHeight="1dp"
             android:footerDividersEnabled="false"
             android:headerDividersEnabled="false" />
     </LinearLayout>
