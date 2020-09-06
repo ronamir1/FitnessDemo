@@ -29,6 +29,7 @@
                     android:layout_marginLeft="2dp"
                     android:layout_marginTop="4dp"
                     android:layout_weight="1"
+                    android:fontFamily="@font/roboto"
                     android:text="first"
                     android:textColor="#FFFFFF" />
 
@@ -56,8 +57,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="36dp"
-                android:textColor="#FFFFFF"
-                android:text="second" />
+                android:fontFamily="@font/roboto"
+                android:text="second"
+                android:textColor="#FFFFFF" />
 
             <ImageView
                 android:id="@+id/squat"

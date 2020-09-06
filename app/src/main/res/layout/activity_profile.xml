@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ProfileActivity"
+    android:theme="@style/AppTheme"
     android:background="@drawable/background">
 
     <de.hdodenhof.circleimageview.CircleImageView
@@ -44,6 +45,7 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="#00FFFFFF"
                 android:ems="10"
+                android:fontFamily="@font/roboto"
                 android:inputType="number"
                 android:text="123"
                 android:textColor="#FFFFFF" />
@@ -52,6 +54,7 @@
                 android:id="@+id/age"
                 android:layout_width="40dp"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
                 android:text="AGE"
                 android:textAlignment="center" />
 
@@ -69,6 +72,7 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="#00FFFFFF"
                 android:ems="10"
+                android:fontFamily="@font/roboto"
                 android:inputType="number"
                 android:text="123"
                 android:textAlignment="center"
@@ -78,6 +82,7 @@
                 android:id="@+id/weight_profile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
                 android:text="WEIGHT"
                 android:textAlignment="center" />
         </LinearLayout>
@@ -93,6 +98,7 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="#00FFFFFF"
                 android:ems="10"
+                android:fontFamily="@font/roboto"
                 android:inputType="number"
                 android:text="123"
                 android:textAlignment="center"
@@ -102,6 +108,7 @@
                 android:id="@+id/height_profile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
                 android:text="HEIGHT"
                 android:textAlignment="center" />
         </LinearLayout>
@@ -112,6 +119,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:fontFamily="@font/roboto"
         android:text="John Smith"
         android:textColor="#FFFFFF"
         android:textSize="25sp"

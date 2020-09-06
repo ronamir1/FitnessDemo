@@ -29,6 +29,7 @@ import java.util.Arrays;
 
 public class MuscleGroupActivity extends AppCompatActivity {
     DbManager dbManager;
+    int muscleGroup;
     final String LINE_DROP = "\n";
     final String firstOption = "First option:\n";
     final String secondOption = "Second option (to vary training from time to time):\n";
@@ -60,7 +61,7 @@ public class MuscleGroupActivity extends AppCompatActivity {
 
     ArrayList<String> exerciseArrList, exerciseInfo;
     ListView exerciseListView;
-    TextView trainingDescription, instructions;
+    TextView trainingDescription;
     AlertDialog.Builder alertDialog;
 
     public void backToMain(View view) {
@@ -109,18 +110,25 @@ public class MuscleGroupActivity extends AppCompatActivity {
         exerciseListView.setAdapter(adapter);
     }
 
+    public void recommendedTraining(View view){
+        AlertDialog.Builder recommended = new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.AppTheme));
+        recommended.setMessage("this is the message");
+        recommended.setPositiveButton("Ok", null);
+
+        recommended.show();
+
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_abs);
         Intent intent = getIntent();
-        final int muscleGroup = intent.getIntExtra("muscle group", -1);
+        muscleGroup = intent.getIntExtra("muscle group", -1);
         dbManager = new DbManager(this.openOrCreateDatabase("exerciseDescription", MODE_PRIVATE, null));
         trainingDescription = findViewById(R.id.trainingDescription);
         trainingDescription.setText(descriptions[muscleGroup]);
-        instructions = findViewById(R.id.instructions);
-        instructions.setText(muscleGroupRecommendations[muscleGroup]);
         exerciseListView = (ListView) findViewById(R.id.exerciseListView);
         matchListView(muscleGroup);
 
