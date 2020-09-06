@@ -167,16 +167,18 @@ public class MuscleGroupActivity extends AppCompatActivity {
         int[] params = dbManager.getExerciseParams(exercise);
         EditText sets = pw.findViewById(R.id.sets);
         sets.setText(Integer.toString(params[0]));
+        sets.setSelection(Integer.toString(params[0]).length());
         EditText weights = pw.findViewById(R.id.weights);
         weights.setText(Integer.toString(params[1]));
+        weights.setSelection(Integer.toString(params[1]).length());
         Window window = pw.getWindow();
         window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         window.setGravity(Gravity.TOP);
         WindowManager.LayoutParams wmlp = pw.getWindow().getAttributes();
         wmlp.width = 360;
-        wmlp.height = 360;
-        wmlp.x = x;
-        wmlp.y = y - 75;
+        wmlp.height = 300;
+        wmlp.x = x - 25;
+        wmlp.y = y - 100;
         pw.setOnCancelListener(new DialogInterface.OnCancelListener() {
             @Override
             public void onCancel(DialogInterface dialogInterface) {

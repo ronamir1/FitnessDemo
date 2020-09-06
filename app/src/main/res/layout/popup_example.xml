@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginRight="10dp"
     android:background="@drawable/popup_background"
     android:padding="3dp">
 
@@ -38,8 +39,8 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="#FFFFFF"
                 android:ems="10"
-                android:hint="0"
                 android:inputType="number"
+                android:text="0"
                 android:textAlignment="center"
                 android:textAllCaps="false"
                 android:textColor="#FFFFFF"
@@ -66,8 +67,8 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="#FFFFFF"
                 android:ems="10"
-                android:hint="0"
                 android:inputType="number"
+                android:text="0"
                 android:textAlignment="center"
                 android:textColor="#FFFFFF"
                 android:textColorHint="#FFFFFF"
