@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
                     toast.setDuration(Toast.LENGTH_SHORT);
                     toast.show();
                 }
-            }, 3500);
+            }, 500);
         }
         else{
             entry.setAlpha(0f);

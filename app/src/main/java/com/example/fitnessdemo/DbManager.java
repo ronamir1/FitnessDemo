@@ -14,9 +14,9 @@ public class DbManager {
     public void updateValues(String description, String sets, String weights){
         myDataBase.execSQL(
                 "UPDATE exercisesParams" +
-                " SET sets = ?, weights = ?" +
-                "WHERE description=?", new String[]{sets, weights, description});
-                //If no update happened (i.e. the row didn't exist) then insert one\n
+                        " SET sets = ?, weights = ?" +
+                        "WHERE description=?", new String[]{sets, weights, description});
+        //If no update happened (i.e. the row didn't exist) then insert one\n
         myDataBase.execSQL("INSERT INTO exercisesParams (sets, weights, description)" +
                 "SELECT ?, ?, ?" +
                 "WHERE (Select Changes() = 0)", new String[]{sets, weights, description});
