@@ -165,10 +165,10 @@ public class MuscleGroupActivity extends AppCompatActivity {
         pw.setContentView(R.layout.popup_example);
         pw.setCanceledOnTouchOutside(true);
         int[] params = dbManager.getExerciseParams(exercise);
-        EditText sets = pw.findViewById(R.id.sets);
-        sets.setText(Integer.toString(params[0]));
+//        EditText sets = pw.findViewById(R.id.sets);
+//        sets.setText(Integer.toString(params[0]));
         EditText weights = pw.findViewById(R.id.weights);
-        weights.setText(Integer.toString(params[1]));
+        weights.setText(Integer.toString(params[0]));
         Window window = pw.getWindow();
         window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         window.setGravity(Gravity.TOP);
@@ -180,9 +180,9 @@ public class MuscleGroupActivity extends AppCompatActivity {
         pw.setOnCancelListener(new DialogInterface.OnCancelListener() {
             @Override
             public void onCancel(DialogInterface dialogInterface) {
-                EditText sets = pw.findViewById(R.id.sets);
+//                EditText sets = pw.findViewById(R.id.sets);
                 EditText weights = pw.findViewById(R.id.weights);
-                dbManager.updateValues(exercise, sets.getText().toString(), weights.getText().toString());
+                dbManager.updateValues(exercise, weights.getText().toString());
             }
         });
         pw.show();
