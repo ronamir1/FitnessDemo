@@ -53,6 +53,11 @@ public class SquatActivity extends AppCompatActivity {
                 Glide.with(this).load(R.drawable.dips_side).into(firstGif);
                 Glide.with(this).load(R.drawable.dips_back).into(secondGif);
                 break;
+            case 3:
+                oneGifOnly();
+                firstTextView.setText("Cable crossover");
+                Glide.with(this).load(R.drawable.cable_crossover).into(firstGif);
+                break;
         }
     }
 

@@ -75,8 +75,8 @@ public class MuscleGroupActivity extends AppCompatActivity {
 
         switch (numMuscleGroup) {
             case CHEST:
-                exercises = new String[]{"1. Bench press", "2. Dumbbell bench press ", "3. dips"};
-                info = new String[]{raisingPyramide, raisingPyramide, bodyWeight};
+                exercises = new String[]{"1. Bench press", "2. Dumbbell bench press ", "3. Dips", "4. Cable crossover"};
+                info = new String[]{raisingPyramide, raisingPyramide, bodyWeight, combineClassicPyramide};
                 break;
             case SHOULDERS:
                 exercises = new String[]{"1. Shoulder press", "2. Face pull"};
@@ -91,7 +91,7 @@ public class MuscleGroupActivity extends AppCompatActivity {
                 info = new String[]{combineClassicPyramide, combineClassicPyramide};
                 break;
             case LEGS:
-                exercises = new String[]{"1. Squat", "2. Deadlift", "3. lunges", "4. Bulgarian split squat"};
+                exercises = new String[]{"1. Squat", "2. Deadlift", "3. Lunges", "4. Bulgarian split squat"};
                 info = new String[]{raisingPyramide, raisingPyramide, combineClassicPyramide, combineClassicPyramide};
                 break;
             case ABS:
