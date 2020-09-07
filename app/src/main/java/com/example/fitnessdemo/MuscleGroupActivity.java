@@ -28,8 +28,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class MuscleGroupActivity extends AppCompatActivity {
-    DbManager dbManager;
-    int muscleGroup;
     final String LINE_DROP = "\n";
     final String firstOption = "First option:\n";
     final String secondOption = "Second option (to vary training from time to time):\n";
@@ -49,6 +47,33 @@ public class MuscleGroupActivity extends AppCompatActivity {
     final String smallMuscle = "We recommend you to choose 2 exercises for this muscle, choose the ones you like.\n\n" + dontForget;
     final String forBicepsTriceps = "We recommend you to choose 2 exercises for this muscle, choose the ones you like.\nThat's two for biceps and two for triceps\n\n"+dontForget;
     final String forAbs = "We recommend you to choose 4 exercises for this muscle, try to work one day on upper and lower and the other on obliques and sides.\n\n"+dontForget;
+
+    final String CHEST_A = "1. Bench press\n2. Incline Bench press\n3. Cable crossover\n4. Decline push ups";
+    final String CHEST_B = "1. Dumbbell bench press\n2. Push ups\n3. Cable crossover\n4. Dips";
+    final String CHEST_C = "";
+
+    final String SHOULDERS_A = "1. Shoulder Press\n2. Lateral raise\n3. Face pull";
+    final String SHOULDERS_B = "1. Shoulder Press\n2. Lateral raise\n3. Face pull";
+    final String SHOULDERS_C = "";
+
+    final String BACK_A = "1. Pull up\n2. Sitting row\n3. Lat pulldown\n4. One arm high row";
+    final String BACK_B = "1. Chin up\n2. Barbell row\n3. Lat pulldown\n4. One arm high row";
+    final String BACK_C = "";
+
+    final String BICEPS_A = "1. Bicep curls";
+    final String BICEPS_B = "1. Bicep curls";
+    final String BICEPS_C = "";
+
+    final String LEGS_A = "1. Squat\n2. Deadlift\n3. Lunges";
+    final String LEGS_B = "1. Squat\n2. Deadlift\n3. Bulgarian split squat";
+    final String LEGS_C = "";
+
+    final String ABS_A = "1. Static upper\n2. Accordion\n3. Leg raise + Marine leg raise (one after the other)";
+    final String ABS_B = "1. Bicycle\n2. Side accordion (beginner/intermediate)\n3. side pocketknife";
+    final String ABS_C = "";
+
+    final String [][] exercises_combinations= {{CHEST_A, CHEST_B, CHEST_C},{SHOULDERS_A, SHOULDERS_B, SHOULDERS_C},{BACK_A, BACK_B, BACK_C},{BICEPS_A, BICEPS_B, BICEPS_C},{LEGS_A, LEGS_B, LEGS_C},{ABS_A, ABS_B, ABS_C}};
+
     final static int CHEST = 0;
     final static int SHOULDERS = 1;
     final static int BACK = 2;
@@ -58,10 +83,17 @@ public class MuscleGroupActivity extends AppCompatActivity {
     final String[] descriptions = {"Chest", "Shoulders", "Back", "Biceps/Triceps", "Legs", "Abs & Core"};
     final String[] muscleGroupRecommendations = {bigMuscle, mediumMuscle, bigMuscle, forBicepsTriceps, mediumMuscle, forAbs};
 
+    final static int A = 0;
+    final static int B = 1;
+    final static int C = 2;
+
+    int muscleGroup;
+    DbManager dbManager;
     ArrayList<String> exerciseArrList, exerciseInfo;
     ListView exerciseListView;
     TextView trainingDescription;
     AlertDialog.Builder alertDialog;
+    Intent intent;
 
     public void backToMain(View view) {
         Intent mainIntent = new Intent(getApplicationContext(), MainActivity.class);
@@ -109,8 +141,9 @@ public class MuscleGroupActivity extends AppCompatActivity {
     }
 
     public void recommendedTraining(View view){
+        int tag = Integer.parseInt(view.getTag().toString());
         AlertDialog.Builder recommended = new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.AppTheme));
-        recommended.setMessage("this is the message");
+        recommended.setMessage(exercises_combinations[muscleGroup][tag]);
         recommended.setPositiveButton("Ok", null);
 
         recommended.show();
@@ -122,7 +155,7 @@ public class MuscleGroupActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_abs);
-        Intent intent = getIntent();
+        intent = getIntent();
         muscleGroup = intent.getIntExtra("muscle group", -1);
         dbManager = new DbManager(this.openOrCreateDatabase("exerciseDescription", MODE_PRIVATE, null));
         trainingDescription = findViewById(R.id.trainingDescription);
