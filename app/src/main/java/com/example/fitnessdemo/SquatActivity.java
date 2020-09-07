@@ -58,6 +58,17 @@ public class SquatActivity extends AppCompatActivity {
                 firstTextView.setText("Cable crossover");
                 Glide.with(this).load(R.drawable.cable_crossover).into(firstGif);
                 break;
+            case 4:
+                oneGifOnly();
+                firstTextView.setText("Push up");
+                Glide.with(this).load(R.drawable.push_up).into(firstGif);
+                break;
+            case 5:
+                firstTextView.setText("Incline push up");
+                secondTextView.setText("Decline push up");
+                Glide.with(this).load(R.drawable.incline_push_up).into(firstGif);
+                Glide.with(this).load(R.drawable.decline_push_up).into(secondGif);
+                break;
         }
     }
 
@@ -158,9 +169,17 @@ public class SquatActivity extends AppCompatActivity {
                 Glide.with(this).load(R.drawable.bicycle).into(firstGif);
                 break;
             case 5:
-                firstTextView.setText("Side accordion");
+                firstTextView.setText("Side accordion (beginner)");
                 Glide.with(this).load(R.drawable.side_accordion).into(firstGif);
-
+                break;
+            case 6:
+                firstTextView.setText("Side accordion (intermediate)");
+                Glide.with(this).load(R.drawable.side_accordionv2).into(firstGif);
+                break;
+            case 7:
+                firstTextView.setText("Side pocketknife");
+                Glide.with(this).load(R.drawable.side_pocketknife).into(firstGif);
+                break;
         }
     }
 
@@ -197,7 +216,5 @@ public class SquatActivity extends AppCompatActivity {
             case MuscleGroupActivity.ABS:
                 absMain(exercise);
         }
-//        Glide.with(this).load(R.drawable.marine_abs_gif).into(firstGif);
-//        Glide.with(this).load(R.drawable.marine_abs_gif).into(secondGif);
     }
 }
