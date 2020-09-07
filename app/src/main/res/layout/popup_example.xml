@@ -34,7 +34,7 @@
                 android:theme="@style/RobotoTextViewStyle" />
 
             <EditText
-                android:id="@+id/weights"
+                android:id="@+id/sets"
                 android:layout_width="30dp"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#FFFFFF"
@@ -62,7 +62,7 @@
                 android:theme="@style/RobotoTextViewStyle" />
 
             <EditText
-                android:id="@+id/sets"
+                android:id="@+id/weights"
                 android:layout_width="30dp"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#FFFFFF"
