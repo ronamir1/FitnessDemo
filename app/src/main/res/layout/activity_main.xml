@@ -3,25 +3,26 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#DCD5D5">
+    android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/entry"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:alpha="1"
+        android:scaleType="fitXY"
         android:src="@drawable/ogo1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ScrollView
         android:id="@+id/scroll"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:alpha="0"
+        android:background="#121212"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,13 +35,18 @@
             <LinearLayout
                 android:id="@+id/first_element"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_height="234dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/element_background"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
                     android:id="@+id/group_a"
                     android:layout_width="match_parent"
-                    android:layout_height="85dp"
+                    android:layout_height="44dp"
                     android:scaleType="fitCenter"
                     app:srcCompat="@drawable/muscle_group_a" />
 
@@ -52,38 +58,48 @@
                     <ImageButton
                         android:id="@+id/chest"
                         android:layout_width="fill_parent"
-                        android:layout_height="195dp"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="15dp"
                         android:layout_weight="1"
                         android:background="#00FFFFFF"
                         android:onClick="muscleGroupMain"
-                        android:scaleType="fitXY"
+                        android:scaleType="fitCenter"
                         android:tag="0"
                         app:srcCompat="@drawable/a1" />
 
                     <ImageButton
                         android:id="@+id/shoulders"
                         android:layout_width="fill_parent"
-                        android:layout_height="195dp"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="15dp"
                         android:layout_weight="1"
                         android:background="#00FFFFFF"
                         android:onClick="muscleGroupMain"
-                        android:scaleType="fitXY"
+                        android:scaleType="fitCenter"
                         android:tag="1"
                         app:srcCompat="@drawable/a2" />
 
                 </LinearLayout>
             </LinearLayout>
+
             <LinearLayout
                 android:id="@+id/second_element"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:layout_constraintTop_toBottomOf="@id/first_element"
-                android:orientation="vertical">
+                android:layout_height="234dp"
+                android:background="@drawable/element_background"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/first_element">
 
                 <ImageView
                     android:id="@+id/group_b"
                     android:layout_width="match_parent"
-                    android:layout_height="85dp"
+                    android:layout_height="44dp"
                     android:scaleType="fitCenter"
                     app:srcCompat="@drawable/muscle_group_b" />
 
@@ -95,37 +111,48 @@
                     <ImageButton
                         android:id="@+id/back"
                         android:layout_width="fill_parent"
-                        android:layout_height="195dp"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="15dp"
                         android:layout_weight="1"
                         android:background="#00FFFFFF"
                         android:onClick="muscleGroupMain"
-                        android:scaleType="fitXY"
-                        android:tag="2"
+                        android:scaleType="fitCenter"
+                        android:tag="0"
                         app:srcCompat="@drawable/b1" />
 
                     <ImageButton
                         android:id="@+id/biceps"
                         android:layout_width="fill_parent"
-                        android:layout_height="195dp"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="15dp"
                         android:layout_weight="1"
                         android:background="#00FFFFFF"
                         android:onClick="muscleGroupMain"
-                        android:scaleType="fitXY"
-                        android:tag="3"
+                        android:scaleType="fitCenter"
+                        android:tag="1"
                         app:srcCompat="@drawable/b2" />
-
                 </LinearLayout>
+
             </LinearLayout>
+
             <LinearLayout
+                android:id="@+id/third_element"
                 android:layout_width="match_parent"
-                app:layout_constraintTop_toBottomOf="@id/second_element"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_height="234dp"
+                android:background="@drawable/element_background"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/second_element">
 
                 <ImageView
                     android:id="@+id/group_c"
                     android:layout_width="match_parent"
-                    android:layout_height="85dp"
+                    android:layout_height="44dp"
                     android:scaleType="fitCenter"
                     app:srcCompat="@drawable/muscle_group_c" />
 
@@ -137,26 +164,32 @@
                     <ImageButton
                         android:id="@+id/legs"
                         android:layout_width="fill_parent"
-                        android:layout_height="195dp"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="15dp"
                         android:layout_weight="1"
                         android:background="#00FFFFFF"
                         android:onClick="muscleGroupMain"
-                        android:scaleType="fitXY"
-                        android:tag="4"
+                        android:scaleType="fitCenter"
+                        android:tag="0"
                         app:srcCompat="@drawable/c1" />
 
                     <ImageButton
                         android:id="@+id/abs"
                         android:layout_width="fill_parent"
-                        android:layout_height="195dp"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="15dp"
                         android:layout_weight="1"
                         android:background="#00FFFFFF"
                         android:onClick="muscleGroupMain"
-                        android:scaleType="fitXY"
-                        android:tag="5"
+                        android:scaleType="fitCenter"
+                        android:tag="1"
                         app:srcCompat="@drawable/c2" />
-
                 </LinearLayout>
+
             </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
