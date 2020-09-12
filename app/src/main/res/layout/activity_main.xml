@@ -119,7 +119,7 @@
                         android:background="#00FFFFFF"
                         android:onClick="muscleGroupMain"
                         android:scaleType="fitCenter"
-                        android:tag="0"
+                        android:tag="2"
                         app:srcCompat="@drawable/b1" />
 
                     <ImageButton
@@ -133,7 +133,7 @@
                         android:background="#00FFFFFF"
                         android:onClick="muscleGroupMain"
                         android:scaleType="fitCenter"
-                        android:tag="1"
+                        android:tag="3"
                         app:srcCompat="@drawable/b2" />
                 </LinearLayout>
 
@@ -172,7 +172,7 @@
                         android:background="#00FFFFFF"
                         android:onClick="muscleGroupMain"
                         android:scaleType="fitCenter"
-                        android:tag="0"
+                        android:tag="4"
                         app:srcCompat="@drawable/c1" />
 
                     <ImageButton
@@ -186,7 +186,7 @@
                         android:background="#00FFFFFF"
                         android:onClick="muscleGroupMain"
                         android:scaleType="fitCenter"
-                        android:tag="1"
+                        android:tag="5"
                         app:srcCompat="@drawable/c2" />
                 </LinearLayout>
 
