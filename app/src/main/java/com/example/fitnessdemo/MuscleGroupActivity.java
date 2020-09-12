@@ -72,6 +72,8 @@ public class MuscleGroupActivity extends AppCompatActivity {
     final String ABS_B = "1. Bicycle\n2. Side accordion (beginner/intermediate)\n3. side pocketknife";
     final String ABS_C = "";
 
+    final String LONG_CLICK_FOR_SETS = "\n\nDon't forget to long click on each exercise to get the sets information!";
+
     final String [][] exercises_combinations= {{CHEST_A, CHEST_B, CHEST_C},{SHOULDERS_A, SHOULDERS_B, SHOULDERS_C},{BACK_A, BACK_B, BACK_C},{BICEPS_A, BICEPS_B, BICEPS_C},{LEGS_A, LEGS_B, LEGS_C},{ABS_A, ABS_B, ABS_C}};
 
     final static int CHEST = 0;
@@ -143,7 +145,7 @@ public class MuscleGroupActivity extends AppCompatActivity {
     public void recommendedTraining(View view){
         int tag = Integer.parseInt(view.getTag().toString());
         AlertDialog.Builder recommended = new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.AppTheme));
-        recommended.setMessage(exercises_combinations[muscleGroup][tag]);
+        recommended.setMessage(exercises_combinations[muscleGroup][tag]+LONG_CLICK_FOR_SETS);
         recommended.setPositiveButton("Ok", null);
 
         recommended.show();
