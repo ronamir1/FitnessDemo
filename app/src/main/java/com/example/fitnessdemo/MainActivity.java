@@ -27,6 +27,11 @@ public class MainActivity extends AppCompatActivity {
     final String DAILY_TIP = "Daily tip:";
     final String LINE_DROP = "\n";
 
+    final String ABOUT_MSG = "This app was built by Ron Amir and Sagi Dekel.\n\n" +
+            "The main purpose of this app is to guide gym beginners how to start working out with less probability of being injured due to inexperience (with some exercises or with the fitness world).\n" +
+            "We spent most of our life in the gym without the right guidance, we hope this app can be your guide for an easier walk into the fitness world!\n\n" +
+            "This app is not a replacement for a gym instructor, for each exercise you are not sure about you should go to them and make a double check on it.\nWe do not take responsibility if any of our users will cause himself an injury.";
+
     final String tip1 = "Drink at least 3 liters of water every day";
     final String tip2 = "Eat at least 1 gram of protein for each kg you weigh\ni.e a 70kg men should eat at least 70 gram of protein a day (don't forget to hydrate enough)";
     final String tip3 = "It is OK to take a day off to rest and gather strength for the next workout";
@@ -40,22 +45,23 @@ public class MainActivity extends AppCompatActivity {
     final String tip11 = "Stressed mind can cause a stressed body, make sure you relax sometimes";
     final String tip12 = "Every exercise you are not sure about - ask your gym instructor they would be happy to help!";
     final String tip13 = "Change does'nt come in a week, patience and consistency are key players";
-    String[] dailyTips = {tip1, tip2,tip3, tip4, tip5, tip6, tip7, tip8, tip9, tip10, tip11, tip12, tip13};
+    String[] dailyTips = {tip1, tip2, tip3, tip4, tip5, tip6, tip7, tip8, tip9, tip10, tip11, tip12, tip13};
     Random rand = new Random();
 
-    public void newHereActivity(MenuItem item){
+    public void newHereActivity(MenuItem item) {
         Intent newIntent = new Intent(getApplicationContext(), NewHereActivity.class);
         startActivity(newIntent);
     }
 
-    public void openProfile(MenuItem item){
-        Intent newIntent = new Intent(getApplicationContext(), ProfileActivity.class);
-        startActivity(newIntent);
-    }
+// if we decide to create profile again
+//    public void openProfile(MenuItem item){
+//        Intent newIntent = new Intent(getApplicationContext(), ProfileActivity.class);
+//        startActivity(newIntent);
+//    }
 
-    public void aboutMessage(MenuItem item){
+    public void aboutMessage(MenuItem item) {
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
-        alertDialog.setMessage("this is an about msg");
+        alertDialog.setMessage(ABOUT_MSG);
         alertDialog.setView(R.layout.layout_dialog).
                 setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                     @Override
@@ -71,13 +77,14 @@ public class MainActivity extends AppCompatActivity {
         startActivity(absIntent);
     }
 
-    public void directions(MenuItem item){
+    public void directions(MenuItem item) {
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(MainActivity.this);
         alertDialog.setMessage("each row contains a workout, we recommend to start with the first muscle group ,then the second one.\n(left button then the right one)");
         alertDialog.setView(R.layout.layout_dialog).
                 setPositiveButton("Got It!", new DialogInterface.OnClickListener() {
                     @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {}
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                    }
                 }).show();
     }
 
@@ -120,8 +127,7 @@ public class MainActivity extends AppCompatActivity {
                     toast.show();
                 }
             }, 500);
-        }
-        else{
+        } else {
             entry.setAlpha(0f);
             scrollView.setVisibility(View.VISIBLE);
             scrollView.setAlpha(1f);

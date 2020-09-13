@@ -35,10 +35,10 @@ public class MuscleGroupActivity extends AppCompatActivity {
     final String firstSet = "First set 75% max weight 12 reps";
     final String secondSet = "Second set 85% max weight 10 reps";
     final String thirdSet = "Third and fourth set max weight 8 reps or failure (max you can do).";
-    final String classicSet = warmUpSet + LINE_DROP + "Three sets of 90% max weight 12 reps or failure";
-    final String raisingPyramide = "5 sets:" + LINE_DROP + warmUpSet + LINE_DROP + firstSet + LINE_DROP + secondSet + LINE_DROP + thirdSet;
-    final String bodyWeight = "4 sets overall.\nThe first is a warm up set, do half your maximum. On the other sets do the maximum you can.";
-    final String health = "This exercise require high rep so do three sets of 80% max weight, 15 reps.\nIf too hard drop to a weight that allows you this number of reps.";
+    final String classicSet = warmUpSet + LINE_DROP + "3 sets, 90% max weight 12 reps or failure, 60-90 seconds rest between each set";
+    final String raisingPyramide = "5 sets, 60-120 seconds rest between each set:" + LINE_DROP + warmUpSet + LINE_DROP + firstSet + LINE_DROP + secondSet + LINE_DROP + thirdSet;
+    final String bodyWeight = "4 sets overall, 60-120 seconds rest between each set.\nThe first is a warm up set, do half your maximum. On the other sets do the maximum you can.";
+    final String health = "This exercise require high rep so do three sets of 80% max weight, 15 reps, 60 seconds rest between each set.\nIf too hard drop to a weight that allows you this number of reps.";
     final String combineClassicPyramide = firstOption + raisingPyramide + LINE_DROP + LINE_DROP + secondOption + classicSet;
     final String absClassic = "3 sets, slow movements, each set 30-45 seconds\nIf it is too hard, try to do your best.\nIf its easy peasy lemon squeezy you go ahead and do it for longer.";
     final String dontForget = "Don't forget to change them every once in a while!";
