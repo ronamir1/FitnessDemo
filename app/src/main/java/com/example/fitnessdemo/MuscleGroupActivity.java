@@ -45,8 +45,8 @@ public class MuscleGroupActivity extends AppCompatActivity {
     final String bigMuscle = "We recommend you to choose 4 exercises for this muscle, choose the ones you like.\n\n" + dontForget;
     final String mediumMuscle = "We recommend you to choose 3 exercises for this muscle, choose the ones you like.\n\n" + dontForget;
     final String smallMuscle = "We recommend you to choose 2 exercises for this muscle, choose the ones you like.\n\n" + dontForget;
-    final String forBicepsTriceps = "We recommend you to choose 2 exercises for this muscle, choose the ones you like.\nThat's two for biceps and two for triceps\n\n"+dontForget;
-    final String forAbs = "We recommend you to choose 4 exercises for this muscle, try to work one day on upper and lower and the other on obliques and sides.\n\n"+dontForget;
+    final String forBicepsTriceps = "We recommend you to choose 2 exercises for this muscle, choose the ones you like.\nThat's two for biceps and two for triceps\n\n" + dontForget;
+    final String forAbs = "We recommend you to choose 4 exercises for this muscle, try to work one day on upper and lower and the other on obliques and sides.\n\n" + dontForget;
 
     final String CHEST_A = "1. Bench press\n2. Incline Bench press\n3. Cable crossover\n4. Decline push ups";
     final String CHEST_B = "1. Dumbbell bench press\n2. Push ups\n3. Cable crossover\n4. Dips";
@@ -74,7 +74,7 @@ public class MuscleGroupActivity extends AppCompatActivity {
 
     final String LONG_CLICK_FOR_SETS = "\n\nDon't forget to long click on each exercise to get the sets information!";
 
-    final String [][] exercises_combinations= {{CHEST_A, CHEST_B, CHEST_C},{SHOULDERS_A, SHOULDERS_B, SHOULDERS_C},{BACK_A, BACK_B, BACK_C},{BICEPS_A, BICEPS_B, BICEPS_C},{LEGS_A, LEGS_B, LEGS_C},{ABS_A, ABS_B, ABS_C}};
+    final String[][] exercises_combinations = {{CHEST_A, CHEST_B, CHEST_C}, {SHOULDERS_A, SHOULDERS_B, SHOULDERS_C}, {BACK_A, BACK_B, BACK_C}, {BICEPS_A, BICEPS_B, BICEPS_C}, {LEGS_A, LEGS_B, LEGS_C}, {ABS_A, ABS_B, ABS_C}};
 
     final static int CHEST = 0;
     final static int SHOULDERS = 1;
@@ -113,7 +113,7 @@ public class MuscleGroupActivity extends AppCompatActivity {
                 info = new String[]{raisingPyramide, raisingPyramide, bodyWeight, combineClassicPyramide, bodyWeight, bodyWeight};
                 break;
             case SHOULDERS:
-                exercises = new String[]{"1. Shoulder press", "2. Face pull"};
+                exercises = new String[]{"1. Shoulder press", "2. Face pull","3. Lateral raise", "4. Shoulder press out", "5. Front raise"};
                 info = new String[]{raisingPyramide, health};
                 break;
             case BACK:
@@ -125,8 +125,8 @@ public class MuscleGroupActivity extends AppCompatActivity {
                 info = new String[]{combineClassicPyramide, combineClassicPyramide};
                 break;
             case LEGS:
-                exercises = new String[]{"1. Squat", "2. Deadlift", "3. Lunges", "4. Bulgarian split squat"};
-                info = new String[]{raisingPyramide, raisingPyramide, combineClassicPyramide, combineClassicPyramide};
+                exercises = new String[]{"1. Squat", "2. Deadlift", "3. Romanian deadlift", "4. Lunges", "5. Bulgarian split squat"};
+                info = new String[]{raisingPyramide, raisingPyramide, raisingPyramide, combineClassicPyramide, combineClassicPyramide};
                 break;
             case ABS:
                 exercises = new String[]{"1. Static upper", "2. Accordion", "3. Legs raise", "4. Marine leg raise", "5. Bicycle", " 6. Side accordion (begginer)", "7. Side accordion (intermediate)", "8. Side pocketknife"};
@@ -142,10 +142,10 @@ public class MuscleGroupActivity extends AppCompatActivity {
         exerciseListView.setAdapter(adapter);
     }
 
-    public void recommendedTraining(View view){
+    public void recommendedTraining(View view) {
         int tag = Integer.parseInt(view.getTag().toString());
         AlertDialog.Builder recommended = new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.AppTheme));
-        recommended.setMessage(exercises_combinations[muscleGroup][tag]+LONG_CLICK_FOR_SETS);
+        recommended.setMessage(exercises_combinations[muscleGroup][tag] + LONG_CLICK_FOR_SETS);
         recommended.setPositiveButton("Ok", null);
 
         recommended.show();
@@ -194,7 +194,7 @@ public class MuscleGroupActivity extends AppCompatActivity {
         });
     }
 
-    public void setExerciseParams(int x, int y, final String exercise){
+    public void setExerciseParams(int x, int y, final String exercise) {
         final Dialog pw = new Dialog(MuscleGroupActivity.this);
         pw.setContentView(R.layout.popup_example);
         pw.setCanceledOnTouchOutside(true);
@@ -224,11 +224,12 @@ public class MuscleGroupActivity extends AppCompatActivity {
         pw.show();
     }
 
-    class MyAdapter extends ArrayAdapter<String>{
+    class MyAdapter extends ArrayAdapter<String> {
         Context context;
         ArrayList<String> exercises;
         View row;
-        MyAdapter(Context c, ArrayList<String> exercises1){
+
+        MyAdapter(Context c, ArrayList<String> exercises1) {
             super(c, R.layout.row, exercises1);
             this.context = c;
             this.exercises = exercises1;
