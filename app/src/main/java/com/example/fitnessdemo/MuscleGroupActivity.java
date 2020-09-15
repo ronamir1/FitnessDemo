@@ -113,7 +113,7 @@ public class MuscleGroupActivity extends AppCompatActivity {
                 info = new String[]{raisingPyramide, raisingPyramide, bodyWeight, combineClassicPyramide, bodyWeight, bodyWeight};
                 break;
             case SHOULDERS:
-                exercises = new String[]{"1. Shoulder press", "2. Face pull","3. Lateral raise", "4. Shoulder press out", "5. Front raise"};
+                exercises = new String[]{"1. Shoulder press", "2. Face pull","3. Prone press", "4. Shoulder press out", "5. Front raise"};
                 info = new String[]{raisingPyramide, health};
                 break;
             case BACK:
