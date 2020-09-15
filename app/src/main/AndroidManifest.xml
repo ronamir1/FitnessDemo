@@ -18,7 +18,7 @@
             android:name=".MuscleGroupActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".SquatActivity"
+            android:name=".ExercisesActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name=".MainActivity">
             <intent-filter>
