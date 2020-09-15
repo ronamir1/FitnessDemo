@@ -100,6 +100,7 @@
                 android:id="@+id/imageButton4"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
+                android:alpha="0"
                 android:layout_weight="1"
                 android:background="#00FFFFFF"
                 android:elevation="8dp"
