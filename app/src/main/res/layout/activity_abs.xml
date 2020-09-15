@@ -66,16 +66,16 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="77dp"
+            android:layout_marginLeft="85dp"
             android:layout_marginTop="20sp"
-            android:layout_marginRight="77dp"
+            android:layout_marginRight="85dp"
             android:orientation="horizontal">
 
             <ImageButton
                 android:id="@+id/imageButton2"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:layout_marginRight="55dp"
+                android:layout_marginRight="35dp"
                 android:layout_weight="1"
                 android:background="#00FFFFFF"
                 android:onClick="recommendedTraining"
@@ -87,7 +87,6 @@
                 android:id="@+id/imageButton3"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:layout_marginRight="55dp"
                 android:layout_weight="1"
                 android:background="#00FFFFFF"
                 android:elevation="8dp"
@@ -96,17 +95,6 @@
                 android:tag="1"
                 app:srcCompat="@drawable/b_icon" />
 
-            <ImageButton
-                android:id="@+id/imageButton4"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_weight="1"
-                android:background="#00FFFFFF"
-                android:elevation="8dp"
-                android:onClick="recommendedTraining"
-                android:scaleType="fitCenter"
-                android:tag="2"
-                app:srcCompat="@drawable/c" />
         </LinearLayout>
 
         <ListView
