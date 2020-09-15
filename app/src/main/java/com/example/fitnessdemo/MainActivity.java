@@ -30,7 +30,8 @@ public class MainActivity extends AppCompatActivity {
     final String ABOUT_MSG = "This app was built by Ron Amir and Sagi Dekel.\n\n" +
             "The main purpose of this app is to guide gym beginners how to start working out with less probability of being injured due to inexperience (with some exercises or with the fitness world).\n" +
             "We spent most of our life in the gym without the right guidance, we hope this app can be your guide for an easier walk into the fitness world!\n\n" +
-            "This app is not a replacement for a gym instructor, for each exercise you are not sure about you should go to them and make a double check on it.\nWe do not take responsibility if any of our users will cause himself an injury.";
+            "This app is not a replacement for a gym instructor, for each exercise you are not sure about you should go to them and make a double check on it.\nWe do not take responsibility if any of our users will cause himself an injury.\n\n" +
+            "We Created our free logo at LogoMakr.com";
 
     final String tip1 = "Drink at least 3 liters of water every day";
     final String tip2 = "Eat at least 1 gram of protein for each kg you weigh\ni.e a 70kg men should eat at least 70 gram of protein a day (don't forget to hydrate enough)";
