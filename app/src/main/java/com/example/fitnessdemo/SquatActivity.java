@@ -75,9 +75,10 @@ public class SquatActivity extends AppCompatActivity {
     public void shouldersMain(int exercise){
         switch(exercise){
             case 0:
-                oneGifOnly();
-                firstTextView.setText("Shoulder press");
+                firstTextView.setText("Shoulder press - barbell");
+                secondTextView.setText("Shoulder press - dumbbell");
                 Glide.with(this).load(R.drawable.shoulder_press).into(firstGif);
+//                Glide.with(this).load(R.drawable.dumbbell_shoulder_press).into(secondGif);
                 break;
             case 1:
                 oneGifOnly();
@@ -86,19 +87,19 @@ public class SquatActivity extends AppCompatActivity {
                 break;
             case 2:
                 oneGifOnly();
-                firstTextView.setText("Lateral raise");
-                Glide.with(this).load(R.drawable.face_pull).into(firstGif);
+                firstTextView.setText("Prone press");
+//                Glide.with(this).load(R.drawable.pront_press).into(firstGif);
                 break;
             case 3:
                 oneGifOnly();
                 firstTextView.setText("Shoulder press out");
-                Glide.with(this).load(R.drawable.face_pull).into(firstGif);
+//                Glide.with(this).load(R.drawable.shoulder_press_out).into(firstGif);
                 break;
             case 4:
                 firstTextView.setText("Front raise - side");
                 secondTextView.setText("Front raise - back");
-                Glide.with(this).load(R.drawable.incline_push_up).into(firstGif);
-                Glide.with(this).load(R.drawable.decline_push_up).into(secondGif);
+//                Glide.with(this).load(R.drawable.front_raise_side).into(firstGif);
+//                Glide.with(this).load(R.drawable.front_raise_front).into(secondGif);
         }
     }
 
@@ -158,32 +159,32 @@ public class SquatActivity extends AppCompatActivity {
         }
     }
 
-    public void LegsMain(int exercise){
+    public void legsMain(int exercise){
         switch(exercise){
             case 0:
                 oneGifOnly();
                 firstTextView.setText("Squat");
-                Glide.with(this).load(R.drawable.shoulder_press).into(firstGif);
+//                Glide.with(this).load(R.drawable.squat).into(firstGif);
                 break;
             case 1:
                 oneGifOnly();
                 firstTextView.setText("Deadlift");
-                Glide.with(this).load(R.drawable.face_pull).into(firstGif);
+//                Glide.with(this).load(R.drawable.deadlift).into(firstGif);
                 break;
             case 2:
                 oneGifOnly();
                 firstTextView.setText("Romanian deadlift");
-                Glide.with(this).load(R.drawable.face_pull).into(firstGif);
+//                Glide.with(this).load(R.drawable.romanian_deadlift).into(firstGif);
                 break;
             case 3:
                 oneGifOnly();
                 firstTextView.setText("Lunges");
-                Glide.with(this).load(R.drawable.face_pull).into(firstGif);
+//                Glide.with(this).load(R.drawable.lunges).into(firstGif);
                 break;
             case 4:
                 oneGifOnly();
                 firstTextView.setText("Bulgarian split squat");
-                Glide.with(this).load(R.drawable.face_pull).into(firstGif);
+//                Glide.with(this).load(R.drawable.bulgarian_split_squat).into(firstGif);
         }
     }
 
@@ -256,6 +257,8 @@ public class SquatActivity extends AppCompatActivity {
                 bicepsMain(exercise);
                 break;
             case MuscleGroupActivity.LEGS:
+                legsMain(exercise);
+                break;
             case MuscleGroupActivity.ABS:
                 absMain(exercise);
         }
