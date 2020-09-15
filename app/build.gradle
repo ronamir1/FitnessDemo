@@ -5,7 +5,7 @@ android {
     buildToolsVersion "30.0.1"
 
     defaultConfig {
-        applicationId "com.example.fitnessdemo"
+        applicationId "com.ezGym.fitnessdemo"
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
