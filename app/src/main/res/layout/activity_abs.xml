@@ -6,7 +6,7 @@
     style="@style/AppTheme"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#121212"
+    android:background="@drawable/bg1"
     tools:context=".MuscleGroupActivity">
 
     <LinearLayout
@@ -32,7 +32,6 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
                 android:layout_weight="1"
-                android:background="#121212"
                 android:fontFamily="@font/roboto"
                 android:text="Abs &amp; Core Day"
                 android:textSize="27sp"
@@ -115,6 +114,7 @@
             android:animateLayoutChanges="false"
             android:animationCache="false"
             android:background="#121212"
+            android:alpha="0.65"
             android:divider="?android:attr/listDivider"
             android:dividerHeight="1dp"
             android:footerDividersEnabled="false"
