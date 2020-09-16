@@ -5,7 +5,6 @@
         <item name="colorPrimary">#484848</item>
         <item name="colorPrimaryDark">#121212</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:textColor">#DBFFFFFF</item>
         <item name="android:itemBackground">#484848</item>
         <item name="android:textViewStyle">@style/RobotoTextViewStyle</item>
         <item name="android:buttonStyle">@style/RobotoButtonStyle</item>

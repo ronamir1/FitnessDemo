@@ -62,9 +62,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void aboutMessage(MenuItem item) {
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
-        alertDialog.setMessage(ABOUT_MSG);
-        alertDialog.setView(R.layout.layout_dialog).
-                setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+        alertDialog.setMessage(ABOUT_MSG).setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                     }
