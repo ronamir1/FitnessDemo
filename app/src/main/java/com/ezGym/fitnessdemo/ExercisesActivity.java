@@ -36,8 +36,8 @@ public class ExercisesActivity extends AppCompatActivity {
     public void chestMain(int exercise){
         switch(exercise){
             case 0:
-                firstTextView.setText("Bench Press");
-                secondTextView.setText("Upper bench Press");
+                firstTextView.setText("Bench press");
+                secondTextView.setText("Upper bench press");
                 Glide.with(this).load(R.drawable.bench_press).into(firstGif);
                 Glide.with(this).load(R.drawable.upper_bench_press).into(secondGif);
                 break;
