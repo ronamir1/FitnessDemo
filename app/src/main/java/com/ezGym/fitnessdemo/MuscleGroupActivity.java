@@ -52,8 +52,8 @@ public class MuscleGroupActivity extends AppCompatActivity {
     final String CHEST_B = "1. Dumbbell bench press\n2. Push ups\n3. Cable crossover\n4. Dips";
     final String CHEST_C = "";
 
-    final String SHOULDERS_A = "1. Shoulder Press\n2. Lateral raise\n3. Face pull";
-    final String SHOULDERS_B = "1. Shoulder Press\n2. Lateral raise\n3. Face pull";
+    final String SHOULDERS_A = "1. Overhead press\n2. Face pull\n3. Prone press";
+    final String SHOULDERS_B = "1. Overhead press\n2. Face pull\n3. Prone press";
     final String SHOULDERS_C = "";
 
     final String BACK_A = "1. Pull up\n2. Sitting row\n3. Lat pulldown\n4. One arm high row";
@@ -113,7 +113,7 @@ public class MuscleGroupActivity extends AppCompatActivity {
                 info = new String[]{raisingPyramide, raisingPyramide, bodyWeight, combineClassicPyramide, bodyWeight, bodyWeight};
                 break;
             case SHOULDERS:
-                exercises = new String[]{"1. Shoulder press", "2. Face pull","3. Prone press", "4. Shoulder press out", "5. Front raise"};
+                exercises = new String[]{"1. Overhead press", "2. Face pull","3. Prone press", "4. Shoulder press out", "5. Front raise"};
                 info = new String[]{raisingPyramide, health};
                 break;
             case BACK:

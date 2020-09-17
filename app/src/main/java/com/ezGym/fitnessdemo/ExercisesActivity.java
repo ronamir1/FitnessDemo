@@ -75,8 +75,8 @@ public class ExercisesActivity extends AppCompatActivity {
     public void shouldersMain(int exercise){
         switch(exercise){
             case 0:
-                firstTextView.setText("Shoulder press - barbell");
-                secondTextView.setText("Shoulder press - dumbbell");
+                firstTextView.setText("Overhead press - barbell");
+                secondTextView.setText("Overhead press - dumbbell");
                 Glide.with(this).load(R.drawable.shoulder_press).into(firstGif);
                 Glide.with(this).load(R.drawable.dumbbell_shoulder_press).into(secondGif);
                 break;
