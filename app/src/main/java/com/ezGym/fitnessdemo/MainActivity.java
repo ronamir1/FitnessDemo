@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = getIntent();
         int isStartScreen = intent.getIntExtra("start screen", -1);
         if (isStartScreen != 0) {
-            new CountDownTimer(3000, 1000) {
+            new CountDownTimer(3410, 1000) {
                 @Override
                 public void onTick(long l) {
                 }
@@ -122,10 +122,10 @@ public class MainActivity extends AppCompatActivity {
                     Toast toast = Toast.makeText(getApplicationContext(), DAILY_TIP + LINE_DROP + dailyTips[todayTip],
                             Toast.LENGTH_LONG);
                     toast.setGravity(Gravity.CENTER, 0, 0);
-                    toast.setDuration(Toast.LENGTH_SHORT);
+                    toast.setDuration(Toast.LENGTH_LONG);
                     toast.show();
                 }
-            }, 500);
+            }, 250);
         } else {
             entry.setAlpha(0f);
             scrollView.setVisibility(View.VISIBLE);
