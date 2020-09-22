@@ -13,15 +13,17 @@ import com.bumptech.glide.Glide;
 public class ExercisesActivity extends AppCompatActivity {
 
     final String LINE_DROP = "\n";
+    final String KNEES_BENT = "Keep your knees a little bit bent.";
     final String CHEST_BEFORE_SHOULDERS = "Make sure your shoulders are pulled back.";
     final String CHEST_POINTERS = CHEST_BEFORE_SHOULDERS + LINE_DROP + "Keep your elbows no more than 45 degrees from your body and your core tight (abs and butt contracted).\nIn addition try to squeeze your armpits when pushing.";
     final String FACE_PULL_POINTERS = "Your wrist should lead the movement not the elbow.";
-    final String OVERHEAD_PRESS_POINTERS = "The press should be over your head, so make sure your movement is not diagonally forward";
-    final String PRONE_PRESS_POINTERS = "Small weight should do the job, even without any weight this exercise is hard";
+    final String OVERHEAD_PRESS_POINTERS = "The press should be over your head, so make sure your movement is not diagonally forward.";
+    final String PRONE_PRESS_POINTERS = "Small weight should do the job, even without any weight this exercise is hard.";
     final String CORE_ENGAGED = "Make sure your core is engaged.";
     final String LEGS_POINTER1 = "Keep your back straight.";
     final String LEGS_POINTER2 = "Let the movement come from the hip joint, not the back.";
     final String LEGS_POINTER3 = "Keep your toes aligned with your knees when going down.";
+    final String BASIC_STANDING_POINTERS = LINE_DROP+CORE_ENGAGED+LINE_DROP+KNEES_BENT;
 
     Intent intent;
     int muscleGroup;
@@ -86,31 +88,42 @@ public class ExercisesActivity extends AppCompatActivity {
     public void shouldersMain(int exercise) {
         switch (exercise) {
             case 0:
-                firstTextView.setText("Overhead press - barbell" + LINE_DROP + OVERHEAD_PRESS_POINTERS);
-                secondTextView.setText("Overhead press - dumbbell");
-                Glide.with(this).load(R.drawable.shoulder_press).into(firstGif);
-                Glide.with(this).load(R.drawable.dumbbell_shoulder_press).into(secondGif);
+                firstTextView.setText("Overhead press - barbell" + LINE_DROP + OVERHEAD_PRESS_POINTERS+BASIC_STANDING_POINTERS);
+                secondTextView.setText("Overhead press - dumbbell" + LINE_DROP + "Same pointers as the barbell press");
+                Glide.with(this).load(R.drawable.overhead_press).into(firstGif);
+                Glide.with(this).load(R.drawable.dumbbell_overhead_press_side).into(secondGif);
                 break;
             case 1:
+                firstTextView.setText("Front raise - side" +BASIC_STANDING_POINTERS);
+                secondTextView.setText("Front raise - front");
+                Glide.with(this).load(R.drawable.front_raise_side).into(firstGif);
+                Glide.with(this).load(R.drawable.front_raise_front).into(secondGif);
+                break;
+            case 2:
+                oneGifOnly();
+                firstTextView.setText("Shoulder press out" + BASIC_STANDING_POINTERS);
+                Glide.with(this).load(R.drawable.shoulder_press_out_side).into(firstGif);
+                break;
+
+            case 3:
                 oneGifOnly();
                 firstTextView.setText("Face pull" + LINE_DROP + FACE_PULL_POINTERS);
                 Glide.with(this).load(R.drawable.face_pull).into(firstGif);
                 break;
-            case 2:
+            case 4:
+                oneGifOnly();
+                firstTextView.setText("Lateral raise" + BASIC_STANDING_POINTERS);
+                Glide.with(this).load(R.drawable.lateral_raise).into(firstGif);
+                break;
+            case 5:
+                oneGifOnly();
+                firstTextView.setText("UCV raise" +BASIC_STANDING_POINTERS);
+                Glide.with(this).load(R.drawable.ucv_raise).into(firstGif);
+                break;
+            case 6:
                 oneGifOnly();
                 firstTextView.setText("Prone press" + LINE_DROP + PRONE_PRESS_POINTERS);
                 Glide.with(this).load(R.drawable.prone_press).into(firstGif);
-                break;
-            case 3:
-                oneGifOnly();
-                firstTextView.setText("Shoulder press out");
-                Glide.with(this).load(R.drawable.shoulder_pressout).into(firstGif);
-                break;
-            case 4:
-                firstTextView.setText("Front raise - side");
-                secondTextView.setText("Front raise - front");
-                Glide.with(this).load(R.drawable.front_raise_side).into(firstGif);
-                Glide.with(this).load(R.drawable.front_raise_front).into(secondGif);
         }
     }
 
@@ -157,16 +170,39 @@ public class ExercisesActivity extends AppCompatActivity {
     public void bicepsMain(int exercise) {
         switch (exercise) {
             case 0:
-                oneGifOnly();
-                firstTextView.setText("Barbell curls");
-                Glide.with(this).load(R.drawable.barbell_curls).into(firstGif);
+                firstTextView.setText("Barbell curls - front"+BASIC_STANDING_POINTERS);
+                secondTextView.setText("Barbell curls - side");
+                Glide.with(this).load(R.drawable.barbell_cruls_side).into(firstGif);
+                Glide.with(this).load(R.drawable.barbell_curls_front).into(secondGif);
                 break;
             case 1:
+                firstTextView.setText("Waiter's curls - front"+BASIC_STANDING_POINTERS);
+                secondTextView.setText("Waiter's curls - side");
+                Glide.with(this).load(R.drawable.waiter_curls_side).into(firstGif);
+                Glide.with(this).load(R.drawable.waiter_curls_front).into(secondGif);
+                break;
+            case 2:
+                firstTextView.setText("Dumbbell hammer curls - front"+BASIC_STANDING_POINTERS);
+                secondTextView.setText("Dumbbell hammer curls - side");
+                Glide.with(this).load(R.drawable.dumbbell_hammer_curls_side).into(firstGif);
+                Glide.with(this).load(R.drawable.dumbbell_hammer_curls_front).into(secondGif);
+                break;
+            case 3:
+                firstTextView.setText("Robot curls - front"+BASIC_STANDING_POINTERS);
+                secondTextView.setText("Robot curls - side");
+                Glide.with(this).load(R.drawable.robot_curls_side).into(firstGif);
+                Glide.with(this).load(R.drawable.robot_curls_front).into(secondGif);
+                break;
+            case 4:
                 oneGifOnly();
                 firstTextView.setText("French press");
                 Glide.with(this).load(R.drawable.french_press).into(firstGif);
                 break;
-            case 2:
+            case 5:
+                oneGifOnly();
+                firstTextView.setText("Triceps extension"+BASIC_STANDING_POINTERS);
+                Glide.with(this).load(R.drawable.triceps_extension_side).into(firstGif);
+                break;
         }
     }
 
@@ -225,7 +261,7 @@ public class ExercisesActivity extends AppCompatActivity {
                 break;
             case 5:
                 firstTextView.setText("Side accordion (beginner)");
-                Glide.with(this).load(R.drawable.side_accordion).into(firstGif);
+                Glide.with(this).load(R.drawable.side_accordionv1).into(firstGif);
                 break;
             case 6:
                 firstTextView.setText("Side accordion (intermediate)");

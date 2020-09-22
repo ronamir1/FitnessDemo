@@ -110,19 +110,19 @@ public class MuscleGroupActivity extends AppCompatActivity {
         switch (numMuscleGroup) {
             case CHEST:
                 exercises = new String[]{"1. Bench press", "2. Dumbbell bench press ", "3. Dips", "4. Cable crossover", "5. Push up", "6. Incline/Decline push up"};
-                info = new String[]{raisingPyramide, raisingPyramide, bodyWeight, combineClassicPyramide, bodyWeight, bodyWeight};
+                info = new String[]{combineClassicPyramide, combineClassicPyramide, bodyWeight, combineClassicPyramide, bodyWeight, bodyWeight};
                 break;
             case SHOULDERS:
-                exercises = new String[]{"1. Overhead press", "2. Face pull","3. Prone press", "4. Shoulder press out", "5. Front raise"};
-                info = new String[]{raisingPyramide, health};
+                exercises = new String[]{"1. Overhead press", "2. Front raise", "3. Shoulder press out", "4. Face pull", "5. Lateral raise", "6. UCV raise", "7. Prone press"};
+                info = new String[]{combineClassicPyramide, combineClassicPyramide, health, health, combineClassicPyramide, classicSet, health};
                 break;
             case BACK:
                 exercises = new String[]{"1. Pull up", "2. Chin up", "3. Barbell row", "4. Sitting row", "5. Lat pulldown", " 6. One arm high row"};
                 info = new String[]{bodyWeight, bodyWeight, raisingPyramide, raisingPyramide, health, raisingPyramide};
                 break;
             case BICEPS:
-                exercises = new String[]{"1. Bicep curls", "2. French press"};
-                info = new String[]{combineClassicPyramide, combineClassicPyramide};
+                exercises = new String[]{"1. Barbell curls", "2. Waiter's curls", "3. Dumbbell hammer curls", "4. Robot hammer curls", "5. French press", "6. Triceps extension"};
+                info = new String[]{combineClassicPyramide, combineClassicPyramide, combineClassicPyramide, combineClassicPyramide, combineClassicPyramide, combineClassicPyramide};
                 break;
             case LEGS:
                 exercises = new String[]{"1. Squat", "2. Deadlift", "3. Romanian deadlift", "4. Lunges", "5. Bulgarian split squat"};
