@@ -48,20 +48,20 @@ public class MuscleGroupActivity extends AppCompatActivity {
     final String forBicepsTriceps = "We recommend you to choose 2 exercises for this muscle, choose the ones you like.\nThat's two for biceps and two for triceps\n\n" + dontForget;
     final String forAbs = "We recommend you to choose 4 exercises for this muscle, try to work one day on upper and lower and the other on obliques and sides.\n\n" + dontForget;
 
-    final String CHEST_A = "1. Bench press\n2. Incline Bench press\n3. Cable crossover\n4. Decline push ups";
-    final String CHEST_B = "1. Dumbbell bench press\n2. Push ups\n3. Cable crossover\n4. Dips";
+    final String CHEST_A = "1. Bench press\n2. Cable crossover + Incline Bench press (set=lower weight cable crossover set and then an incline bench press set)\n3. Decline push ups";
+    final String CHEST_B = "1. Dumbbell bench press\n2. Cable crossover + Push ups(set = lower weight cable crossover set and then a push ups set)\n3. Dips";
     final String CHEST_C = "";
 
-    final String SHOULDERS_A = "1. Overhead press\n2. Face pull\n3. Prone press";
-    final String SHOULDERS_B = "1. Overhead press\n2. Face pull\n3. Prone press";
+    final String SHOULDERS_A = "1. UCV raise\n2. Overhead press (Barbell or Dumbbell)\n3. Face pull/Prone press";
+    final String SHOULDERS_B = "1. Front raise\n2. Shoulder press out\n3. Lateral raise";
     final String SHOULDERS_C = "";
 
     final String BACK_A = "1. Pull up\n2. Sitting row\n3. Lat pulldown\n4. One arm high row";
     final String BACK_B = "1. Chin up\n2. Barbell row\n3. Lat pulldown\n4. One arm high row";
     final String BACK_C = "";
 
-    final String BICEPS_A = "1. Bicep curls";
-    final String BICEPS_B = "1. Bicep curls";
+    final String BICEPS_A = "1. Barbell curls\n2. Dumbbell hammer curls\n3. French press";
+    final String BICEPS_B = "1. Waiter's curls\n2. Robot curls\n3. Triceps extension";
     final String BICEPS_C = "";
 
     final String LEGS_A = "1. Squat\n2. Deadlift\n3. Lunges";
