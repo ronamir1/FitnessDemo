@@ -52,7 +52,7 @@ public class ExercisesActivity extends AppCompatActivity {
                 firstTextView.setText("Bench press" + LINE_DROP + CHEST_POINTERS);
                 secondTextView.setText("Incline bench press");
                 Glide.with(this).load(R.drawable.bench_press).into(firstGif);
-                Glide.with(this).load(R.drawable.upper_bench_press).into(secondGif);
+                Glide.with(this).load(R.drawable.incline_bench_press).into(secondGif);
                 break;
             case 1:
                 firstTextView.setText("Dumbbell bench press - side" + LINE_DROP + CHEST_POINTERS);
