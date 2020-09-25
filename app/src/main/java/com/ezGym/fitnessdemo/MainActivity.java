@@ -23,7 +23,6 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
     ImageView entry;
     ScrollView scrollView;
-    TextView dailyTip;
     final String DAILY_TIP = "Daily tip:";
     final String LINE_DROP = "\n";
 

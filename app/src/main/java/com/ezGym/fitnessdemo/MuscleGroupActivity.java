@@ -237,10 +237,11 @@ public class MuscleGroupActivity extends AppCompatActivity {
         }
 
         @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
+        public View getView(final int position, View convertView, ViewGroup parent) {
             LayoutInflater layoutInflater = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             row = layoutInflater.inflate(R.layout.row, parent, false);
             final ImageView imageView = row.findViewById(R.id.options);
+            final ImageView imageView1 = row.findViewById(R.id.options1);
             final TextView description = row.findViewById(R.id.exercise_description);
             imageView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -248,6 +249,20 @@ public class MuscleGroupActivity extends AppCompatActivity {
                     int[] location = new int[2];
                     imageView.getLocationOnScreen(location);
                     setExerciseParams(location[0], location[1], description.getText().toString());
+                }
+            });
+
+            imageView1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    alertDialog = new AlertDialog.Builder(new ContextThemeWrapper(MuscleGroupActivity.this, R.style.CustomDialogTheme));
+                    alertDialog.setMessage(exerciseInfo.get(position)).setTitle("Exercise Explanation:");
+                    alertDialog.
+                            setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                }
+                            }).show();
                 }
             });
             description.setText(this.exercises.get(position));
