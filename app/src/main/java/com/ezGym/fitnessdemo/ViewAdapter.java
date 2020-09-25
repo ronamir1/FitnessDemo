@@ -19,9 +19,9 @@ public class ViewAdapter extends PagerAdapter {
     final String tip3 = "Work on each body part (i.e. chest/shoulders/back/legs etc.) 1-2 times a week.";
     final String tip4 = "The workouts are divided into 3 sections:\nChest and shoulders, Back and Biceps/Triceps, Legs.\nOn each workout, choose one of the sections and work it.\nRegarding abs &amp; core, you can do them after each workout (no more than 3-4 times a week).";
     final String tip5 = "your Max weight in an exercise is the maximum weight you can do 6-8 reps in that specific exercise.";
-    final String tip6 = "Change your workout every few weeks, going in a rut in workouts is not good. Hence, you can either change the order of the exercises or choose different exercises, you have plenty of exercises to choose from in each section.";
-    final String tip7 = "Most important exercises to put effort into:\nPull up, Bench press, Squat, Deadlift, Dips (this exercises increase testosterone levels).";
-    final String tip8 = "Try to keep your core engaged in all of the exercises - this will stabilize you and help you achieve more quality reps.";
+    final String tip6 = "Change your workout every few weeks, repeating the same workouts is not good. try to change the order of the exercises or choose different exercises, you have plenty of exercises to choose from in each section.";
+    final String tip7 = "The most important exercises to put effort into are:\nPull up, Bench press, Squat, Deadlift, Dips (this exercises increase testosterone levels).";
+    final String tip8 = "Try to keep your core engaged in all of the exercises - this will stabilize you and will help you achieve more quality reps.";
     private String[] strings = {tip1, tip2, tip3, tip4, tip5, tip6, tip7, tip8};
 
     ViewAdapter(Context context){
