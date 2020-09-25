@@ -5,4 +5,5 @@
     <color name="popupColor">#F6ECEC</color>
     <color name="colorAccent">#BB86FC</color>
     <color name="alertTitleColor">#DEFFFFFF</color>
+    <color name="textColor">#DBFFFFFF</color>
 </resources>

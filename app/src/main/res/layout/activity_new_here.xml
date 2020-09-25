@@ -7,38 +7,47 @@
     android:background="@drawable/bg1"
     tools:context=".NewHereActivity">
 
-    <TextView
-        android:id="@+id/msg"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:padding="10sp"
-        android:text="Basic time saving tips"
-        android:textSize="25sp"
-        android:theme="@style/RobotoTextViewStyle"
-        app:layout_constraintEnd_toStartOf="@+id/imageView"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="backToMain"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/back" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="10sp"
+            android:text="Basic Time Saving Tips"
+            android:textSize="30sp"
+            android:theme="@style/RobotoTextViewStyle" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:onClick="backToMain"
+            app:srcCompat="@drawable/back" />
+
+    </LinearLayout>
 
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager2"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="405dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:theme="@style/AppTheme"
         app:layout_constraintBottom_toTopOf="@+id/indicator"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/msg"
-        app:layout_constraintVertical_bias="0.2" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
     <me.relex.circleindicator.CircleIndicator
         android:id="@+id/indicator"

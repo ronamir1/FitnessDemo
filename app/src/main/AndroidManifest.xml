@@ -13,7 +13,8 @@
             android:name=".ProfileActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 
-        <activity android:name=".NewHereActivity" />
+        <activity android:name=".NewHereActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity
             android:name=".MuscleGroupActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
