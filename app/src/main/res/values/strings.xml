@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">FitnessDemo</string>
+    <string name="app_name">EZ Gym</string>
     <string name="abs_amp_core_day"><![CDATA[Abs & core day]]></string>
     <string name="our_recommendation_is_nfirst_day_upper_and_lower_abs_exercises_1_3_nsecond_day_obliques_exercises_4_5">Our recommendation is:\nFirst day - upper and lower abs (exercises 1-3)\nSecond day - obliques (exercises 4-5)</string>
     <string name="todo">TODO</string>
