@@ -37,8 +37,8 @@ public class MainActivity extends AppCompatActivity {
     final String tip2 = "Eat at least 1 gram of protein for each kg you weigh\ni.e a 70kg men should eat at least 70 gram of protein a day (don't forget to hydrate enough)";
     final String tip3 = "It is OK to take a day off to rest and gather strength for the next workout";
     final String tip4 = "Eating veggies and fruits is important, make sure you eat a few every day!";
-    final String tip5 = "Drinking coffee without milk and eating a banana or a date with some nut might improve your workout, try it!";
-    final String tip6 = "Sleeping is essential, make sure you get at least 7-8 hours of sleep every day";
+    final String tip5 = "Drinking black coffee, eating a banana or a date with some nut might improve your workout, try it!";
+    final String tip6 = "A good night sleep is essential, make sure you get at least 7-8 hours of sleep every day";
     final String tip7 = "Good posture and strong core can improve your deadlift, squat and many more exercises so don't neglect it";
     final String tip8 = "Warm up before each workout to reduce the risk of an injury";
     final String tip9 = "Nutrition menu should be given by a professional only!";
@@ -46,7 +46,11 @@ public class MainActivity extends AppCompatActivity {
     final String tip11 = "Stressed mind can stress your body, make sure to relax sometimes";
     final String tip12 = "Every exercise you are not sure about - ask your gym instructor they will be happy to help!";
     final String tip13 = "Change doesn't come in a week, patience and consistency are key players";
-    String[] dailyTips = {tip1, tip2, tip3, tip4, tip5, tip6, tip7, tip8, tip9, tip10, tip11, tip12, tip13};
+    final String tip14 ="you should NOT feel pain in any exercise, if you do feel pain you can ask the gym instructor for replacements.";
+    final String tip15 ="No one cares how much you lift if you don't do it in the right form, so take your time with increasing weight.";
+    final String tip16 ="Try to keep your core engaged in all of the exercises - this will stabilize you and will help you achieve more quality reps.";
+    final String tip17 ="Quality > Quantity\nSo in each exercise try to focus on the contraction of muscles.";
+    String[] dailyTips = {tip1, tip2, tip3, tip4, tip5, tip6, tip7, tip8, tip9, tip10, tip11, tip12, tip13, tip14, tip15, tip16, tip17};
     Random rand = new Random();
 
     public void newHereActivity(MenuItem item) {

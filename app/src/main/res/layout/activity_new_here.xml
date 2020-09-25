@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:padding="10sp"
-            android:text="Basic Time Saving Tips"
+            android:text="Tips that I wish I knew when I first started"
             android:textSize="30sp"
             android:theme="@style/RobotoTextViewStyle" />
 
@@ -30,7 +30,6 @@
             android:id="@+id/imageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
             android:onClick="backToMain"
             app:srcCompat="@drawable/back" />
 
