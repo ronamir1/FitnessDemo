@@ -46,8 +46,8 @@ public class MuscleGroupActivity extends AppCompatActivity {
     final String CHEST_B = "1. Dumbbell bench press\n2. Cable crossover + Push ups(set = lower weight cable crossover set and then a push ups set)\n3. Dips";
     final String CHEST_C = "";
 
-    final String SHOULDERS_A = "1. UCV raise\n2. Overhead press (Barbell or Dumbbell)\n3. Face pull/Prone press";
-    final String SHOULDERS_B = "1. Front raise\n2. Lateral raise\n3. Shoulder press out";
+    final String SHOULDERS_A = "1. UCV raise/Front raise\n2. Overhead press (Barbell or Dumbbell)\n3. Face pull";
+    final String SHOULDERS_B = "1. Shoulder press out\n2. Prone press\n3. Lateral raise";
     final String SHOULDERS_C = "";
 
     final String BACK_A = "1. Chin up\n2. Sitting row (narrow grip)\n3. Lat pulldown + One arm high row (superset)";
