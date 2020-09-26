@@ -41,23 +41,17 @@ public class MuscleGroupActivity extends AppCompatActivity {
     final String health = "This exercise require high rep so do three sets of 80% max weight, 15 reps, 60 seconds rest between each set.\nIf too hard drop to a weight that allows you this number of reps.";
     final String combineClassicPyramide = firstOption + raisingPyramide + LINE_DROP + LINE_DROP + secondOption + classicSet;
     final String absClassic = "3 sets, slow movements, each set 30-45 seconds\nIf it is too hard, try to do your best.\nIf its easy peasy lemon squeezy you go ahead and do it for longer.";
-    final String dontForget = "Don't forget to change them every once in a while!";
-    final String bigMuscle = "We recommend you to choose 4 exercises for this muscle, choose the ones you like.\n\n" + dontForget;
-    final String mediumMuscle = "We recommend you to choose 3 exercises for this muscle, choose the ones you like.\n\n" + dontForget;
-    final String smallMuscle = "We recommend you to choose 2 exercises for this muscle, choose the ones you like.\n\n" + dontForget;
-    final String forBicepsTriceps = "We recommend you to choose 2 exercises for this muscle, choose the ones you like.\nThat's two for biceps and two for triceps\n\n" + dontForget;
-    final String forAbs = "We recommend you to choose 4 exercises for this muscle, try to work one day on upper and lower and the other on obliques and sides.\n\n" + dontForget;
 
     final String CHEST_A = "1. Bench press\n2. Cable crossover + Incline Bench press (set=lower weight cable crossover set and then an incline bench press set)\n3. Decline push ups";
     final String CHEST_B = "1. Dumbbell bench press\n2. Cable crossover + Push ups(set = lower weight cable crossover set and then a push ups set)\n3. Dips";
     final String CHEST_C = "";
 
     final String SHOULDERS_A = "1. UCV raise\n2. Overhead press (Barbell or Dumbbell)\n3. Face pull/Prone press";
-    final String SHOULDERS_B = "1. Front raise\n2. Shoulder press out\n3. Lateral raise";
+    final String SHOULDERS_B = "1. Front raise\n2. Lateral raise\n3. Shoulder press out";
     final String SHOULDERS_C = "";
 
-    final String BACK_A = "1. Pull up\n2. Sitting row\n3. Lat pulldown\n4. One arm high row";
-    final String BACK_B = "1. Chin up\n2. Barbell row\n3. Lat pulldown\n4. One arm high row";
+    final String BACK_A = "1. Chin up\n2. Sitting row (narrow grip)\n3. Lat pulldown + One arm high row (superset)";
+    final String BACK_B = "1. Barbell row \n2. Lat pulldown + pull up (superset)\n3. One arm high row";
     final String BACK_C = "";
 
     final String BICEPS_A = "1. Barbell curls\n2. Dumbbell hammer curls\n3. French press";
@@ -72,7 +66,7 @@ public class MuscleGroupActivity extends AppCompatActivity {
     final String ABS_B = "1. Bicycle\n2. Side accordion (beginner/intermediate)\n3. side pocketknife";
     final String ABS_C = "";
 
-    final String LONG_CLICK_FOR_SETS = "\n\nDon't forget to long click on each exercise to get the sets information!";
+    final String SETS_INFO_BUTTON = "\n\nDon't forget to click on sets info button to get the sets information!";
     final String DO_THIS = "Do these exercises in this order:\n";
 
     final String[][] exercises_combinations = {{CHEST_A, CHEST_B, CHEST_C}, {SHOULDERS_A, SHOULDERS_B, SHOULDERS_C}, {BACK_A, BACK_B, BACK_C}, {BICEPS_A, BICEPS_B, BICEPS_C}, {LEGS_A, LEGS_B, LEGS_C}, {ABS_A, ABS_B, ABS_C}};
@@ -84,11 +78,6 @@ public class MuscleGroupActivity extends AppCompatActivity {
     final static int LEGS = 4;
     final static int ABS = 5;
     final String[] descriptions = {"Chest", "Shoulders", "Back", "Biceps/Triceps", "Legs", "Abs & Core"};
-    final String[] muscleGroupRecommendations = {bigMuscle, mediumMuscle, bigMuscle, forBicepsTriceps, mediumMuscle, forAbs};
-
-    final static int A = 0;
-    final static int B = 1;
-    final static int C = 2;
 
     int muscleGroup;
     DbManager dbManager;
@@ -146,11 +135,9 @@ public class MuscleGroupActivity extends AppCompatActivity {
     public void recommendedTraining(View view) {
         int tag = Integer.parseInt(view.getTag().toString());
         AlertDialog.Builder recommended = new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.AppTheme));
-        recommended.setMessage(DO_THIS + LINE_DROP + exercises_combinations[muscleGroup][tag] + LONG_CLICK_FOR_SETS);
+        recommended.setMessage(DO_THIS + LINE_DROP + exercises_combinations[muscleGroup][tag] + SETS_INFO_BUTTON);
         recommended.setPositiveButton("Ok", null);
-
         recommended.show();
-
     }
 
 
@@ -174,23 +161,6 @@ public class MuscleGroupActivity extends AppCompatActivity {
                 exerciseIntent.putExtra("muscle group", muscleGroup);
                 exerciseIntent.putExtra("exercise", i);
                 startActivity(exerciseIntent);
-            }
-        });
-
-        // LONG onClick for the listView
-        exerciseListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-            @Override
-            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
-
-                alertDialog = new AlertDialog.Builder(new ContextThemeWrapper(MuscleGroupActivity.this, R.style.CustomDialogTheme));
-                alertDialog.setMessage(exerciseInfo.get(i)).setTitle("Exercise Explanation:");
-                alertDialog.
-                        setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                            }
-                        }).show();
-                return true;
             }
         });
     }

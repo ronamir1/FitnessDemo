@@ -45,10 +45,10 @@ public class MainActivity extends AppCompatActivity {
     final String tip11 = "Stressed mind can stress your body, make sure to relax sometimes";
     final String tip12 = "Every exercise you are not sure about - ask your gym instructor they will be happy to help!";
     final String tip13 = "Change doesn't come in a week, patience and consistency are key players";
-    final String tip14 ="you should NOT feel pain in any exercise, if you do feel pain you can ask the gym instructor for replacements.";
-    final String tip15 ="No one cares how much you lift if you don't do it in the right form, so take your time with increasing weight.";
-    final String tip16 ="Try to keep your core engaged in all of the exercises - this will stabilize you and will help you achieve more quality reps.";
-    final String tip17 ="Quality > Quantity\nSo in each exercise try to focus on the contraction of muscles.";
+    final String tip14 = "you should NOT feel pain in any exercise, if you do feel pain you can ask the gym instructor for replacements.";
+    final String tip15 = "No one cares how much you lift if you don't do it in the right form, so take your time with increasing weight.";
+    final String tip16 = "Try to keep your core engaged in all of the exercises - this will stabilize you and will help you achieve more quality reps.";
+    final String tip17 = "Quality > Quantity\nSo in each exercise try to focus on the contraction of muscles.";
     String[] dailyTips = {tip1, tip2, tip3, tip4, tip5, tip6, tip7, tip8, tip9, tip10, tip11, tip12, tip13, tip14, tip15, tip16, tip17};
     Random rand = new Random();
 
@@ -66,10 +66,10 @@ public class MainActivity extends AppCompatActivity {
     public void aboutMessage(MenuItem item) {
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
         alertDialog.setMessage(ABOUT_MSG).setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                    }
-                }).show();
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+            }
+        }).show();
     }
 
     public void muscleGroupMain(View view) {
