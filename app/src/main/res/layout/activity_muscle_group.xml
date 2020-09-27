@@ -44,6 +44,7 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
+                android:layout_gravity="center"
                 android:layout_toEndOf="@+id/trainingDescription"
                 android:layout_toRightOf="@+id/trainingDescription"
                 android:contentDescription="@string/todo"
@@ -92,7 +93,7 @@
                 android:onClick="recommendedTraining"
                 android:scaleType="fitCenter"
                 android:tag="1"
-                app:srcCompat="@drawable/b_icon" />
+                app:srcCompat="@drawable/b" />
 
         </LinearLayout>
 
