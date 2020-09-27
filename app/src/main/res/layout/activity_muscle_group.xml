@@ -93,7 +93,7 @@
                 android:onClick="recommendedTraining"
                 android:scaleType="fitCenter"
                 android:tag="1"
-                app:srcCompat="@drawable/b_icon" />
+                app:srcCompat="@drawable/b" />
 
         </LinearLayout>
 
