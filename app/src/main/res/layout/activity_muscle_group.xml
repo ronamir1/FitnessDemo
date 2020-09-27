@@ -44,11 +44,11 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
-                android:layout_gravity="center"
                 android:layout_toEndOf="@+id/trainingDescription"
                 android:layout_toRightOf="@+id/trainingDescription"
                 android:contentDescription="@string/todo"
                 android:onClick="backToMain"
+                android:layout_marginTop="7dp"
                 app:srcCompat="@drawable/back" />
 
         </LinearLayout>
