@@ -115,8 +115,8 @@ public class MuscleGroupActivity extends AppCompatActivity {
                 info = new String[]{combineClassicPyramide, combineClassicPyramide, combineClassicPyramide, combineClassicPyramide, combineClassicPyramide, combineClassicPyramide};
                 break;
             case LEGS:
-                exercises = new String[]{"1. Squat", "2. Deadlift", "3. Romanian deadlift", "4. Lunges", "5. Bulgarian split squat"};
-                info = new String[]{raisingPyramide, raisingPyramide, raisingPyramide, combineClassicPyramide, combineClassicPyramide};
+                exercises = new String[]{"1. Squat", "2. Deadlift", "3. Romanian deadlift", "4. Lunges", "5. Bulgarian split squat", "6. Calf raise"};
+                info = new String[]{raisingPyramide, raisingPyramide, raisingPyramide, combineClassicPyramide, combineClassicPyramide, classicSet};
                 break;
             case ABS:
                 exercises = new String[]{"1. Static upper", "2. Accordion", "3. Legs raise", "4. Marine leg raise", "5. Bicycle", " 6. Side accordion (begginer)", "7. Side accordion (intermediate)", "8. Side pocketknife"};

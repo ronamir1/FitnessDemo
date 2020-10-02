@@ -232,6 +232,11 @@ public class ExercisesActivity extends AppCompatActivity {
                 oneGifOnly();
                 firstTextView.setText("Bulgarian split squat"+LINE_DROP+CORE_ENGAGED+LINE_DROP+LEGS_POINTER3);
                 Glide.with(this).load(R.drawable.bulgarian_split_squat).into(firstGif);
+                break;
+            case 5:
+                oneGifOnly();
+                firstTextView.setText("Calf raise");
+                Glide.with(this).load(R.drawable.calf_raise).into(firstGif);
         }
     }
 
