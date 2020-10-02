@@ -77,7 +77,11 @@ public class MuscleGroupActivity extends AppCompatActivity {
     final static int BICEPS = 3;
     final static int LEGS = 4;
     final static int ABS = 5;
-    final String[] descriptions = {"Chest", "Shoulders", "Back", "Biceps/Triceps", "Legs", "Abs & Core"};
+    final static int WORKOUT1 = 6;
+    final static int WORKOUT2 = 7;
+    final static int WORKOUT3 = 8;
+    final static int WORKOUT4 = 9;
+    final String[] descriptions = {"Chest", "Shoulders", "Back", "Biceps/Triceps", "Legs", "Abs & Core", "Workout 1", "Workout 2", "Workout 3"};
 
     int muscleGroup;
     DbManager dbManager;
@@ -108,7 +112,7 @@ public class MuscleGroupActivity extends AppCompatActivity {
                 break;
             case BACK:
                 exercises = new String[]{"1. Pull up", "2. Chin up", "3. Barbell row", "4. Sitting row", "5. Lat pulldown", " 6. One arm high row"};
-                info = new String[]{bodyWeight, bodyWeight, raisingPyramide, raisingPyramide, health, raisingPyramide};
+                info = new String[]{bodyWeight, bodyWeight, raisingPyramide, combineClassicPyramide, health, combineClassicPyramide};
                 break;
             case BICEPS:
                 exercises = new String[]{"1. Barbell curls", "2. Waiter's curls", "3. Dumbbell hammer curls", "4. Robot hammer curls", "5. French press", "6. Triceps extension"};
@@ -121,6 +125,22 @@ public class MuscleGroupActivity extends AppCompatActivity {
             case ABS:
                 exercises = new String[]{"1. Static upper", "2. Accordion", "3. Legs raise", "4. Marine leg raise", "5. Bicycle", " 6. Side accordion (begginer)", "7. Side accordion (intermediate)", "8. Side pocketknife"};
                 info = new String[]{absClassic, absClassic, absClassic, absClassic, absClassic, absClassic, absClassic, absClassic};
+                break;
+            case WORKOUT1:
+                exercises = new String[]{"1. Bench press/Dumbbell bench press", "2. Pull up/Chin up ", "3. Lateral raise", "4. Waiter's curls", "5. French press", "6. Squat"};
+                info = new String[]{combineClassicPyramide, bodyWeight, classicSet, classicSet, classicSet, combineClassicPyramide};
+                break;
+            case WORKOUT2:
+                exercises = new String[]{"1. Dips", "2. One arm high row", "3. Overhead press", "4. Robot hammer curls", "5. Triceps extension", "6. Lunges"};
+                info = new String[]{bodyWeight, combineClassicPyramide, combineClassicPyramide, classicSet, classicSet, combineClassicPyramide};
+                break;
+            case WORKOUT3:
+                exercises = new String[]{"1. Push up (regular, incline or decline)", "2. Barbell row/Sitting row", "3. Prone press/UCV raise", "4. Dumbbell hammer curls", "5. Triceps extension", "6. Deadlift/Romanian deadlift"};
+                info = new String[]{bodyWeight, combineClassicPyramide, classicSet, classicSet, classicSet, raisingPyramide};
+                break;
+            case WORKOUT4:
+                exercises = new String[]{"1. Cable crossover", "2. Lat pulldown", "3. Face pull", "4. Barbell curls", "5. French press", "6. Bulgarian split squat"};
+                info = new String[]{combineClassicPyramide, health, health, classicSet, classicSet, combineClassicPyramide};
                 break;
             default:
                 exercises = new String[]{};
