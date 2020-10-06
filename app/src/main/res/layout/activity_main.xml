@@ -9,7 +9,7 @@
         android:id="@+id/entry"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:alpha="1"
+        android:alpha="0"
         android:scaleType="fitXY"
         android:src="@drawable/ogo1"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -21,7 +21,7 @@
         android:id="@+id/scroll"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:alpha="0"
+        android:alpha="1"
         android:background="@drawable/bg1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -33,34 +33,93 @@
             android:layout_height="wrap_content">
 
             <LinearLayout
-                android:id="@+id/first_element"
                 android:layout_width="match_parent"
-                android:layout_height="234dp"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/element_background"
+                android:layout_height="match_parent"
                 android:orientation="vertical"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                android:paddingTop="10dp">
 
-                <ImageView
-                    android:id="@+id/group_a"
+                <TextView
+                    android:id="@+id/element_1"
                     android:layout_width="match_parent"
-                    android:layout_height="44dp"
-                    android:scaleType="fitCenter"
-                    app:srcCompat="@drawable/muscle_group_a" />
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="RECOMMENDED WORKOUTS"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
 
                 <LinearLayout
+                    android:id="@+id/element_2"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="125dp"
+                    android:background="@drawable/recommende_bg"
+                    android:orientation="horizontal"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp">
+
+                    <ImageView
+                        android:id="@+id/workout_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="95dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:paddingLeft="5dp"
+                        android:tag="6"
+                        app:srcCompat="@drawable/workout_1" />
+
+                    <ImageView
+                        android:id="@+id/workout_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="95dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:paddingLeft="5dp"
+                        android:tag="7"
+                        app:srcCompat="@drawable/workout_2" />
+
+                    <ImageView
+                        android:id="@+id/workout_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="95dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:paddingLeft="5dp"
+                        android:tag="8"
+                        app:srcCompat="@drawable/workout_3" />
+
+                    <ImageView
+                        android:id="@+id/workout_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="95dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:tag="9"
+                        app:srcCompat="@drawable/workout_4" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="ALL EXCERCISES"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:id="@+id/element_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="210dp"
+                    android:background="@drawable/excercise_bg"
                     android:orientation="horizontal">
 
                     <ImageButton
                         android:id="@+id/chest"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginRight="5dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="15dp"
                         android:layout_marginBottom="15dp"
                         android:layout_weight="1"
                         android:background="#00FFFFFF"
@@ -73,8 +132,8 @@
                         android:id="@+id/shoulders"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="5dp"
                         android:layout_marginBottom="15dp"
                         android:layout_weight="1"
                         android:background="#00FFFFFF"
@@ -84,36 +143,20 @@
                         app:srcCompat="@drawable/a2" />
 
                 </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/second_element"
-                android:layout_width="match_parent"
-                android:layout_height="234dp"
-                android:background="@drawable/element_background"
-                android:orientation="vertical"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/first_element">
-
-                <ImageView
-                    android:id="@+id/group_b"
-                    android:layout_width="match_parent"
-                    android:layout_height="44dp"
-                    android:scaleType="fitCenter"
-                    app:srcCompat="@drawable/muscle_group_b" />
 
                 <LinearLayout
+                    android:id="@+id/element_5"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="210dp"
+                    android:background="@drawable/excercise_bg"
                     android:orientation="horizontal">
 
                     <ImageButton
                         android:id="@+id/back"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginRight="5dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="15dp"
                         android:layout_marginBottom="15dp"
                         android:layout_weight="1"
                         android:background="#00FFFFFF"
@@ -126,8 +169,8 @@
                         android:id="@+id/biceps"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="5dp"
                         android:layout_marginBottom="15dp"
                         android:layout_weight="1"
                         android:background="#00FFFFFF"
@@ -135,38 +178,22 @@
                         android:scaleType="fitCenter"
                         android:tag="3"
                         app:srcCompat="@drawable/b2" />
+
                 </LinearLayout>
 
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/third_element"
-                android:layout_width="match_parent"
-                android:layout_height="234dp"
-                android:background="@drawable/element_background"
-                android:orientation="vertical"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/second_element">
-
-                <ImageView
-                    android:id="@+id/group_c"
-                    android:layout_width="match_parent"
-                    android:layout_height="44dp"
-                    android:scaleType="fitCenter"
-                    app:srcCompat="@drawable/muscle_group_c" />
-
                 <LinearLayout
+                    android:id="@+id/element_6"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="210dp"
+                    android:background="@drawable/excercise_bg"
                     android:orientation="horizontal">
 
                     <ImageButton
                         android:id="@+id/legs"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginRight="5dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="15dp"
                         android:layout_marginBottom="15dp"
                         android:layout_weight="1"
                         android:background="#00FFFFFF"
@@ -179,8 +206,8 @@
                         android:id="@+id/abs"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="5dp"
                         android:layout_marginBottom="15dp"
                         android:layout_weight="1"
                         android:background="#00FFFFFF"
