@@ -81,7 +81,7 @@ public class MuscleGroupActivity extends AppCompatActivity {
     final static int WORKOUT2 = 7;
     final static int WORKOUT3 = 8;
     final static int WORKOUT4 = 9;
-    final String[] descriptions = {"Chest", "Shoulders", "Back", "Biceps/Triceps", "Legs", "Abs & Core", "Workout 1", "Workout 2", "Workout 3"};
+    final String[] descriptions = {"Chest", "Shoulders", "Back", "Biceps/Triceps", "Legs", "Abs & Core", "Workout 1", "Workout 2", "Workout 3", "Workout 4"};
 
     int muscleGroup;
     DbManager dbManager;
