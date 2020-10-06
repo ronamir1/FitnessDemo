@@ -73,10 +73,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void muscleGroupMain(View view) {
-        Intent absIntent = new Intent(getApplicationContext(), MuscleGroupActivity.class);
         int muscleGroup = Integer.parseInt(view.getTag().toString());
-        absIntent.putExtra("muscle group", muscleGroup);
-        startActivity(absIntent);
+
+        if (muscleGroup<6) {
+            Intent muscleGIntent = new Intent(getApplicationContext(), MuscleGroupActivity.class);
+            muscleGIntent.putExtra("muscle group", muscleGroup);
+            startActivity(muscleGIntent);
+        }
+        else{
+            Intent fullBodyIntent = new Intent(getApplicationContext(), full_body.class);
+            fullBodyIntent.putExtra("muscle group", muscleGroup);
+            startActivity(fullBodyIntent);
+        }
     }
 
     public void directions(MenuItem item) {

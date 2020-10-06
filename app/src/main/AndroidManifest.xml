@@ -9,12 +9,14 @@
         android:roundIcon="@drawable/app_logo"
         android:supportsRtl="false"
         android:theme="@style/AppTheme">
+        <activity android:name=".full_body"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".ProfileActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-
-        <activity android:name=".NewHereActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity
+            android:name=".NewHereActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".MuscleGroupActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />

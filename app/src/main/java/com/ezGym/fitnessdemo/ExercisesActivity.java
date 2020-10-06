@@ -12,19 +12,19 @@ import com.bumptech.glide.Glide;
 
 public class ExercisesActivity extends AppCompatActivity {
 
-    final String LINE_DROP = "\n";
-    final String KNEES_BENT = "Keep your knees a little bit bent.";
-    final String CHEST_BEFORE_SHOULDERS = "Make sure your shoulders are pulled back.";
-    final String CHEST_POINTERS = CHEST_BEFORE_SHOULDERS + LINE_DROP + "Keep your elbows no more than 45 degrees from your body and your core tight (abs and butt contracted).\nIn addition try to squeeze your armpits when pushing.";
-    final String FACE_PULL_POINTERS = "Your wrist should lead the movement not the elbow.";
-    final String OVERHEAD_PRESS_POINTERS = "The press should be over your head, so make sure your movement is not diagonally forward.";
-    final String PRONE_PRESS_POINTERS = "Small weight should do the job, even without any weight this exercise is hard.";
-    final String CORE_ENGAGED = "Make sure your core is engaged.";
-    final String LEGS_POINTER1 = "Keep your back straight.";
-    final String LEGS_POINTER2 = "Let the movement come from the hip joint, not the back.";
-    final String LEGS_POINTER3 = "Keep your toes aligned with your knees when going down.";
-    final String BASIC_STANDING_POINTERS = LINE_DROP + CORE_ENGAGED + LINE_DROP + KNEES_BENT;
-
+    final static String LINE_DROP = "\n";
+    final static String KNEES_BENT = "Keep your knees a little bit bent.";
+    final static String CHEST_BEFORE_SHOULDERS = "Make sure your shoulders are pulled back.";
+    final static String CHEST_POINTERS = CHEST_BEFORE_SHOULDERS + LINE_DROP + "Keep your elbows no more than 45 degrees from your body and your core tight (abs and butt contracted).\nIn addition try to squeeze your armpits when pushing.";
+    final static String FACE_PULL_POINTERS = "Your wrist should lead the movement not the elbow.";
+    final static String OVERHEAD_PRESS_POINTERS = "The press should be over your head, so make sure your movement is not diagonally forward.";
+    final static String PRONE_PRESS_POINTERS = "Small weight should do the job, even without any weight this exercise is hard.";
+    final static String CORE_ENGAGED = "Make sure your core is engaged.";
+    final static String LEGS_POINTER1 = "Keep your back straight.";
+    final static String LEGS_POINTER2 = "Let the movement come from the hip joint, not the back.";
+    final static String LEGS_POINTER3 = "Keep your toes aligned with your knees when going down.";
+    final static String BASIC_STANDING_POINTERS = LINE_DROP + CORE_ENGAGED + LINE_DROP + KNEES_BENT;
+static
     Intent intent;
     int muscleGroup;
     TextView firstTextView, secondTextView;
@@ -383,7 +383,7 @@ public class ExercisesActivity extends AppCompatActivity {
                 break;
             case 4:
                 oneGifOnly();
-                firstTextView.setText("Triceps extension" + BASIC_STANDING_POINTERS);
+                firstTextView.setText("Triceps extension" +LINE_DROP+ BASIC_STANDING_POINTERS);
                 Glide.with(this).load(R.drawable.triceps_extension_side).into(firstGif);
                 break;
             case 5:
