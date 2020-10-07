@@ -26,7 +26,7 @@ public class DbManager {
         int sets = 0;
         int weights = 0;
         Cursor c = myDataBase.rawQuery("SELECT * FROM exercisesParams Where description = ?", new String[]{description});
-        int setsIdx =c.getColumnIndex("sets");
+        int setsIdx = c.getColumnIndex("sets");
         int weightsIdx = c.getColumnIndex("weights");
         if (c!= null && c.moveToFirst()){
             sets = c.getInt(setsIdx);

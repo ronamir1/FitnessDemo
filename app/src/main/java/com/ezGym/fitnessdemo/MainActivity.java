@@ -18,11 +18,13 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.List;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     ImageView entry;
     ScrollView scrollView;
+    static DatabaseAccess databaseAccess;
     final String DAILY_TIP = "Daily tip:";
     final String LINE_DROP = "\n";
 
@@ -104,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
         setTitle("EZ GYM");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        databaseAccess = DatabaseAccess.getInstance(this);
         final int todayTip = rand.nextInt(dailyTips.length);
         entry = findViewById(R.id.entry);
         scrollView = findViewById(R.id.scroll);

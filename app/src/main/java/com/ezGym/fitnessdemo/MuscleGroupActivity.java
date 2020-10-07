@@ -26,6 +26,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
 
 public class MuscleGroupActivity extends AppCompatActivity {
     final String LINE_DROP = "\n";
@@ -68,8 +70,10 @@ public class MuscleGroupActivity extends AppCompatActivity {
 
     final String SETS_INFO_BUTTON = "\n\nDon't forget to click on sets info button to get the sets information!";
     final String DO_THIS = "Do these exercises in this order:\n";
+    final String[] categories = {"CHEST", "SHOULDERS", "BACK", "BICEPS", "LEGS", "ABS", "WORKOUT1", "WORKOUT2", "WORKOUT3", "WORKOUT4"};
 
     final String[][] exercises_combinations = {{CHEST_A, CHEST_B, CHEST_C}, {SHOULDERS_A, SHOULDERS_B, SHOULDERS_C}, {BACK_A, BACK_B, BACK_C}, {BICEPS_A, BICEPS_B, BICEPS_C}, {LEGS_A, LEGS_B, LEGS_C}, {ABS_A, ABS_B, ABS_C}};
+
 
     final static int CHEST = 0;
     final static int SHOULDERS = 1;
@@ -97,57 +101,21 @@ public class MuscleGroupActivity extends AppCompatActivity {
         startActivity(mainIntent);
     }
 
-    public void matchListView(int numMuscleGroup) {
-        String[] exercises;
-        String[] info;
-
-        switch (numMuscleGroup) {
-            case CHEST:
-                exercises = new String[]{"1. Bench press", "2. Dumbbell bench press ", "3. Dips", "4. Cable crossover", "5. Push up", "6. Incline/Decline push up"};
-                info = new String[]{combineClassicPyramide, combineClassicPyramide, bodyWeight, combineClassicPyramide, bodyWeight, bodyWeight};
-                break;
-            case SHOULDERS:
-                exercises = new String[]{"1. Overhead press", "2. Front raise", "3. Shoulder press out", "4. Face pull", "5. Lateral raise", "6. UCV raise", "7. Prone press"};
-                info = new String[]{combineClassicPyramide, combineClassicPyramide, health, health, combineClassicPyramide, classicSet, health};
-                break;
-            case BACK:
-                exercises = new String[]{"1. Pull up", "2. Chin up", "3. Barbell row", "4. Sitting row", "5. Lat pulldown", " 6. One arm high row"};
-                info = new String[]{bodyWeight, bodyWeight, raisingPyramide, combineClassicPyramide, health, combineClassicPyramide};
-                break;
-            case BICEPS:
-                exercises = new String[]{"1. Barbell curls", "2. Waiter's curls", "3. Dumbbell hammer curls", "4. Robot hammer curls", "5. French press", "6. Triceps extension"};
-                info = new String[]{combineClassicPyramide, combineClassicPyramide, combineClassicPyramide, combineClassicPyramide, combineClassicPyramide, combineClassicPyramide};
-                break;
-            case LEGS:
-                exercises = new String[]{"1. Squat", "2. Deadlift", "3. Romanian deadlift", "4. Lunges", "5. Bulgarian split squat", "6. Calf raise"};
-                info = new String[]{raisingPyramide, raisingPyramide, raisingPyramide, combineClassicPyramide, combineClassicPyramide, classicSet};
-                break;
-            case ABS:
-                exercises = new String[]{"1. Static upper", "2. Accordion", "3. Legs raise", "4. Marine leg raise", "5. Bicycle", " 6. Side accordion (begginer)", "7. Side accordion (intermediate)", "8. Side pocketknife"};
-                info = new String[]{absClassic, absClassic, absClassic, absClassic, absClassic, absClassic, absClassic, absClassic};
-                break;
-            case WORKOUT1:
-                exercises = new String[]{"1. Bench press/Dumbbell bench press", "2. Pull up/Chin up ", "3. Lateral raise", "4. Waiter's curls", "5. French press", "6. Squat"};
-                info = new String[]{combineClassicPyramide, bodyWeight, classicSet, classicSet, classicSet, combineClassicPyramide};
-                break;
-            case WORKOUT2:
-                exercises = new String[]{"1. Dips", "2. One arm high row", "3. Overhead press", "4. Robot hammer curls", "5. Triceps extension", "6. Lunges"};
-                info = new String[]{bodyWeight, combineClassicPyramide, combineClassicPyramide, classicSet, classicSet, combineClassicPyramide};
-                break;
-            case WORKOUT3:
-                exercises = new String[]{"1. Push up (regular, incline or decline)", "2. Barbell row/Sitting row", "3. Prone press/UCV raise", "4. Dumbbell hammer curls", "5. Triceps extension", "6. Deadlift/Romanian deadlift"};
-                info = new String[]{bodyWeight, combineClassicPyramide, classicSet, classicSet, classicSet, raisingPyramide};
-                break;
-            case WORKOUT4:
-                exercises = new String[]{"1. Cable crossover", "2. Lat pulldown", "3. Face pull", "4. Barbell curls", "5. French press", "6. Bulgarian split squat"};
-                info = new String[]{combineClassicPyramide, health, health, classicSet, classicSet, combineClassicPyramide};
-                break;
-            default:
-                exercises = new String[]{};
-                info = new String[]{};
+    public void matchListView() {
+        if(muscleGroup < 6){
+            dbAccess(0);
         }
-        exerciseArrList = new ArrayList<String>(Arrays.asList(exercises));
-        exerciseInfo = new ArrayList<String>(Arrays.asList(info));
+        else{
+            dbAccess(1);
+            if (muscleGroup == 8){
+                exerciseArrList.add("Triceps extension");
+                exerciseInfo.add(combineClassicPyramide);
+            }
+            if (muscleGroup == 9){
+                exerciseArrList.add("French press");
+                exerciseInfo.add(combineClassicPyramide);
+            }
+        }
         MyAdapter adapter = new MyAdapter(this, exerciseArrList);
         exerciseListView.setAdapter(adapter);
     }
@@ -171,7 +139,7 @@ public class MuscleGroupActivity extends AppCompatActivity {
         trainingDescription = findViewById(R.id.trainingDescription);
         trainingDescription.setText(descriptions[muscleGroup]);
         exerciseListView = (ListView) findViewById(R.id.exerciseListView);
-        matchListView(muscleGroup);
+        matchListView();
 
         // onClick for the listView
         exerciseListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -213,6 +181,37 @@ public class MuscleGroupActivity extends AppCompatActivity {
             }
         });
         pw.show();
+    }
+
+    private HashMap<String, String> createHash(){
+        HashMap<String, String> hashMap = new HashMap<>();
+        hashMap.put("absClassic", absClassic);
+        hashMap.put("bodyWeight", bodyWeight);
+        hashMap.put("raisingPyramide", raisingPyramide);
+        hashMap.put("health", health);
+        hashMap.put("combineClassicPyramide", combineClassicPyramide);
+        return hashMap;
+    }
+
+    private void dbAccess(int j){
+        DatabaseAccess database = MainActivity.databaseAccess;
+        database.open();
+        List<List<String>> myExcercises;
+        if (j == 0){
+            myExcercises = database.getMuscleGroup(categories[muscleGroup]);
+        }
+        else{
+            myExcercises = database.getWorkout(categories[muscleGroup]);
+        }
+        database.close();
+        HashMap<String, String> exercisesDescription = createHash();
+        exerciseArrList = new ArrayList<>();
+        exerciseInfo = new ArrayList<>();
+        for (int i = 0 ; i < myExcercises.size(); i++){
+            exerciseArrList.add(myExcercises.get(i).get(0));
+            exerciseInfo.add(exercisesDescription.get(myExcercises.get(i).get(1)));
+        }
+
     }
 
     class MyAdapter extends ArrayAdapter<String> {
