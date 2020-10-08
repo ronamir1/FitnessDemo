@@ -86,7 +86,8 @@ public class DatabaseAccess {
 
     public List<List<String>> getWorkout(String workout) {
         List<List<String>> fnlList = new ArrayList<>();
-        Cursor cursor = database.rawQuery("SELECT * FROM excerciseDB WHERE ? = 1", new String[]{workout});
+        String query = String.format("SELECT * FROM excerciseDB WHERE %s = 1", workout);
+        Cursor cursor = database.rawQuery(query, null);
         cursor.moveToFirst();
         int explanation = cursor.getColumnIndex("Explanation");
         int description = cursor.getColumnIndex("Description");

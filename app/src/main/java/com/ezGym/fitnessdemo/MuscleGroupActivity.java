@@ -118,7 +118,7 @@ public class MuscleGroupActivity extends AppCompatActivity {
         dbManager = new DbManager(this.openOrCreateDatabase("exerciseDescription", MODE_PRIVATE, null));
         trainingDescription = findViewById(R.id.trainingDescription);
         trainingDescription.setText(descriptions[muscleGroup]);
-        exerciseListView = (ListView) findViewById(R.id.exerciseListView);
+        exerciseListView = findViewById(R.id.exerciseListView);
         matchListView();
 
         // onClick for the listView
@@ -137,7 +137,7 @@ public class MuscleGroupActivity extends AppCompatActivity {
         });
     }
 
-    public void setExerciseParams(int x, int y, final String exercise) {
+    public void setExerciseParams(final String exercise) {
         final Dialog pw = new Dialog(MuscleGroupActivity.this);
         pw.setContentView(R.layout.popup_example);
         pw.setCanceledOnTouchOutside(true);
@@ -149,13 +149,11 @@ public class MuscleGroupActivity extends AppCompatActivity {
         weights.setText(Integer.toString(params[1]));
         weights.setSelection(Integer.toString(params[1]).length());
         Window window = pw.getWindow();
-        window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        window.setGravity(Gravity.TOP);
+        window.setBackgroundDrawable(getDrawable(R.drawable.bg1));
+        window.setGravity(Gravity.CENTER);
         WindowManager.LayoutParams wmlp = pw.getWindow().getAttributes();
         wmlp.width = 360;
         wmlp.height = 300;
-        wmlp.x = x - 25;
-        wmlp.y = y - 100;
         pw.setOnCancelListener(new DialogInterface.OnCancelListener() {
             @Override
             public void onCancel(DialogInterface dialogInterface) {
@@ -219,9 +217,7 @@ public class MuscleGroupActivity extends AppCompatActivity {
             imageView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    int[] location = new int[2];
-                    imageView.getLocationOnScreen(location);
-                    setExerciseParams(location[0], location[1], description.getText().toString());
+                    setExerciseParams(description.getText().toString());
                 }
             });
 
