@@ -25,7 +25,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
@@ -73,22 +72,11 @@ public class MuscleGroupActivity extends AppCompatActivity {
     final String[] categories = {"CHEST", "SHOULDERS", "BACK", "BICEPS", "LEGS", "ABS", "WORKOUT1", "WORKOUT2", "WORKOUT3", "WORKOUT4"};
 
     final String[][] exercises_combinations = {{CHEST_A, CHEST_B, CHEST_C}, {SHOULDERS_A, SHOULDERS_B, SHOULDERS_C}, {BACK_A, BACK_B, BACK_C}, {BICEPS_A, BICEPS_B, BICEPS_C}, {LEGS_A, LEGS_B, LEGS_C}, {ABS_A, ABS_B, ABS_C}};
-
-
-    final static int CHEST = 0;
-    final static int SHOULDERS = 1;
-    final static int BACK = 2;
-    final static int BICEPS = 3;
-    final static int LEGS = 4;
-    final static int ABS = 5;
-    final static int WORKOUT1 = 6;
-    final static int WORKOUT2 = 7;
-    final static int WORKOUT3 = 8;
-    final static int WORKOUT4 = 9;
     final String[] descriptions = {"Chest", "Shoulders", "Back", "Biceps/Triceps", "Legs", "Abs & Core", "Workout 1", "Workout 2", "Workout 3", "Workout 4"};
 
     int muscleGroup;
     DbManager dbManager;
+    List<List<String>> myExercises;
     ArrayList<String> exerciseArrList, exerciseInfo;
     ListView exerciseListView;
     TextView trainingDescription;
@@ -107,14 +95,6 @@ public class MuscleGroupActivity extends AppCompatActivity {
         }
         else{
             dbAccess(1);
-            if (muscleGroup == 8){
-                exerciseArrList.add("Triceps extension");
-                exerciseInfo.add(combineClassicPyramide);
-            }
-            if (muscleGroup == 9){
-                exerciseArrList.add("French press");
-                exerciseInfo.add(combineClassicPyramide);
-            }
         }
         MyAdapter adapter = new MyAdapter(this, exerciseArrList);
         exerciseListView.setAdapter(adapter);
@@ -147,7 +127,11 @@ public class MuscleGroupActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent exerciseIntent = new Intent(getApplicationContext(), ExercisesActivity.class);
                 exerciseIntent.putExtra("muscle group", muscleGroup);
-                exerciseIntent.putExtra("exercise", i);
+                exerciseIntent.putExtra("display1", myExercises.get(i).get(2));
+                exerciseIntent.putExtra("gif1", myExercises.get(i).get(3));
+                exerciseIntent.putExtra("display2", myExercises.get(i).get(4));
+                exerciseIntent.putExtra("gif2", myExercises.get(i).get(5));
+                exerciseIntent.putExtra("exDescription", myExercises.get(i).get(6));
                 startActivity(exerciseIntent);
             }
         });
@@ -196,20 +180,20 @@ public class MuscleGroupActivity extends AppCompatActivity {
     private void dbAccess(int j){
         DatabaseAccess database = MainActivity.databaseAccess;
         database.open();
-        List<List<String>> myExcercises;
         if (j == 0){
-            myExcercises = database.getMuscleGroup(categories[muscleGroup]);
+            myExercises = database.getMuscleGroup(categories[muscleGroup]);
         }
         else{
-            myExcercises = database.getWorkout(categories[muscleGroup]);
+            myExercises = database.getWorkout(categories[muscleGroup]);
         }
         database.close();
         HashMap<String, String> exercisesDescription = createHash();
         exerciseArrList = new ArrayList<>();
         exerciseInfo = new ArrayList<>();
-        for (int i = 0 ; i < myExcercises.size(); i++){
-            exerciseArrList.add(myExcercises.get(i).get(0));
-            exerciseInfo.add(exercisesDescription.get(myExcercises.get(i).get(1)));
+
+        for (int i = 0; i < myExercises.size(); i++){
+            exerciseArrList.add(myExercises.get(i).get(0));
+            exerciseInfo.add(exercisesDescription.get(myExercises.get(i).get(1)));
         }
 
     }

@@ -23,25 +23,34 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/firstGifTextView"
+                    android:id="@+id/GifDisaplay1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:layout_marginLeft="2dp"
                     android:layout_marginTop="4dp"
                     android:layout_weight="1"
                     android:fontFamily="@font/roboto"
                     android:text="first"
+                    android:textSize="20sp"
                     android:theme="@style/RobotoTextViewStyle" />
 
                 <ImageView
                     android:id="@+id/imageView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
                     android:cropToPadding="false"
                     android:onClick="backToLegs"
-                    android:layout_marginTop="7dp"
                     app:srcCompat="@drawable/back" />
             </LinearLayout>
+
+            <TextView
+                android:id="@+id/exDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textAppearance="@style/RobotoTextViewStyle" />
 
             <ImageView
                 android:id="@+id/splace_image_view"
@@ -54,11 +63,12 @@
                 android:layout_marginRight="50dp" />
 
             <TextView
-                android:id="@+id/secondGifTextView"
+                android:id="@+id/GifDisaplay2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="36dp"
                 android:text="second"
+                android:textSize="20sp"
                 android:theme="@style/RobotoTextViewStyle" />
 
             <ImageView

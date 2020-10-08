@@ -63,10 +63,20 @@ public class DatabaseAccess {
         cursor.moveToFirst();
         int explanation = cursor.getColumnIndex("Explanation");
         int description = cursor.getColumnIndex("Description");
+        int display1 = cursor.getColumnIndex("DisplayName1");
+        int gif1 = cursor.getColumnIndex("GifName1");
+        int display2 = cursor.getColumnIndex("DisplayName2");
+        int gif2 = cursor.getColumnIndex("GifName2");
+        int exDescription = cursor.getColumnIndex("ExDescription1");
         while (!cursor.isAfterLast()) {
             List<String> list = new ArrayList<>();
             list.add(cursor.getString(description));
             list.add(cursor.getString(explanation));
+            list.add(cursor.getString(display1));
+            list.add(cursor.getString(gif1));
+            list.add(cursor.getString(display2));
+            list.add(cursor.getString(gif2));
+            list.add(cursor.getString(exDescription));
             fnlList.add(list);
             cursor.moveToNext();
         }
@@ -76,14 +86,24 @@ public class DatabaseAccess {
 
     public List<List<String>> getWorkout(String workout) {
         List<List<String>> fnlList = new ArrayList<>();
-        Cursor cursor = database.rawQuery("SELECT * FROM excerciseDB WHERE TrainingCategory = ?", new String[]{workout});
+        Cursor cursor = database.rawQuery("SELECT * FROM excerciseDB WHERE ? = 1", new String[]{workout});
         cursor.moveToFirst();
         int explanation = cursor.getColumnIndex("Explanation");
         int description = cursor.getColumnIndex("Description");
+        int display1 = cursor.getColumnIndex("DisplayName1");
+        int gif1 = cursor.getColumnIndex("GifName1");
+        int display2 = cursor.getColumnIndex("DisplayName2");
+        int gif2 = cursor.getColumnIndex("GifName2");
+        int exDescription = cursor.getColumnIndex("ExDescription1");
         while (!cursor.isAfterLast()) {
             List<String> list = new ArrayList<>();
             list.add(cursor.getString(description));
             list.add(cursor.getString(explanation));
+            list.add(cursor.getString(display1));
+            list.add(cursor.getString(gif1));
+            list.add(cursor.getString(display2));
+            list.add(cursor.getString(gif2));
+            list.add(cursor.getString(exDescription));
             fnlList.add(list);
             cursor.moveToNext();
         }
