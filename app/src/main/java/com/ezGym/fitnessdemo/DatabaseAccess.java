@@ -86,7 +86,7 @@ public class DatabaseAccess {
 
     public List<List<String>> getWorkout(String workout) {
         List<List<String>> fnlList = new ArrayList<>();
-        String query = String.format("SELECT * FROM excerciseDB WHERE %s = 1", workout);
+        String query = String.format("SELECT * FROM excerciseDB WHERE %s > 0", workout);
         Cursor cursor = database.rawQuery(query, null);
         cursor.moveToFirst();
         int explanation = cursor.getColumnIndex("Explanation");
@@ -96,6 +96,7 @@ public class DatabaseAccess {
         int display2 = cursor.getColumnIndex("DisplayName2");
         int gif2 = cursor.getColumnIndex("GifName2");
         int exDescription = cursor.getColumnIndex("ExDescription1");
+        int priority = cursor.getColumnIndex(workout);
         while (!cursor.isAfterLast()) {
             List<String> list = new ArrayList<>();
             list.add(cursor.getString(description));
@@ -105,6 +106,7 @@ public class DatabaseAccess {
             list.add(cursor.getString(display2));
             list.add(cursor.getString(gif2));
             list.add(cursor.getString(exDescription));
+            list.add(cursor.getString(priority));
             fnlList.add(list);
             cursor.moveToNext();
         }
