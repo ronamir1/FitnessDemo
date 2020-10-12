@@ -27,6 +27,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
@@ -92,9 +93,10 @@ public class MuscleGroupActivity extends AppCompatActivity {
     }
 
     public void matchListView() {
-        if (muscleGroup < 6) {
+        if(muscleGroup < 6){
             dbAccess(0);
-        } else {
+        }
+        else{
             dbAccess(1);
         }
         MyAdapter adapter = new MyAdapter(this, exerciseArrList);
@@ -193,7 +195,7 @@ public class MuscleGroupActivity extends AppCompatActivity {
         pw.show();
     }
 
-    private HashMap<String, String> createHash() {
+    private HashMap<String, String> createHash(){
         HashMap<String, String> hashMap = new HashMap<>();
         hashMap.put("absClassic", absClassic);
         hashMap.put("bodyWeight", bodyWeight);
@@ -203,24 +205,35 @@ public class MuscleGroupActivity extends AppCompatActivity {
         return hashMap;
     }
 
-    private void dbAccess(int j) {
+    private void dbAccess(int j){
         DatabaseAccess database = MainActivity.databaseAccess;
-        database.open();
-        if (j == 0) {
-            myExercises = database.getMuscleGroup(categories[muscleGroup]);
-        } else {
-            myExercises = database.getWorkout(categories[muscleGroup]);
-        }
-        database.close();
         HashMap<String, String> exercisesDescription = createHash();
         exerciseArrList = new ArrayList<>();
         exerciseInfo = new ArrayList<>();
-
-        for (int i = 0; i < myExercises.size(); i++) {
-            exerciseArrList.add(myExercises.get(i).get(0));
-            exerciseInfo.add(exercisesDescription.get(myExercises.get(i).get(1)));
+        database.open();
+        if (j == 0){
+            myExercises = database.getMuscleGroup(categories[muscleGroup]);
+            database.close();
+            for (int i = 0; i < myExercises.size(); i++){
+                exerciseArrList.add(myExercises.get(i).get(0));
+                exerciseInfo.add(exercisesDescription.get(myExercises.get(i).get(1)));
+            }
         }
-
+        else{
+            myExercises = database.getWorkout(categories[muscleGroup]);
+            database.close();
+            String[] exercisesArr = new String[myExercises.size()];
+            String[] infoArr = new String[myExercises.size()];
+            for (int i = 0; i < myExercises.size(); i++){
+                List<String> exercise = myExercises.get(i);
+                exercisesArr[Integer.parseInt(exercise.get(exercise.size() - 1)) - 1] = (exercise.get(0));
+                infoArr[Integer.parseInt(exercise.get(exercise.size() - 1)) - 1] = exercisesDescription.get(exercise.get(1));
+            }
+            for(int i = 0; i < exercisesArr.length ; i++){
+                exerciseArrList.add(exercisesArr[i]);
+                exerciseInfo.add(infoArr[i]);
+            }
+        }
     }
 
     class MyAdapter extends ArrayAdapter<String> {
