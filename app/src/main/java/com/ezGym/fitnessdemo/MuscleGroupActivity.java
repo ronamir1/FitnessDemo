@@ -20,7 +20,9 @@ import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -90,10 +92,9 @@ public class MuscleGroupActivity extends AppCompatActivity {
     }
 
     public void matchListView() {
-        if(muscleGroup < 6){
+        if (muscleGroup < 6) {
             dbAccess(0);
-        }
-        else{
+        } else {
             dbAccess(1);
         }
         MyAdapter adapter = new MyAdapter(this, exerciseArrList);
@@ -108,6 +109,32 @@ public class MuscleGroupActivity extends AppCompatActivity {
         recommended.show();
     }
 
+    public void fbOrAllExercises() {
+        LinearLayout linearLayoutFB = findViewById(R.id.linearLayoutFB);
+        LinearLayout linearLayout12 = findViewById(R.id.linearLayout12);
+        ImageButton imageButton = findViewById(R.id.imageButton);
+        ImageButton intensityImage = findViewById(R.id.intensityImage);
+        linearLayout12.setAlpha(0f);
+        imageButton.setAlpha(0f);
+        linearLayoutFB.setAlpha(1f);
+        switch (muscleGroup) {
+            case 6:
+                intensityImage.setImageResource(R.drawable.hardest);
+                break;
+            case 7:
+            case 9:
+                intensityImage.setImageResource(R.drawable.medium);
+                break;
+            case 8:
+                intensityImage.setImageResource(R.drawable.hard);
+                break;
+            default:
+                linearLayout12.setAlpha(1f);
+                imageButton.setAlpha(1f);
+                linearLayoutFB.setAlpha(0f);
+        }
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -115,6 +142,7 @@ public class MuscleGroupActivity extends AppCompatActivity {
         setContentView(R.layout.activity_muscle_group);
         intent = getIntent();
         muscleGroup = intent.getIntExtra("muscle group", -1);
+        fbOrAllExercises();
         dbManager = new DbManager(this.openOrCreateDatabase("exerciseDescription", MODE_PRIVATE, null));
         trainingDescription = findViewById(R.id.trainingDescription);
         trainingDescription.setText(descriptions[muscleGroup]);
@@ -165,7 +193,7 @@ public class MuscleGroupActivity extends AppCompatActivity {
         pw.show();
     }
 
-    private HashMap<String, String> createHash(){
+    private HashMap<String, String> createHash() {
         HashMap<String, String> hashMap = new HashMap<>();
         hashMap.put("absClassic", absClassic);
         hashMap.put("bodyWeight", bodyWeight);
@@ -175,13 +203,12 @@ public class MuscleGroupActivity extends AppCompatActivity {
         return hashMap;
     }
 
-    private void dbAccess(int j){
+    private void dbAccess(int j) {
         DatabaseAccess database = MainActivity.databaseAccess;
         database.open();
-        if (j == 0){
+        if (j == 0) {
             myExercises = database.getMuscleGroup(categories[muscleGroup]);
-        }
-        else{
+        } else {
             myExercises = database.getWorkout(categories[muscleGroup]);
         }
         database.close();
@@ -189,7 +216,7 @@ public class MuscleGroupActivity extends AppCompatActivity {
         exerciseArrList = new ArrayList<>();
         exerciseInfo = new ArrayList<>();
 
-        for (int i = 0; i < myExercises.size(); i++){
+        for (int i = 0; i < myExercises.size(); i++) {
             exerciseArrList.add(myExercises.get(i).get(0));
             exerciseInfo.add(exercisesDescription.get(myExercises.get(i).get(1)));
         }

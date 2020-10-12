@@ -13,7 +13,9 @@ import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -76,17 +78,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void muscleGroupMain(View view) {
         int muscleGroup = Integer.parseInt(view.getTag().toString());
-
-//        if (muscleGroup<6) {
-            Intent muscleGIntent = new Intent(getApplicationContext(), MuscleGroupActivity.class);
-            muscleGIntent.putExtra("muscle group", muscleGroup);
-            startActivity(muscleGIntent);
-//        }
-//        else{
-//            Intent fullBodyIntent = new Intent(getApplicationContext(), full_body.class);
-//            fullBodyIntent.putExtra("muscle group", muscleGroup);
-//            startActivity(fullBodyIntent);
-//        }
+        Intent muscleGIntent = new Intent(getApplicationContext(), MuscleGroupActivity.class);
+        muscleGIntent.putExtra("muscle group", muscleGroup);
+        startActivity(muscleGIntent);
     }
 
     public void directions(MenuItem item) {
