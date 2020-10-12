@@ -116,6 +116,8 @@ public class MuscleGroupActivity extends AppCompatActivity {
         LinearLayout linearLayout12 = findViewById(R.id.linearLayout12);
         ImageButton imageButton = findViewById(R.id.imageButton);
         ImageButton intensityImage = findViewById(R.id.intensityImage);
+        LinearLayout headline = findViewById(R.id.headline);
+        headline.setAlpha(0f);
         linearLayout12.setAlpha(0f);
         imageButton.setAlpha(0f);
         linearLayoutFB.setAlpha(1f);
@@ -133,6 +135,7 @@ public class MuscleGroupActivity extends AppCompatActivity {
             default:
                 linearLayout12.setAlpha(1f);
                 imageButton.setAlpha(1f);
+                headline.setAlpha(1f);
                 linearLayoutFB.setAlpha(0f);
         }
     }
