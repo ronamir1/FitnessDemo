@@ -224,6 +224,7 @@ public class MuscleGroupActivity extends AppCompatActivity {
         }
         else{
             myExercises = database.getWorkout(categories[muscleGroup]);
+            ArrayList<List<String>> newOrder = new ArrayList<>();
             database.close();
             String[] exercisesArr = new String[myExercises.size()];
             String[] infoArr = new String[myExercises.size()];
@@ -231,11 +232,16 @@ public class MuscleGroupActivity extends AppCompatActivity {
                 List<String> exercise = myExercises.get(i);
                 exercisesArr[Integer.parseInt(exercise.get(exercise.size() - 1)) - 1] = (exercise.get(0));
                 infoArr[Integer.parseInt(exercise.get(exercise.size() - 1)) - 1] = exercisesDescription.get(exercise.get(1));
+                newOrder.add(exercise);
             }
             for(int i = 0; i < exercisesArr.length ; i++){
                 exerciseArrList.add(exercisesArr[i]);
                 exerciseInfo.add(infoArr[i]);
+                List<String> exercise = myExercises.get(i);
+                newOrder.set(Integer.parseInt(exercise.get(exercise.size() - 1)) - 1, exercise);
             }
+            myExercises = newOrder;
+
         }
     }
 
