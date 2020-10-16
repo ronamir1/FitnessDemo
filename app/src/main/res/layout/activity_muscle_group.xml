@@ -193,7 +193,6 @@
                 android:layout_weight="1"
                 android:background="#00FFFFFF"
                 android:elevation="8dp"
-                android:onClick="recommendedTraining"
                 android:scaleType="fitCenter"
                 android:tag="1"
                 app:srcCompat="@drawable/medium" />
